@@ -1,0 +1,11 @@
+Study ID,Disease,Intervention,Year,NumberAffectdByOutcomeMeasureInControlGroup,NumberAffectdByOutcomeMeasureInTreatmentGroup,NumberInControlGroup,NumberInTreatmentGroup,OutcomeMeasure,BlindedAssessmentOfOutcome,BlindedInductionOfIschaemia,MethodOfInductionOfMCAO,RandomAllocationToGroup,SampleSizeCalculation,Sex,TypeOfIschaemia,Comorbidity,Dose,DrugUnit,TimeOfAdministrationInMins,TimeOfAssessmentInHours
+Maysami2015a,Stroke,IL-1RA,2015,0,1,10,8,Mortality,TRUE,TRUE,Intraluminal filament/suture,TRUE,FALSE,Male,Temporary,None,200,mg/kg,30,168
+Maysami2015b,Stroke,IL-1RA,2015,1,2,16,16,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,Aged,200,mg/kg,30,672
+Maysami2015c,Stroke,IL-1RA,2015,1,1,12,15,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,None,200,mg/kg,30,168
+Maysami2015d,Stroke,IL-1RA,2015,0,2,15,16,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,Aged,200,mg/kg,30,672
+Maysami2015e,Stroke,IL-1RA,2015,0,0,6,6,Mortality,TRUE,TRUE,Intraluminal filament/suture,TRUE,FALSE,Male,Temporary,None,200,mg/kg,30,168
+Maysami2015f,Stroke,IL-1RA,2015,0,0,9,9,Mortality,TRUE,TRUE,Intraluminal filament/suture,TRUE,FALSE,Male,Temporary,None,200,mg/kg,30,168
+Maysami2015g,Stroke,IL-1RA,2015,0,0,5,6,Mortality,TRUE,TRUE,thrombin,TRUE,FALSE,Male,Thrombotic,None,200,mg/kg,30,168
+Maysami2015h,Stroke,IL-1RA,2015,0,0,7,8,Mortality,TRUE,TRUE,thrombin,TRUE,FALSE,Male,Thrombotic,None,200,mg/kg,30,168
+Maysami2015i,Stroke,IL-1RA,2015,8,6,19,18,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,None,200,mg/kg,30,168
+Garcia1995a,Stroke,IL-1RA,1995,2,1,13,13,Mortality,TRUE,FALSE,Intraluminal filament/suture,FALSE,FALSE,Male,Permanent,None,400,mg/kg,0,168
