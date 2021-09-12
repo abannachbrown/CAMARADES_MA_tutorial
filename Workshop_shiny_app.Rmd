@@ -62,7 +62,7 @@ Interleukin-1 receptor antagonist (IL-1 RA) is an anti-inflammatory protein used
 
 
 
-## 1. Introduction to Meta-Analysis {#meta-analysis}
+## Introduction to Meta-Analysis{#meta-analysis}
 
 In the first section of this tutorial we will cover the basic steps of a meta-analysis: 
 - Importing data
@@ -74,7 +74,7 @@ Further information on systematic review and meta-analysis of animal studies, pl
 
 <br>
 
-## 1.1 Set-up
+### Set-up{#set-up}
 
 ```{r ex1_1_setup_1, include = FALSE}
 infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv" 
@@ -141,7 +141,7 @@ quiz(caption = "Take a look at the dataset and answer the following:",
 ```
 
 
-## 1.1.1 Effect sizes for infarct volume (NMD)
+## Effect sizes - NMD
 
 In this section of the tutorial we will calculate the effect sizes for our infarct volume data, which is a continuous variable. 
 An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts. Here, we will calculate a “normalised mean difference” (NMD) using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group. NMD is not widely used in clinical systematic reviews and there is no inbuilt calculation in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
@@ -348,7 +348,7 @@ View(infarctVol)
 ```
 
 
-## 1.1.2 Random-effects meta-analysis
+## Random-effects meta-analysis
 
 Next we combine the individual effect sizes with meta-analysis to obtain an overall summary estimate of effect and test for heterogeneity using the function "metagen"
 
@@ -442,9 +442,9 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
 ```
 
 
-### 1.1.3 Forest plot
+### Forest plot
 
-A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> graphs the effect size and confidence intervals for each individual study in the meta-analysis and is created using the function "forest"
+A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> graphs the effect size and confidence intervals for each individual study in the meta-analysis and is created using the function "forest". 
 
 ```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=44}
 
@@ -491,6 +491,8 @@ infarctVolFor <- forest(
   # specify minimal number of significant digits for standard errors
   digits.se = 1  
 )
+
+
 ```
 
 ```{r quiz1_1_3, echo=FALSE}
@@ -539,11 +541,13 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.2 Exploring heterogeneity
+## Exploring heterogeneity
 
 Here we will <a href="http://www.camarades.de/meta-analysis.html#step-3.-investigate-heterogeneity" target="_blank" rel="noopener noreferrer">investigate patterns of heterogeneity</a> in our data and what causes them. Different study-level variables (e.g. species) can be added to a meta-regression model to predict differences in true effect sizes. We will investigate four variables in different subsets of the data, as performed in the publication <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann et al. (2016)</a>. For this we will use the function "metareg".
 
-## 1.2.1 Meta-regression
+### Meta-regression - Blinding
+
+Investigate the variable "Blinded induction of ischaemia" in the complete data
 
 This variable addresses specifically whether authors reported blinding of researchers during stroke induction in the animals. Blinding is an important variable when assessing risk of bias.
 
@@ -645,7 +649,9 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.2.2 Meta-regression - Part 2
+### Meta-regression - Route of delivery
+
+Investigate the variable "Route of drug delivery " in the subset of data where the drug delivery mode is "Protein"
 
 In this data set IL-1RA was administered using several different delivery modes (column "Drug.delivery.mode"). We will restrict subsequent analyses to those experiments where IL-1RA was delivered in protein form, due to uncertainty around the timing and effective dose achieved in transgenic and transfection studies (the alternative drug delivery modes).
 
@@ -787,7 +793,9 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.2.3 Meta-regression - Part 3
+### Meta-regression - Species
+
+Investigate the variable "Species" in the subset of data where the drug delivery mode is "Protein"
   
 Using the same data set (infarctVol2) and meta-analysis (infarctVolMA2), now investigate animal species as a source of heterogeneity.
 
@@ -842,7 +850,9 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.2.4 Meta-regresion - Part 4
+### Meta-regresion - Dose
+
+Investigate the variable "Dose" in the subset of data where the drug delivery mode is "Protein" and the location of administration is "Central"
 
 Now let's check if the dose of IL1-RA is associated with effect size differences (i.e. is there a dose response) using only data where the drug was administered centrally (i.e. directly into the brain) and excluding data where the drug was administered peripherally. 
 
@@ -955,7 +965,7 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.3 Meta-analysis binary data
+## Meta-analysis of binary data
 
 ```{r ex1_3_setup, include = FALSE}
 mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv", 
@@ -975,7 +985,9 @@ mortalityMA <- metabin(
  )
 ```
 
-Load and view the data
+For this exercise, we will use the function "metabin" for meta-analysis of binary outcomes. "metabin" will calculate an odds ratio effect size directly if we provide the number of observations and events (deaths) in the treatment and control groups, so there is no need to manually calculate these values as we did in Part 1.1.
+
+### Load and view the data
 
 ```{r ex1_3_1, exercise = TRUE, exercise.setup = "ex1_3_setup"}
 mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv", 
@@ -1003,7 +1015,9 @@ quiz(caption = "Question:",
 ```
 
 
-## 1.3.1 Calcualte effect size
+### Meta-analysis
+
+Perform a meta-analysis using the function "metabin". 
 
 ```{r ex1_3_2, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=34}
 mortalityMA <- metabin(
@@ -1070,7 +1084,9 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.3.2 Meta-analysis & forest plot
+### Forest plot
+
+Next we create a forest plot of the mortality data using the function "forest"
 
 ```{r ex1_3_3, fig.width = 8.5, fig.height = 4, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=34}
 mortalityFor <- forest(
@@ -1146,16 +1162,15 @@ quiz(caption = "Questions:",
 ```
 
 
-## 1.4 Explore the IL1-RA neurobehavioural outcomes data set
+## Test you skills - Meta-analysis 
 
 Now you can explore the data set for neurobehavioural outcomes on your own.
 Only experiments where IL-1 RA was administered in protein form and motor / sensory
 outcomes were assessed are included.
-In this data set, an NMD effect size (column ESi) and standard error (column SEi) have
-already been calculated for each experiment. 
 
-You can edit the code we used for the infarct volume data above and compare your results
-to those in the paper (McCann et al 2016).
+In this data set, an NMD effect size (column ESi) and standard error (column SEi) have already been calculated for each experiment. 
+
+You can edit the code we used for the infarct volume data above and compare your results to those in the paper (McCann et al 2016).
 
 ```{r ex1_4_setup, include = FALSE}
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
@@ -1228,31 +1243,30 @@ neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-
 #)
 ```
 
-Next select some variables to investigate as possible sources of heterogeneity using the function "metareg" e.g. species, sex, dose, time of administration, route of drug delivery, comorbidities, method of induction of ischaemia, type of ischaemia, anaesthetic used, time of assessment, single/ multiple administrations.
-
 ```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
 # load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 
 
-# Perform a random-effects meta-analysis using the function "metagen".
-
-
-# Create a forest plot of the data using the function "forest".
-
-
-# Next select some variables to investigate as possible sources of heterogeneity using 
-# the function "metareg" e.g. species, sex, dose, time of administration, route of drug 
-# delivery, comorbidities, method of induction of ischaemia, type of ischaemia, anaesthetic 
-# used, time of assessment, single/ multiple administrations.
-
 ```
+
 
 ```{r ex1_4_1-hint-1}
 # load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
 ```
 
-```{r ex1_4_1-hint-2}
+
+Then, perform a random-effects meta-analysis
+```{r ex1_4_2, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
+
+
+# use the function "metagen"
+
+
+```
+
+
+```{r ex1_4_2-hint}
 # Perform a random-effects meta-analysis using the function "metagen".
 neurobehMA <- metagen(
   # specify the variable that contains the effect size for each experiment 
@@ -1275,8 +1289,17 @@ neurobehMA <- metagen(
 )
 ```
 
+Next visualise the results of the meta-analysis with a forest plot. 
+```{r ex1_4_3, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
 
-```{r ex1_4_1-hint-3}
+# Create a forest plot of the data using the function "forest".
+
+
+```
+
+
+
+```{r ex1_4_3-hint}
 # Create a forest plot of the data using the function "forest".
 neurobehFor <- forest(
   neurobehMA,                                   # specify the meta-analysis to plot
@@ -1296,7 +1319,44 @@ neurobehFor <- forest(
 )
 ```
 
-```{r ex1_4_1-hint-4}
+```{r quiz1_4_1, echo=FALSE}
+
+# Questions:
+# 
+ ## - What effect does IL-1RA treatment have on neurobehavioural outcomes after stroke?
+ ## - How much heterogeneity is in the data set?
+  
+quiz(caption = "Questions:",
+  question("What effect does IL-1RA treatment have on neurobehavioural outcomes after stroke?",
+    answer("8", correct = TRUE),
+    answer("14"),
+    answer("1"),
+    answer("23"),
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ),
+  question("How much heterogeneity is in the data set?",
+    answer("8", correct = TRUE),
+    answer("14"),
+    answer("1"),
+    answer("23"),
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  ))
+```
+
+
+
+
+Next select some variables to investigate as possible sources of heterogeneity using the function "metareg" e.g. species, sex, dose, time of administration, route of drug delivery, comorbidities, method of induction of ischaemia, type of ischaemia, anaesthetic used, time of assessment, single/ multiple administrations.
+```{r ex1_4_4, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
+# use the metareg() function
+
+
+```
+
+
+```{r ex1_4_4-hint-1}
 # Next select some variables to investigate as possible sources of heterogeneity using 
 # the function "metareg" e.g. species, sex, dose, time of administration, route of drug 
 # delivery, comorbidities, method of induction of ischaemia, type of ischaemia, anaesthetic 
@@ -1314,7 +1374,7 @@ neurobehSpecies <- metareg(
 neurobehSpecies 
 ```
 
-```{r quiz1_4_1, echo=FALSE}
+```{r quiz1_4_2, echo=FALSE}
 
 # Questions:
 # 
@@ -1360,13 +1420,13 @@ quiz(caption = "Questions:",
 ```
 
 
-## 2. Detecting small study effects
+## Small study effects
 
 Small study effects in meta-analysis can be assessed using a funnel plot, which is a scatterplot of individual study effect sizes against a measure of each study's precision. Ideally, the plot should approximately resemble a symmetrical (inverted) funnel. If there is bias due to missing results, for example because smaller studies without statistically significant effects remain unpublished, this will lead to an asymmetrical appearance of the funnel plot.
 
-In this exercise, we will use the complete infarct volume data set and meta-analysis from Part 1.1
+In this exercise, we will use the complete infarct volume data set and meta-analysis from the [first section of this exercise.]{#set-up}
 
-First, draw a funnel plot using the function "funnel"
+First, draw a funnel plot using the function "funnel". 
 
 ```{r ex2_1, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVolFun <- funnel(
@@ -1382,9 +1442,11 @@ infarctVolFun <- funnel(
  # specify the measure plotted on the y axis, "invse" = inverse of the standard error
  yaxis = "invse"   
 )
+
+infarctVolFun
 ```
 
-```{r quiz1_4_2, echo=FALSE}
+```{r quiz2_4_2, echo=FALSE}
 
 # Take a look at the funnel plot and answer the following questions:
 # 
@@ -1430,8 +1492,12 @@ quiz(caption = "Take a look at the funnel plot and answer the following question
 ```
 
 
-## 2.1 Funnel plot asymmetry
+### Funnel plot asymmetry
 
+In addition to assessing the funnel plot visually, we can test for asymmetry statistically. Here we will use the "Egger" test, based on a weighted linear regression of the treatment effect on its standard error.
+
+
+Test for funnel plot asymmetry using the function "meta-bias"
 ```{r ex2_2, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVolBias <- metabias(
  # specify the meta-analysis to analyse
@@ -1448,10 +1514,10 @@ infarctVolBias <- metabias(
 infarctVolBias  
 ```
 
-We will test for funnel plat asymmetry with the "meta-bias" function. 
 
 
-```{r quiz1_4_3, echo=FALSE}
+
+```{r quiz2_4_3, echo=FALSE}
 
 # Questions:
 #  
@@ -1468,11 +1534,11 @@ quiz(caption = "Question",
 ```
 
 
-We can also estimate and adjust for the number and outcomes of missing studies in a meta-analysis, using a method called trim-and-fill.
-
-## 2.2 Trim & Fill 
 
 
+### Trim & Fill 
+
+We can also estimate and adjust for the number and outcomes of missing studies in a meta-analysis, using a method called trim-and-fill. 
 We can test for and impute missing studies using the function "trimfill".
 
 ```{r ex2_3, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=16}
@@ -1494,8 +1560,6 @@ infarctVolTrim <- trimfill(
 infarctVolTrim  
 ```
 
-## 2.3 Funnel plot & trim and fill
-
 
 Draw a funnel plot of the trim and fill data using the function "funnel"
 
@@ -1510,9 +1574,11 @@ infarctVolTrimFun <- funnel(infarctVolTrim,
   # specify the measure plotted on the y axis, "invse" = inverse of the standard error
   yaxis = "invse"  
 )
+
+infarctVolTrimFun
 ```
 
-```{r quiz1_4_4, echo=FALSE}
+```{r quiz2_4_4, echo=FALSE}
 
 # Questions:
 # 
@@ -1576,7 +1642,7 @@ quiz(caption = "Questions:",
 ```
 
 
-## 2.4 Small study effects in neurobehavioural outcomes
+## Test your skills - Small study effects
 
 
 
@@ -1585,35 +1651,35 @@ We have covered the code and visualisation of investigating small study effects 
 
 
 
-Now use the analyses from Part 1.4 to test for funnel plot asymmetry and missing studies in the neurobehavioural data set, using the "funnel, "metabias", and "trimfill" functions above.
+Now use the analyses from Test your skills - Meta-analysis to create a funnel plot, test for asymmetry and calculate missing studies in the neurobehavioural data set, using the "funnel, "metabias", and "trimfill" functions above.
 
 
 
 
 ```{r ex2_5, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=80}
-# load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+# firstly load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
 
 # Perform a random-effects meta-analysis using the function "metagen".
 neurobehMA <- metagen(
-  # specify the variable that contains the effect size for each experiment 
   ESi,  
-  
-  # specify the variable that contains the standard error for each experiment
   SEi,  
-  
-  # specify the data set
   data = neurobeh,  
-  
-  # specify the study labels
   studlab = Study.ID,  
-  
-  # specify a random effects model
   comb.random = TRUE,  
-  
-  # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
   method.tau = "REML",  
 )
+
+# use the funnel() function to generate a funnel plot
+
+
+
+# use the metabias() to conduct funnel plot asymmetry analysis
+
+
+
+# 
+
 ```
 
 ```{r ex2_5-hint-1}
