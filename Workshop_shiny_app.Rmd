@@ -31,7 +31,6 @@ require('meta')
 require('metafor')
 
 
-
 library(learnr)
 # library(tidyverse)
 library(meta)
@@ -71,8 +70,11 @@ Interleukin-1 receptor antagonist (IL-1 RA) is an anti-inflammatory protein used
 ## Introduction to Meta-Analysis{#meta-analysis}
 
 In the first section of this tutorial we will cover the basic steps of a meta-analysis: 
+<br>
 - Importing data
+<br>
 - Calculating effect size
+<br>
 - Conducting a random-effects meta-analysis
 
 <br>
@@ -83,8 +85,7 @@ Further information on systematic review and meta-analysis of animal studies, pl
 ### Set-up{#set-up}
 
 ```{r ex1_1_setup_1, include = FALSE}
-infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv" 
-                         #, fileEncoding = "UTF-8-BOM"
+infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv", fileEncoding = "UTF-8-BOM"
                        )
 ```
 
@@ -150,7 +151,10 @@ quiz(caption = "Take a look at the dataset and answer the following:",
 ## Effect sizes - NMD
 
 In this section of the tutorial we will calculate the effect sizes for our infarct volume data, which is a continuous variable. 
-An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts. Here, we will calculate a “normalised mean difference” (NMD) using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group. NMD is not widely used in clinical systematic reviews and there is no inbuilt calculation in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
+An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts. Here, we will calculate a [“normalised mean difference”](https://www.camarades.de/meta-analysis.html#continuous){target="_blank"} (NMD) using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group. NMD is not widely used in clinical systematic reviews and there is no inbuilt calculation in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
+
+</br>
+
 
 ```{r ex1_1_setup_2, include = FALSE}
 infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv", 
@@ -356,7 +360,8 @@ View(infarctVol)
 
 ## Random-effects meta-analysis
 
-Next we combine the individual effect sizes with meta-analysis to obtain an overall summary estimate of effect and test for heterogeneity using the function "metagen"
+### Building the meta-analysis model
+Next we combine the individual effect sizes with meta-analysis to obtain an overall summary estimate of effect and test for heterogeneity using the function "metagen".
 
 ```{r ex1_1_9, exercise = TRUE, exercise.setup = "ex1_1_setup_3",  exercise.lines=23}
 infarctVolMA <- metagen(
@@ -446,6 +451,8 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
   )
 )
 ```
+
+
 
 
 ### Forest plot
@@ -681,7 +688,7 @@ infarctVol2 <- subset(
 View(infarctVol2)
 ```
 
-Next we will run a meta-analysis on this new data set, as performed in part 1.1:
+Next we will run a meta-analysis on the subset of the data set. 
 
 ```{r ex1_2_2_2, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=25}
 infarctVolMA2 <- metagen(
@@ -991,7 +998,7 @@ mortalityMA <- metabin(
  )
 ```
 
-For this exercise, we will use the function "metabin" for meta-analysis of binary outcomes. "metabin" will calculate an odds ratio effect size directly if we provide the number of observations and events (deaths) in the treatment and control groups, so there is no need to manually calculate these values as we did in Part 1.1.
+For this exercise, we will use the function "metabin" for meta-analysis of binary outcomes. "metabin" will calculate an odds ratio effect size directly if we provide the number of observations and events (deaths) in the treatment and control groups, so there is no need to manually calculate these values as we did for NMD effect sizes above.
 
 ### Load and view the data
 
@@ -1140,7 +1147,7 @@ mortalityFor <- forest(
 # * How confident would you be in the effect of IL-1RA on mortality based on these results?
   
 quiz(caption = "Questions:",
-  question("How is the forest plot different from the plot in Part 1.1?",
+  question("How is the forest plot different from the plot in the main dataset?",
     answer("8", correct = TRUE),
     answer("14"),
     answer("1"),
@@ -1449,7 +1456,7 @@ infarctVolFun <- funnel(
  yaxis = "invse"   
 )
 
-infarctVolFun
+# infarctVolFun
 ```
 
 ```{r quiz2_4_2, echo=FALSE}
