@@ -4,6 +4,7 @@ output:
   learnr::tutorial:
     progressive: true
     allow_skip: true
+    highlight: tango
     config: 
       toc:
         before: |
@@ -25,6 +26,10 @@ description: >
 # - using "learnr" v0.10.1, chained setup chunks do not work correctly. Found work-around. Question posted to stack overflow: https://stackoverflow.com/questions/68995597/sharing-variables-between-chunks-in-learnr-tutorial-app-with-chained-setup-chun ; it is a bug in this version of "learnr". but following the suggested solution - installing the latest development version of "learnr" - results in plots not being shown correctly. 
 # - using "learnr" v0.10.1.9015, chained setup chunks works, but forest plots are shown incorrectly.
 ################################################################################
+require('learnr')
+require('meta')
+require('metafor')
+
 
 library(learnr)
 # library(tidyverse)
