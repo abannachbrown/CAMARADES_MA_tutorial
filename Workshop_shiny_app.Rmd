@@ -45,51 +45,57 @@ knitr::opts_knit$set(root.dir = normalizePath("."))
 
 ## Welcome
 
-In this web-based tutorial complements the workshop: <a href="https://www.bihealth.org/en/translation/innovation-enabler/quest-center/mission-approaches/education-and-training/how-to-conduct-a-preclinical-animal-systematic-review-and-meta-analysis" target="_blank" rel="noopener noreferrer">
+This web-based tutorial complements the workshop: <a href="https://www.bihealth.org/en/translation/innovation-enabler/quest-center/mission-approaches/education-and-training/how-to-conduct-a-preclinical-animal-systematic-review-and-meta-analysis" target="_blank" rel="noopener noreferrer">
 "Introduction to Systematic Review & Meta-Analysis of Animal Studies" 
 </a>
 
+<br>
+We will use the R programming language to work through a meta-analysis of animal data but you do not need any previous experience using R to complete the tutorial.  
 <br>
 
 We will use example data from the publication:
 
 <p><a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">
 
-  McCann, S.K., Cramond, F., Macleod, M.R. et al. Systematic Review and 
+  McCann, S.K., Cramond, F., Macleod, M.R. *et al*. Systematic Review and 
   Meta-Analysis of the Efficacy of Interleukin-1 Receptor Antagonist in 
-  Animal Models of Stroke: an Update. Transl. Stroke Res. 7, 395–406 (2016).
+  Animal Models of Stroke: an Update. *Translational Stroke Research* 7, 395–406 (2016).
 
 </a></p>
 
 **Background Information on the Dataset: **
 <br>
-Interleukin-1 receptor antagonist (IL-1 RA) is an anti-inflammatory protein used clinically to treat rheumatoid arthritis and is considered a promising candidate therapy for stroke. In this systematic review and meta-analysis, we sought to assess efficacy in animal models of ischaemic stroke, the range of circumstances in which efficacy has been tested and whether the data appear to be confounded due to reported study quality and publication bias. The outcomes we assessed were post-stroke infarct volume (the amount of brain damage), neurobehavioural outcomes e.g. motor deficits, and mortality.
+Interleukin-1 receptor antagonist (IL-1 RA) is an anti-inflammatory protein used clinically to treat rheumatoid arthritis and is considered a promising candidate therapy for stroke. In this systematic review and meta-analysis, we seek to assess the efficacy of IL-1 RA in animal models of ischaemic stroke, the range of conditions under which efficacy has been tested, and whether the data appear to be confounded due to reported study quality and publication bias. The outcomes we will assess are post-stroke infarct volume (brain damage), mortality, and neurobehavioural outcomes e.g. motor deficits.
 
 
 
 ## Introduction to Meta-Analysis{#meta-analysis}
 
-In the first section of this tutorial we will cover the basic steps of a meta-analysis: 
+In the first section of the tutorial we will cover the basic steps of a meta-analysis: 
 <br>
-- Importing data
+- importing and viewing data
 <br>
-- Calculating effect size
+- calculating effect sizes
 <br>
-- Conducting a random-effects meta-analysis
+- performing a random-effects meta-analysis
+<br>
+
+We will analyse each of our three outcomes (infarct volume, mortality, and neurobehaviour) separately. In this first section, we will analyse the effect of IL-1 RA treatment on infarct volume.
 
 <br>
-Further information on systematic review and meta-analysis of animal studies, please see the <a href="http://camarades.de/intro.html" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page.</a>
+For further information on systematic review and meta-analysis of animal studies, please see the <a href="http://camarades.de/intro.html" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page.</a>
 
 <br>
 
 ### Set-up{#set-up}
 
 ```{r ex1_1_setup_1, include = FALSE}
-infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv", fileEncoding = "UTF-8-BOM"
+infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv", 
+                       fileEncoding = "UTF-8-BOM"
                        )
 ```
 
-Firstly, let's load the data:
+First, let's load the data we will use for the meta-analysis of infarct volume:
 
 ```{r ex1_1_1, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
 infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv", 
@@ -97,7 +103,7 @@ infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv",
 ```
 
 <br>
-It is good practice to take a look at the data you import to make sure there are no errors.
+It is good practice to take a look at the data you import to make sure there are no errors. After you run the next section of code, the imported data will open in a new R window:
 
 ```{r ex1_1_2, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
 View(infarctVol)
@@ -111,36 +117,36 @@ View(infarctVol)
 # * Which columns are the intervention group data?
 # * What other data have been recorded for each experiment?
 
-quiz(caption = "Take a look at the dataset and answer the following:",
+quiz(caption = "Examine the dataset and answer the following:",
   question("What does each row represent?",
-    answer("a single study", correct = TRUE),
+    answer("a single publication"),
     answer("a single meta-analysis"),
-    answer(""),
-    answer("23"),
+    answer("a single group of animals involved in an experiment"),
+    answer("a single experiment with data for a control group and a treatment group", correct = TRUE),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Which columns are the control group data (mean, standard deviation, N)?",
-    answer("Mean.in.control.group; SD.in.control.group; True.No.of.C", correct = TRUE),
-    answer("Mean.in.treatment.group; SD.in.treatment.group; Number.in.treatment.group"),
-    answer("Method.of.Induction.of.MCAO; Anaestetic; Blinded.Assessment.of.Outcome"),
-    answer("Drug.delivery.mode; Dose; Sample.Size.Calculation"),
+    answer("Mean.in.control.group; SD.in.control.group; True.No.of.C"),
+    answer("Mean.in.control.group; SD.in.treatment.group; Number.in.treatment.group"),
+    answer("Mean.in.treatment.group; Type.of.Ischaemia; TreatmentGroupsPerControl"),
+    answer("Mean.in.control.group; SD.in.control.group; Number.in.control.group", correct = TRUE),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Which columns are the intervention group data?",
-    answer("Mean.in.control.group; SD.in.control.group; True.No.of.C", correct = TRUE),
-    answer("Mean.in.treatment.group; SD.in.treatment.group; Number.in.treatment.group"),
-    answer("Method.of.Induction.of.MCAO; Anaestetic; Blinded.Assessment.of.Outcome"),
-    answer("Drug.delivery.mode; Dose; Sample.Size.Calculation"),
+  question("Which columns are the intervention group data (mean, standard deviation, N)?",
+    answer("Mean.in.treatment.group; SD.in.control.group; True.No.of.C"),
+    answer("Mean.in.treatment.group; SD.in.treatment.group; Number.in.treatment.group", correct = TRUE),
+    answer("Mean.in.treatment.group; SD.in.treatment.group; TreatmentGroupsPerControl"),
+    answer("Mean.in.treatment.group; SD.in.treatment.group; True.No.of.C"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What other data have been recorded for each experiment?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("the method of induction of MCAo; the type of ischaemia; the dose of IL-1 RA; the sex of the animals", correct = TRUE),
+    answer("the method of induction of MCAo; the age of the animals; the dose of IL-1 RA; the sex of the animals"),
+    answer("the type of ischaemia; the dose of IL-1 RA; random allocation to group; the weight of the animals"),
+    answer("random allocation to group; blinded assessment of outcome; the time of assessment; the number of animals that suffered a haemorrhage "),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -150,12 +156,14 @@ quiz(caption = "Take a look at the dataset and answer the following:",
 
 ## Effect sizes - NMD
 
-In this section of the tutorial we will calculate the effect sizes for our infarct volume data, which is a continuous variable. 
-An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts. Here, we will calculate a [“normalised mean difference”](https://www.camarades.de/meta-analysis.html#continuous){target="_blank"} (NMD) using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group. NMD is not widely used in clinical systematic reviews and there is no inbuilt calculation in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
+Now we will calculate an effect size for each experiment in the dataset. An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts.
+
+<br>
+Infarct volume is a continuous variable and we will calculate a [“normalised mean difference”](https://www.camarades.de/meta-analysis.html#continuous){target="_blank"} (NMD) effect size using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group. NMD is not widely used in clinical systematic reviews and there is no in-built calculation in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
+</br>
+Note that green text following a hash symbol (#)is not read by R but simply provides a description of the code to make it easier to follow.
 
 </br>
-
-
 ```{r ex1_1_setup_2, include = FALSE}
 infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv", 
                          fileEncoding = "UTF-8-BOM")
@@ -180,38 +188,47 @@ ESi <- (mCi - mTi) / mCi * 100
 infarctVol <- cbind(infarctVol, ESi)  
 ```
 
-Specify the columns that contain the mean, standard deviation, and number of animals in the control group
+First, specify the columns in the data set that contain the mean, standard deviation, and number of animals in the **control** group:
 
 ```{r ex1_1_3, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9}
-# mean
+# save the group means to a variable called mCi
 mCi <- infarctVol$Mean.in.control.group
 
-# standard deviation
+# save the group standard deviations  to a variable called sdCi 
 sdCi <- infarctVol$SD.in.control.group
 
-# number of animals
+# save the number of animals to a variable called nCi
 nCi <- infarctVol$True.No.of.C 
 ```
 
 
-Specify the columns that contain the mean, standard deviation, and number of animals in the treatment group
+...and the columns that contain the mean, standard deviation, and number of animals in the **treatment** group:
 
 ```{r ex1_1_4, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9}
-# mean
+# save the group means to a variable called mTi
 mTi <- infarctVol$Mean.in.treatment.group
 
-# standard deviation
+# save the group standard deviations  to a variable called sdTi 
 sdTi <- infarctVol$SD.in.treatment.group 
 
-# number of animals
+# save the number of animals to a variable called nTi
 nTi <- infarctVol$Number.in.treatment.group
 ```
 
+You have just created six new variables that you will use to calculate effect sizes. You can view variables to check that they contain the correct data. For example, running the following section of code will show you the list of values in the mCi variable (data for the mean in the control group). This should match the corresponding column in the data set. You can edit this code to view the other variables if you wish.
 
-Calculate an NMD effect size for each experiment and add the effect size data as a new column in the infarctVol data set. The function "cbind" takes a table of data and binds a new column to the right side. cbind(table, new_column). Remember: each variable in this equation is a vector of numbers with each entry corresponding to a single experiment. 
+```{r ex1_1_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=3}
+
+mCi
+```
+
+
+Now let's calculate an NMD effect size for each experiment (ESi) and add the effect size data as a new column in the infarctVol data set. The function "cbind" takes a table of data and binds a new column to the right side. Remember: each variable in this equation is a list of numbers, with each entry corresponding to a single experiment. 
+<br> 
+Note that we are using a truncated form of the NMD equation here because we know that a sham animal that has not suffered a stroke will have no infarct. This reduces the corresponding parts of the equation to zero. See the CAMARADES wiki for more information.
 
 ```{r ex1_1_5, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=6}
-# calculate the NMD effect size for each experiment
+# calculate the NMD effect size for each experiment and save the results to the ESi variable
 ESi <- (mCi - mTi) / mCi * 100
 
 # add the effect size data as a new column
@@ -340,7 +357,7 @@ nsdTi <- sdTi / mCi * 100
 ```
 
 
-Calculate the NMD standard error for each experiment and add the standard error data as a new column in the infarctVol data set
+We will now calculate the NMD standard error for each experiment (SEi) and add the standard error data as a new column in the infarctVol data set:
 
 ```{r ex1_1_7, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6}
 # calculate the NMD standard error
@@ -351,7 +368,7 @@ infarctVol <- cbind(infarctVol, SEi)
 ```
 
 
-Check that your new columns have been added to the right hand side of the data set
+Check that your new columns have been added to the right hand side of the data set:
 
 ```{r ex1_1_8, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 View(infarctVol)
@@ -361,7 +378,7 @@ View(infarctVol)
 ## Random-effects meta-analysis
 
 ### Building the meta-analysis model
-Next we combine the individual effect sizes with meta-analysis to obtain an overall summary estimate of effect and test for heterogeneity using the function "metagen".
+Next we combine the individual effect sizes with random effects meta-analysis using the function "metagen". This gives us an overall summary estimate of the effect of IL-1 RA on infarct volume, compared to control.
 
 ```{r ex1_1_9, exercise = TRUE, exercise.setup = "ex1_1_setup_3",  exercise.lines=23}
 infarctVolMA <- metagen(
@@ -380,8 +397,8 @@ infarctVolMA <- metagen(
   # specify a random effects model
   comb.random = TRUE,  
   
-  # specify which method is used to estimate the between-study variance τ^: restricted maximum-likelihood (REML) estimator
-  method.tau = "REML",  
+  # specify which method is used to estimate the between-study variance, τ^2: restricted maximum-likelihood (REML) estimator
+  method.tau = "REML"  
 )
 ``` 
 
@@ -401,11 +418,11 @@ infarctVolMA
 # * What does the value of I^2 mean? 
 
 quiz(caption = "Answer the following questions about the results of the meta-analysis:",
-  question("What are the random effects summary point estimate and 95% CIs?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("What are the random effects summary point estimate and 95% confidence interval (CI)?",
+    answer("36.1523, [31.6521; 40.6524]", correct = TRUE),
+    answer("20.6449 [19.1253; 22.1645]"),
+    answer("13.6945 [8.5156; 15.2983]"),
+    answer("187.5407 [72.5151; 234.0391]"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
