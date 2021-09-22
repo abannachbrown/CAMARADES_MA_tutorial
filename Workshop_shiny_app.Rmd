@@ -29,10 +29,11 @@ description: >
 require('learnr')
 require('meta')
 require('metafor')
+require('tidyverse')
 
 
 library(learnr)
-# library(tidyverse)
+library(tidyverse)
 library(meta)
 library(metafor)
 
@@ -57,37 +58,58 @@ We will use example data from the publication:
 
 <p><a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">
 
-  McCann, S.K., Cramond, F., Macleod, M.R. *et al*. Systematic Review and 
+  McCann SK, Cramond F, Macleod MR *et al*. Systematic Review and 
   Meta-Analysis of the Efficacy of Interleukin-1 Receptor Antagonist in 
   Animal Models of Stroke: an Update. *Translational Stroke Research* 7, 395–406 (2016).
 
 </a></p>
 
-**Background Information on the Dataset: **
+**Background information on the data set: **
 <br>
-Interleukin-1 receptor antagonist (IL-1 RA) is an anti-inflammatory protein used clinically to treat rheumatoid arthritis and is considered a promising candidate therapy for stroke. In this systematic review and meta-analysis, we seek to assess the efficacy of IL-1 RA in animal models of ischaemic stroke, the range of conditions under which efficacy has been tested, and whether the data appear to be confounded due to reported study quality and publication bias. The outcomes we will assess are post-stroke infarct volume (brain damage), mortality, and neurobehavioural outcomes e.g. motor deficits.
+Interleukin-1 receptor antagonist (IL-1RA) is an anti-inflammatory protein used clinically to treat rheumatoid arthritis and is considered a promising candidate therapy for stroke. In this systematic review and meta-analysis, we seek to assess the efficacy of IL-1RA in animal models of ischaemic stroke, the range of conditions under which efficacy has been tested, and whether the data appear to be confounded due to reported study quality and publication bias. The outcomes we will assess are post-stroke infarct volume (brain damage), mortality, and neurobehavioural outcomes e.g. motor deficits.
 
 
 
-## Introduction to Meta-Analysis{#meta-analysis}
+## Contents{#meta-analysis}
 
-In the first section of the tutorial we will cover the basic steps of a meta-analysis: 
-<br>
-- importing and viewing data
-<br>
-- calculating effect sizes
-<br>
-- performing a random-effects meta-analysis
-<br>
+We will analyse the effect of IL-1Ra treatment on each of our three outcomes (infarct volume, mortality, and neurobehaviour) separately. 
 
-We will analyse each of our three outcomes (infarct volume, mortality, and neurobehaviour) separately. In this first section, we will analyse the effect of IL-1 RA treatment on infarct volume.
+For infarct volume and mortality, all of the R code is provided and you just need to click on the blue **Run Code** button on the top right of each code chunk to see the results.
+
+For neurobehaviour, you will have the opportunity to write your own code to analyse the data set provided.
+
+The tutorial comprises five main sections, each with multiple-choice questions to test your understanding:
+<br>
+**1.  Meta-analysis of continuous data** (infarct volume)
+
+In the first section of the tutorial we will cover the steps of a meta-analysis of continuous data: 
+<br>
+  1.1  Calculating effect sizes
+<br>
+  1.2  Performing a random-effects meta-analysis
+<br>
+  1.3  Exploring heterogeneity
+
+**2.  Meta-analysis of binary data** (mortality)
+
+In the second section of the tutorial we will look at the binary outcome, mortality, calculate effect sizes and perform a random effects meta-analysis.
+
+**3.  Test your skills: meta-analysis** (neurobehaviour)
+
+In this section we will provide you with the data set describing neurobehavioural outcomes (continuous data) and prompts to insert code to analyse the data. 
+
+You can copy and edit the code provided in Part 1 to perform the analyses. If you are unsure about what code to use, you can use the **Hint** button. You can compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. 
+
+**4.  Small study effects**
+
+**5.  Test your skills: small study effects**
 
 <br>
 For further information on systematic review and meta-analysis of animal studies, please see the <a href="http://camarades.de/intro.html" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page.</a>
 
 <br>
 
-### Set-up{#set-up}
+## 1.  Meta-analysis of continuous data{#set-up}
 
 ```{r ex1_1_setup_1, include = FALSE}
 infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv", 
@@ -117,12 +139,12 @@ View(infarctVol)
 # * Which columns are the intervention group data?
 # * What other data have been recorded for each experiment?
 
-quiz(caption = "Examine the dataset and answer the following:",
+quiz(caption = "Examine the data set and answer the following:",
   question("What does each row represent?",
-    answer("a single publication"),
-    answer("a single meta-analysis"),
-    answer("a single group of animals involved in an experiment"),
-    answer("a single experiment with data for a control group and a treatment group", correct = TRUE),
+    answer("A single publication"),
+    answer("A single meta-analysis"),
+    answer("A single group of animals involved in an experiment"),
+    answer("A single experiment with data for a control group and a treatment group", correct = TRUE),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -143,10 +165,10 @@ quiz(caption = "Examine the dataset and answer the following:",
     allow_retry = TRUE
   ),
   question("What other data have been recorded for each experiment?",
-    answer("the method of induction of MCAo; the type of ischaemia; the dose of IL-1 RA; the sex of the animals", correct = TRUE),
-    answer("the method of induction of MCAo; the age of the animals; the dose of IL-1 RA; the sex of the animals"),
-    answer("the type of ischaemia; the dose of IL-1 RA; random allocation to group; the weight of the animals"),
-    answer("random allocation to group; blinded assessment of outcome; the time of assessment; the number of animals that suffered a haemorrhage "),
+    answer("The method of induction of MCAo; the type of ischaemia; the dose of IL-1RA; the sex of the animals", correct = TRUE),
+    answer("The method of induction of MCAo; the age of the animals; the dose of IL-1RA; the sex of the animals"),
+    answer("The type of ischaemia; the dose of IL-1RA; random allocation to group; the weight of the animals"),
+    answer("Random allocation to group; blinded assessment of outcome; the time of assessment; the number of animals that suffered a haemorrhage "),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -154,9 +176,9 @@ quiz(caption = "Examine the dataset and answer the following:",
 ```
 
 
-## Effect sizes - NMD
+## 1.1  Calculating effect sizes
 
-Now we will calculate an effect size for each experiment in the dataset. An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts.
+Now we will calculate an effect size for each experiment in the data set. An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts.
 
 <br>
 Infarct volume is a continuous variable and we will calculate a [“normalised mean difference”](https://www.camarades.de/meta-analysis.html#continuous){target="_blank"} (NMD) effect size using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group. NMD is not widely used in clinical systematic reviews and there is no in-built calculation in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
@@ -223,7 +245,7 @@ mCi
 ```
 
 
-Now let's calculate an NMD effect size for each experiment (ESi) and add the effect size data as a new column in the infarctVol data set. The function "cbind" takes a table of data and binds a new column to the right side. Remember: each variable in this equation is a list of numbers, with each entry corresponding to a single experiment. 
+Now let's calculate an NMD effect size for each experiment (ESi) and add the effect size data as a new column in the infarctVol data set. The function "cbind" takes a table of data and binds a new column to the right side. Remember: each variable in this equation is a list of numbers, with each entry corresponding to a single experiment. In this format, the effect size tells us the percentage reduction in infarct volume in IL-1RA-treated animals compared to control animals.
 <br> 
 Note that we are using a truncated form of the NMD equation here because we know that a sham animal that has not suffered a stroke will have no infarct. This reduces the corresponding parts of the equation to zero. See the CAMARADES wiki for more information.
 
@@ -287,7 +309,7 @@ infarctVolBlind <- metareg(
 infarctVol2 <- subset(
   infarctVol,  # specify the data to subset
   !(Drug.delivery.mode %in%  # specify the relevant variable
-      c("Transgenic", "Vector", "IL-1 RA Tg BM cells"))  # specify the variable levels to exclude from analysis  
+      c("Transgenic", "Vector", "IL-1RA Tg BM cells"))  # specify the variable levels to exclude from analysis  
 )  
 
 infarctVolMA2 <- metagen(
@@ -375,10 +397,10 @@ View(infarctVol)
 ```
 
 
-## Random-effects meta-analysis
+## 1.2  Random-effects meta-analysis
 
 ### Building the meta-analysis model
-Next we combine the individual effect sizes with random effects meta-analysis using the function "metagen". This gives us an overall summary estimate of the effect of IL-1 RA on infarct volume, compared to control.
+Next we combine the individual effect sizes with random effects meta-analysis using the function "metagen". This gives us an overall summary estimate of the effect of IL-1RA on infarct volume, compared to control.
 
 ```{r ex1_1_9, exercise = TRUE, exercise.setup = "ex1_1_setup_3",  exercise.lines=23}
 infarctVolMA <- metagen(
@@ -414,55 +436,54 @@ infarctVolMA
 # * How would you interpret these results?
 # * How is the random effects model different to the fixed effect model and why? (check the model estimates and weights (%W))
 # * Why do we choose a random effect model for this data set?
-# * How much heterogeneity is in the data set?
 # * What does the value of I^2 mean? 
 
 quiz(caption = "Answer the following questions about the results of the meta-analysis:",
   question("What are the random effects summary point estimate and 95% confidence interval (CI)?",
     answer("36.1523, [31.6521; 40.6524]", correct = TRUE),
-    answer("20.6449 [19.1253; 22.1645]"),
-    answer("13.6945 [8.5156; 15.2983]"),
-    answer("187.5407 [72.5151; 234.0391]"),
+    answer("20.6449, [19.1253; 22.1645]"),
+    answer("13.6945, [8.5156; 15.2983]"),
+    answer("187.5407, [72.5151; 234.0391]"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How would you interpret these results?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Treatment with IL-1RA reduces infarct volume overall compared to control", correct = TRUE),
+    answer("Treatment with IL-1RA causes an increase in infarct volume overall compared to control"),
+    answer("There is no effect of treatment with IL-1RA compared to control"),
+    answer("Treatment with IL-1RA reduces infarct volume compared with control but the estimate is imprecise"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How is the random effects model different to the fixed effect model and why? (check the model estimates and weights (%W))",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The random effects estimate is less precise because it assigns a wider range of weights to the individual studies"),
+    answer("The random effects model estimates a higher effect size because it gives more weight to higher quality studies"),
+    answer("The fixed effect model estimates a mean of a distribution of effects while the random effects model estimates a common underying effect size"),
+    answer("The fixed effect model assumes the only reason the effect size varies between studies is due to sampling error and assigns more weight to more precise studies", correct = TRUE),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Why do we choose a random effect model for this data set?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("Why do we choose a random effects model for this data set?",
+    answer("Because we assume that the true effect size for all the studies is identical"),
+    answer("Because there is high statistical heterogeneity in the data set"),
+    answer("Because we assume that the true effect size varies between the studies", correct = TRUE),
+    answer("Because there is a wide range of effect sizes in the data set"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How much heterogeneity is in the data set?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("tau^2 = 187.5 and I^2 = 82.3%, there is a significant amount of heterogeneity (p-value < 0.0001)", correct = TRUE),
+    answer("Q = 423.36 and there is a non-significant amount of heterogeneity (p-value < 0.0001)"),
+    answer("I^2 = 82.3% so there is a significant amount of heterogeneity"),
+    answer("The confidence interval for tau^2 is very wide so we are unsure how much heterogeneity is in the data set"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What does the value of I^2 mean?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("How do we interpret the value of I^2?",
+    answer("82% of the variation across studies is due to heterogeneity rather than sampling error (chance)", correct = TRUE),
+    answer("82% is close to 100% so there is considerable heterogeneity in the data set"),
+    answer("The confidence interval for the I^2 estimate is narrow so we are very certain there is high heterogeneity"),
+    answer("We cannot deduce anything from the I^2 value alone"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -474,7 +495,7 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
 
 ### Forest plot
 
-A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> graphs the effect size and confidence intervals for each individual study in the meta-analysis and is created using the function "forest". 
+A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> is a way to visualise the effect size and confidence interval for each individual study in a meta-analysis, it is created using the function "forest". 
 
 ```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=44}
 
@@ -491,8 +512,11 @@ infarctVolFor <- forest(
   # plot the random effects estimate
   comb.random = TRUE,  
   
-  # specify the labels for the left hand plot columns
-  leftlabs = c("Study", "ES", "SE"),  
+  # specify what information to print on the left side of the plot: the study labels
+  leftcols = "Study.ID",
+  
+  # specify the labels for the left side plot columns
+  leftlabs = "Study",  
   
   # specify the x axis label
   xlab = "NMD (% reduction in infarct volume)",  
@@ -530,40 +554,31 @@ infarctVolFor <- forest(
 # Questions:
 # 
 # * What does the size of the point estimate square for each experiment represent?
-# * What symbol is used to represent the overall summary estimate?
-# * Which are the most precise and imprecise effect size estimates?
+# * What is printed on the plot?
 # * What does it mean if confidence intervals cross zero?
   
 quiz(caption = "Questions:",
   question("What does the size of the point estimate square for each experiment represent?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The size of the study"),
+    answer("The precision of the study"),
+    answer("The weight assigned to the study under the random effects model", correct = TRUE),
+    answer("The effect size of the study"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What symbol is used to represent the overall summary estimate?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("What is printed on the plot?",
+    answer("Effect sizes, the direction of the effect, and I2", correct = TRUE),
+    answer("Effect sizes, standard errors, and tau2"),
+    answer("Effect sizes, tau2, and the number of animals in each group"),
+    answer("Effect sizes, 95% confidence intervals, and fixed effect weights"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Which are the most precise and imprecise effect size estimates?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("What does it mean if confidence intervals cross zero?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("What does it mean if a confidence interval crosses zero?",
+    answer("We are 95% sure there is no effect of Il-1RA"),
+    answer("There is no statistically significant difference between the groups in that study", correct = TRUE),
+    answer("There is 95% probability that the true effect is zero"),
+    answer("We are 5% certain that if we repeated the study we would get an effect size close to zero"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -571,15 +586,15 @@ quiz(caption = "Questions:",
 ```
 
 
-## Exploring heterogeneity
+## 1.3 Exploring heterogeneity
 
-Here we will <a href="http://www.camarades.de/meta-analysis.html#step-3.-investigate-heterogeneity" target="_blank" rel="noopener noreferrer">investigate patterns of heterogeneity</a> in our data and what causes them. Different study-level variables (e.g. species) can be added to a meta-regression model to predict differences in true effect sizes. We will investigate four variables in different subsets of the data, as performed in the publication <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann et al. (2016)</a>. For this we will use the function "metareg".
+Here we will <a href="http://www.camarades.de/meta-analysis.html#step-3.-investigate-heterogeneity" target="_blank" rel="noopener noreferrer">investigate patterns of heterogeneity</a> in our data and what might be causing them. Different study-level variables (e.g. species) can be added to a meta-regression model to predict differences in true effect sizes. We will investigate four variables in different subsets of the infarct volume data set, as performed in the publication <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann et al. (2016)</a>. For this analysis we will use the function "metareg".
 
-### Meta-regression - Blinding
+### Meta-regression: blinding
 
-Investigate the variable "Blinded induction of ischaemia" in the complete data
+Investigate the variable "Blinded induction of ischaemia" in the complete data set.
 
-This variable addresses specifically whether authors reported blinding of researchers during stroke induction in the animals. Blinding is an important variable when assessing risk of bias.
+This variable addresses whether authors reported blinding of researchers during stroke induction in the animals. Blinding is an important variable when assessing risks of bias.
 
 ```{r ex1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14}
 # check the different levels of the variable and number of experiments in each
@@ -597,6 +612,64 @@ infarctVolBlind <- metareg(
 infarctVolBlind
 ```
 
+You can create a bar chart of these results using the code below. Don't worry about trying to understand the code at this stage, the flexibility offered by R means that it is very long!
+
+```{r plot1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=3, fig.width=5, fig.height=5.5, fig.fullwidth=FALSE}
+infarctVolBlind.p <- predict.rma(infarctVolBlind, addx = TRUE)
+blind <- as_tibble(infarctVolBlind.p)%>% group_by(X.Blinded.Induction.of.IschaemiaTRUE)
+blind.s <- blind %>% summarise(
+  Blind = mean(X.Blinded.Induction.of.IschaemiaTRUE),
+  es = mean(pred),
+  se = mean(se),
+  ci.lb = mean(ci.lb),
+  ci.ub = mean(ci.ub))
+blind.s <- blind.s %>% 
+  mutate(Blind=replace(Blind,Blind==0, "No"),
+  Blind=replace(Blind,Blind==1, "Yes"))
+N <- (infarctVol$Number.in.treatment.group + infarctVol$True.No.of.C)
+infarctVol <- cbind(infarctVol, N)
+blind.n <- infarctVol %>% 
+          group_by(Blinded.Induction.of.Ischaemia) %>%
+          summarise(
+          sum.N = sum(N))
+
+ggplot(data=blind.s, 
+       aes(x=Blind, y=es)) +
+  geom_rect(xmin=0.4, 
+            xmax=2.6, 
+            ymin = infarctVolMA$lower.random, 
+            ymax = infarctVolMA$upper.random,
+            alpha=0.2) +
+  geom_bar(data=blind.s, 
+           aes(x=Blind, y=es),
+           color = "cadetblue4", 
+           fill = "cadetblue", 
+           width = c(sqrt(blind.n$sum.N[2])*0.03, sqrt(blind.n$sum.N[1])*0.03),
+           stat = "identity") +
+  geom_hline(yintercept = 0)  +
+  geom_errorbar(data=blind.s, 
+                aes(x = Blind, ymin = ci.lb, ymax = ci.ub),
+                width=0.1, 
+                colour="cadetblue4", 
+                alpha=0.9, 
+                size=1) +
+  scale_y_continuous(name="NMD (% reduction in infarct volume)", 
+                     limits=c(0, 50), 
+                     breaks = seq(0, 50, 10), expand = c(0,0)) +
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(), 
+        axis.line = element_line(colour = "black"),
+        axis.title.x = element_text(margin = margin(t = 20, b = 20), size = 16),
+        axis.title.y = element_text(margin = margin(r = 20), size = 16),
+        axis.text.x= element_text(size = 14),
+        axis.text.y= element_text(size = 14))+ 
+  labs(x = "Blinded induction of ischaemia", caption = "The horizontal grey bar represents the 95% CIs of the global estimate.
+         The width of the bars is proportional to the number of animals in each subgroup.")  
+
+```
+
+
 ```{r quiz1_2_1, echo=FALSE}
 
 # Questions:
@@ -612,66 +685,66 @@ infarctVolBlind
   
 quiz(caption = "Questions:",
   question("What proportion of studies reported blinded induction of ischaemia?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("37%", correct = TRUE),
+    answer("63%"),
+    answer("100%"),
+    answer("58%"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What group does the intercept (intrcpt) in the Model Results represent?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Studies that did not report blinded induction of ischaemia", correct = TRUE),
+    answer("Studies that did report blinded induction of ischaemia"),
+    answer("The intercept of studies that did and did not report blinded induction of ischaemia"),
+    answer("The intercept of all studies"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What is the difference in effect size and confidence intervals between the two groups?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("What is the difference in effect size between the two groups?",
+    answer("-9.77", correct = TRUE),
+    answer("4.79"),
+    answer("39.45"),
+    answer("29.68"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Is the presence of blinded induction of ischaemia a significant source of heterogeneity?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("It depends at what level the p-value is considered statistically significant", correct = TRUE),
+    answer("Yes, p-val < .0001"),
+    answer("Yes, p-val = 0.0414"),
+    answer("No, p-val = 0.0414"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How would you interpret these results in the context of evaluating risk of bias?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Studies that did report blinded induction of ischaemia reported significantly larger reductions in infarct volume"),
+    answer("Reporting of blinded induction of ischaemia, a measure to reduce the risk of bias, is associated with a smaller reduction in infarct volume", correct = TRUE),
+    answer("Reporting of blinded induction of ischaemia has no effect on infarct volume"),
+    answer("Studies that did not report blinded induction of ischaemia are at a lower risk of bias and report larger reductions in infarct volume"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How might failing to blind during model induction be a source of bias?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("If researchers are not blinded they may give treated animals smaller strokes", correct = TRUE),
+    answer("If researchers are not blinded they will pay extra attention to giving all animals the same size stroke"),
+    answer("If researchers are not blinded they will make biased outcome assessments"),
+    answer("If researchers are not blinded they will treat the animals differently when handling them"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How have the tau^2 and I^2 values changed when compared to infarctVolMA?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Both tau^2 and I^2 are reduced, meaning some of the heterogeneity has been explained by adding this variable to the model", correct = TRUE),
+    answer("Both tau^2 and I^2 are reduced and there is no longer any significant heterogeneity in the data set"),
+    answer("Both tau^2 and I^2 are increased so blinding adds heterogeneity to the data set"),
+    answer("I^2 is reduced and the estimate of tau^2 is imprecise so none of the heterogeneity is explained by adding this variable to the model"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What does R^2 tell us?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The proportion of heterogenity accounted for by the variable **Blinded induction of ischaemia**", correct = TRUE),
+    answer("The proportion of heterogenity accounted for by failing to report blinded induction of ischaemia"),
+    answer("The proportion of heterogenity accounted for by reporting blinded induction of ischaemia"),
+    answer("The proportion of heterogeneity that remains in the data set"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -679,9 +752,9 @@ quiz(caption = "Questions:",
 ```
 
 
-### Meta-regression - Route of delivery
+### Meta-regression: route of drug delivery
 
-Investigate the variable "Route of drug delivery " in the subset of data where the drug delivery mode is "Protein"
+Investigate the variable "Route of drug delivery " in the subset of data where the drug delivery mode is "Protein".
 
 In this data set IL-1RA was administered using several different delivery modes (column "Drug.delivery.mode"). We will restrict subsequent analyses to those experiments where IL-1RA was delivered in protein form, due to uncertainty around the timing and effective dose achieved in transgenic and transfection studies (the alternative drug delivery modes).
 
@@ -698,14 +771,16 @@ infarctVol2 <- subset(
   !(Drug.delivery.mode %in%  
       
       # specify the variable levels to exclude from analysis  
-      c("Transgenic", "Vector", "IL-1 RA Tg BM cells"))  
+      c("Transgenic", "Vector", "IL-1RA Tg BM cells"))  
 ) 
 
-# Check that only experiments where drug delivery mode = Protein are remaining
+# View the new data subset
 View(infarctVol2)
 ```
 
-Next we will run a meta-analysis on the subset of the data set. 
+Have a look at the new R window that opened when you ran the code and check that the only studies that are remaining are those where the drug delivery mode is "Protein".
+
+Next we will run a meta-analysis on this subset of the data. 
 
 ```{r ex1_2_2_2, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=25}
 infarctVolMA2 <- metagen(
@@ -723,6 +798,9 @@ infarctVolMA2 <- metagen(
   
   # specify a random effects model
   comb.random = TRUE,  
+  
+  # specify that the fixed effect estimate should not be printed
+  comb.fixed = FALSE,
   
   # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
   method.tau = "REML",  
@@ -764,58 +842,42 @@ infarctVolRoute
   
 quiz(caption = "Questions:",
   question("How many different drug delivery routes are there and how are the data distributed across these routes?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("There are five drug delivery routes and the data are unevenly distributed", correct = TRUE),
+    answer("There are five drug delivery routes and the data are evenly distributed"),
+    answer("There are four drug delivery routes and the data are unevenly distributed"),
+    answer("There are five drug delivery routes and the data are normally distributed"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What group does the intercept (intrcpt) in the Model Results represent?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("ICerebVentricular", correct = TRUE),
+    answer("IPeritoneal"),
+    answer("IVenous"),
+    answer("SubCut"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Is the route of drug delivery a significant source of heterogeneity?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Yes, p-val < .0001"),
+    answer("It depends at what level the p-value is considered statistically significant", correct = TRUE),
+    answer("No, p-val = 0.0267"),
+    answer("No, p-val = 0.0558"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Which routes might be the most clinically relevant?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("How do their effect sizes compare to less clinically relevant routes?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("How have the heterogeneity estimates changed when compared with infarctVolMA2",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Administration into the brain (ICerebVentricular, Stereotactic) beacuse these routes are more direct", correct = TRUE),
+    answer("Peripheral administration (SubCut, IVenous) because these routes are more often used in human patients", correct = TRUE),
+    answer("ICerebVentricular (directly into the) because it has the highest efficacy"),
+    answer("None of these routes are used clinically"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How much heterogeneity is accounted for by the route of drug delivery?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("tau^2 and I^2 are reduced and R^2 is 43.3% meaning a large portion of the heterogeneity in this data set is accounted for by the route of drug delivery", correct = TRUE),
+    answer("There is still significant residual heterogeneity so the route of drug delivery does not account for a significant portion of the heterogeneity"),
+    answer("tau^2 and I^2 are reduced but R^2 is under 50% so route of drug delivery is not a significant source of heterogeneity"),
+    answer("tau^2, I^2, and R^2 are all high so route of drug delivery does not account for much heterogeneity"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -823,13 +885,15 @@ quiz(caption = "Questions:",
 ```
 
 
-### Meta-regression - Species
+### Meta-regression: species
 
 Investigate the variable "Species" in the subset of data where the drug delivery mode is "Protein"
   
 Using the same data set (infarctVol2) and meta-analysis (infarctVolMA2), now investigate animal species as a source of heterogeneity.
 
 ```{r ex1_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+table(infarctVol2$Species)
+
 infarctVolSpecies <- metareg(
   
   # specify the meta-analysis
@@ -852,27 +916,19 @@ infarctVolSpecies
 # * What do these results indicate about the generalisability, or external validity, of the data?
   
 quiz(caption = "Questions:",
-  question("What different species have been used in these experiments and how are the data distributed?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
   question("Is species a significant source of heterogeneity in the data set?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Yes, p-val < .0001", correct = TRUE),
+    answer("No, p-val = 0.3303"),
+    answer("It depends at what level the p-value is considered statistically significant"),
+    answer("Yes, R^2 = 1.25%"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What do these results indicate about the generalisability, or external validity, of the data?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("There is no effect of species, which might indicate generalisability of results across other species", correct = TRUE),
+    answer("Mice and rats always react the same way to drugs so we do not know how results will generalise to other species"),
+    answer("These results do not tell us anything about generalisabilty"),
+    answer("There is no effect of species so generalisability is poor"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -880,7 +936,7 @@ quiz(caption = "Questions:",
 ```
 
 
-### Meta-regresion - Dose
+### Meta-regresion: dose of IL-1RA
 
 Investigate the variable "Dose" in the subset of data where the drug delivery mode is "Protein" and the location of administration is "Central"
 
@@ -900,9 +956,11 @@ infarctVol3 <- subset(
     "Central"  
 )     
 
-# Check that only experiments where location = Central are remaining
+# View the new data subset
 View(infarctVol3)  
 ```
+
+Have a look at the new R window that opened when you ran the code and check that the only studies that are remaining are those where the location of drug administration is "Central".
 
 Next run a meta-analysis on this new data set:
 
@@ -922,6 +980,9 @@ infarctVolMA3 <-  metagen(
   
   # specify a random effects model
   comb.random = TRUE,  
+  
+  # specify that the fixed effect estimate should not be printed
+  comb.fixed = FALSE,
   
   # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
   method.tau = "REML",  
@@ -946,6 +1007,8 @@ infarctVolDose <- metareg(
 infarctVolDose  
 ```
 
+To graph a continuous variable we can use a bubble plot:
+
 ```{r ex1_2_4_4, fig.width = 6, fig.height = 5, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 # specify the meta-regression analysis to plot 
 bubble(infarctVolDose, 
@@ -968,26 +1031,26 @@ bubble(infarctVolDose,
   
 quiz(caption = "Questions:",
   question("What is the relationship between the effect size and dose of IL-1RA?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("For each unit increase in IL-1RA dose, infarct volume is reduced by 2.16%", correct = TRUE),
+    answer("As the reduction in infarct volume increases, the dose of IL-1Ra administered decreases"),
+    answer("As the infarct volume reduction decreases, the dose of IL-1RA administered increases"),
+    answer("For each 2.16ug dose increase in IL-1RA, infarct volume is reduced by 1.00% "),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("How much heterogeneity is accounted for by dose??",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("How much heterogeneity is accounted for by dose?",
+    answer("45.17%", correct = TRUE),
+    answer("3.32%"),
+    answer("A non-significant amount"),
+    answer("A significant amount, p-val < .0001"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("In the bubble plot, what does the size of the circles represent?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The weights from the random effects meta-regression model", correct = TRUE),
+    answer("The weights from the fixed effect meta-regression model"),
+    answer("The number of animals in each study"),
+    answer("The dose of IL-1RA administered in each study"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -995,7 +1058,7 @@ quiz(caption = "Questions:",
 ```
 
 
-## Meta-analysis of binary data
+## 2.  Meta-analysis of binary data
 
 ```{r ex1_3_setup, include = FALSE}
 mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv", 
@@ -1026,6 +1089,8 @@ mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv",
 View(mortality)
 ```
 
+Take a look at the data sheet that has opened in a new R window and compare the outcome data to that from the infarct volume (continuous) data above.
+
 ```{r quiz1_3_1, echo=FALSE}
 
 # Questions:
@@ -1034,10 +1099,10 @@ View(mortality)
   
 quiz(caption = "Question:",
   question("How do these data differ from the infarct volume data used above?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Instead of group means and standard deviations, the number affected by the event (death) is recorded", correct = TRUE),
+    answer("There are fewer rows in the mortality data but no difference in the type of data recorded"),
+    answer("There are no means and standard deviations in the mortality data but there are medians and interquartile ranges recorded instead"),
+    answer("In addition to means and standard deviations, there is event data recorded in the mortality data set"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -1095,18 +1160,18 @@ mortalityMA <- metabin(
   
 quiz(caption = "Questions:",
   question("Is mortality affected by administration of IL-1RA?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The summary OR is close to 1 and the 95%-CI crosses 1, there is no evidence that IL-1RA affects mortality", correct = TRUE),
+    answer("The summary OR is close to 1 and the 95%-CI does not cross 0 so there is evidence that IL-1RA affects mortality"),
+    answer("Most of the data came from the same study so we cannot trust the results on mortality"),
+    answer("Il-1RA administration increases mortality"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("How much heterogeneity is in the data set?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("There is no statistical heterogeneity detected in the data set", correct = TRUE),
+    answer("The upper confidence interval for I^2 is 62.4% so there might be a large amount of heterogeneity"),
+    answer("t^2 and I^2 = 0 but the included studies are imprecise so we are sure there is undetected heterogeneity in the data set"),
+    answer("The test of heterogeneity has a very large p-value so there cannot be any heterogeneity in the data set"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -1118,7 +1183,7 @@ quiz(caption = "Questions:",
 
 Next we create a forest plot of the mortality data using the function "forest"
 
-```{r ex1_3_3, fig.width = 8.5, fig.height = 4, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=34}
+```{r ex1_3_3, fig.width = 8.5, fig.height = 4, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=32}
 mortalityFor <- forest(
  # specify the meta-analysis to plot
  mortalityMA,  
@@ -1132,11 +1197,8 @@ mortalityFor <- forest(
  # plot the random effects estimate
  comb.random = TRUE,  
  
- # specify the x axis label
- xlab = "Odds ratio", 
- 
  # specify the effect size label
- smlab = "OR",  
+ smlab = "Odds ratio",  
  
  # specify the graph label on right side of plot
  label.right = "Favours Control",
@@ -1164,27 +1226,19 @@ mortalityFor <- forest(
 # * How confident would you be in the effect of IL-1RA on mortality based on these results?
   
 quiz(caption = "Questions:",
-  question("How is the forest plot different from the plot in the main dataset?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("How is the forest plot different from the plot using the infarct volume data set?",
+    answer("The number of events are printed and the weights are fixed effect"),
+    answer("The x axis is on a log scale and the line of no effect is at x = 1", correct = TRUE),
+    answer("The effect size is OR instead of SMD"),
+    answer("The number of animals who did not experience an event is printed and the x axis is on a log scale"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Interpret the point estimates from Garcia1995a and Maysami2015b",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("How confident would you be in the effect of IL-1RA on mortality based on these results?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("In both studies there is no effect of IL-1RA on mortality because the confidence intervals cross 1", correct = TRUE),
+    answer("The odds of mortality in the IL-1RA treated group are 0.46 and 2.14 that of the control group in Garcia1995a and Maysami2015b, respectively"),
+    answer("With IL-1RA treatment, there is increased occurance of mortality in Garcia1995a and decreased occurance of mortality in Maysami2015b"),
+    answer("With IL-1RA treatment, there is decreased occurance of mortality in Garcia1995a and increased occurance of mortality in Maysami2015b"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -1192,13 +1246,12 @@ quiz(caption = "Questions:",
 ```
 
 
-## Test you skills - Meta-analysis 
+## 3.  Test you skills: meta-analysis 
 
 Now you can explore the data set for neurobehavioural outcomes on your own.
-Only experiments where IL-1 RA was administered in protein form and motor / sensory
-outcomes were assessed are included.
+We have only included experiments where IL-1RA was administered in protein form and motor / sensory outcomes were assessed.
 
-In this data set, an NMD effect size (column ESi) and standard error (column SEi) have already been calculated for each experiment. 
+In this data set, a normalised mean difference effect size (column ESi) and standard error (column SEi) have already been calculated for each experiment. 
 
 You can edit the code we used for the infarct volume data above and compare your results to those in the paper (McCann et al 2016).
 
@@ -1274,14 +1327,14 @@ neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-
 ```
 
 ```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
-# load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+# load the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 
 
 ```
 
 
 ```{r ex1_4_1-hint-1}
-# load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+# load the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
 ```
 
@@ -1450,9 +1503,9 @@ quiz(caption = "Questions:",
 ```
 
 
-## Small study effects
+## 4.  Small study effects
 
-Small study effects in meta-analysis can be assessed using a funnel plot, which is a scatterplot of individual study effect sizes against a measure of each study's precision. Ideally, the plot should approximately resemble a symmetrical (inverted) funnel. If there is bias due to missing results, for example because smaller studies without statistically significant effects remain unpublished, this will lead to an asymmetrical appearance of the funnel plot.
+Small study effects in meta-analysis can be assessed using a funnel plot, which is a scatter plot of individual study effect sizes against a measure of each study's precision. Ideally, the plot should approximately resemble a symmetrical (inverted) funnel. If there is bias due to missing results, for example because smaller studies without statistically significant effects remain unpublished, this will lead to asymmetry in the appearance of the funnel plot.
 
 In this exercise, we will use the complete infarct volume data set and meta-analysis from the [first section of this exercise.]{#set-up}
 
@@ -1470,7 +1523,7 @@ infarctVolFun <- funnel(
  xlab = "NMD (% reduction in infarct volume)",  
  
  # specify the measure plotted on the y axis, "invse" = inverse of the standard error
- yaxis = "invse"   
+ yaxis = "se"   
 )
 
 # infarctVolFun
@@ -1487,10 +1540,10 @@ infarctVolFun <- funnel(
   
 quiz(caption = "Take a look at the funnel plot and answer the following questions:",
   question("What does the short-dash vertical line represent?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The pooled random effects estimate", correct = TRUE),
+    answer("The pooled fixed effect estimate"),
+    answer("The line of no effect"),
+    answer("The funnel axis of symmetry"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -1602,7 +1655,7 @@ infarctVolTrimFun <- funnel(infarctVolTrim,
   xlab = "NMD (% reduction in infarct volume)", 
   
   # specify the measure plotted on the y axis, "invse" = inverse of the standard error
-  yaxis = "invse"  
+  yaxis = "se"  
 )
 
 infarctVolTrimFun
@@ -1672,7 +1725,7 @@ quiz(caption = "Questions:",
 ```
 
 
-## Test your skills - Small study effects
+## 5.  Test your skills: small study effects
 
 
 
@@ -1687,7 +1740,7 @@ Now use the analyses from Test your skills - Meta-analysis to create a funnel pl
 
 
 ```{r ex2_5, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=80}
-# firstly load the dataset "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+# firstly load the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
 
 # Perform a random-effects meta-analysis using the function "metagen".
