@@ -26,10 +26,10 @@ description: >
 # - using "learnr" v0.10.1, chained setup chunks do not work correctly. Found work-around. Question posted to stack overflow: https://stackoverflow.com/questions/68995597/sharing-variables-between-chunks-in-learnr-tutorial-app-with-chained-setup-chun ; it is a bug in this version of "learnr". but following the suggested solution - installing the latest development version of "learnr" - results in plots not being shown correctly. 
 # - using "learnr" v0.10.1.9015, chained setup chunks works, but forest plots are shown incorrectly.
 ################################################################################
-require('learnr')
-require('meta')
-require('metafor')
-require('tidyverse')
+# require('learnr')
+# require('meta')
+# require('metafor')
+# require('tidyverse')
 
 
 library(learnr)
@@ -133,10 +133,10 @@ infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv",
 ```
 
 <br>
-It is good practice to take a look at the data you import to make sure there are no errors. After you run the next section of code, the imported data will open in a new R window:
+It is good practice to take a look at the data you import to make sure there are no errors. After you run the next section of code, the imported data will open in a table below:
 
 ```{r ex1_1_2, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
-View(infarctVol)
+head(infarctVol, n=76)
 ```
 
 ```{r quiz1_1_1, echo=FALSE}
@@ -319,7 +319,7 @@ infarctVolBlind <- metareg(
 infarctVol2 <- subset(
   infarctVol,  # specify the data to subset
   !(Drug.delivery.mode %in%  # specify the relevant variable
-      c("Transgenic", "Vector", "IL-1RA Tg BM cells"))  # specify the variable levels to exclude from analysis  
+      c("Transgenic", "Vector", "IL-1RA Tg BM cells", "IL-1 RA Tg BM cells"))  # specify the variable levels to exclude from analysis  
 )  
 
 infarctVolMA2 <- metagen(
@@ -402,7 +402,7 @@ infarctVol <- cbind(infarctVol, SEi)
 Check that your new columns have been added to the right hand side of the data set:
 
 ```{r ex1_1_8, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
-View(infarctVol)
+head(infarctVol)
 ```
 
 
@@ -783,14 +783,14 @@ infarctVol2 <- subset(
   !(Drug.delivery.mode %in%  
       
       # specify the variable levels to exclude from analysis  
-      c("Transgenic", "Vector", "IL-1RA Tg BM cells"))  
+      c("Transgenic", "Vector", "IL-1RA Tg BM cells", "IL-1 RA Tg BM cells"))  
 ) 
 
 # View the new data subset
-View(infarctVol2)
+head(infarctVol2, n=65)
 ```
 
-Have a look at the new R window that opened when you ran the code and check that the only studies remaining are those where the drug delivery mode is "Protein".
+Have a look at the table above and check that the only studies remaining are those where the drug delivery mode is "Protein".
 
 Next we will run a meta-analysis on this subset of the data: 
 
@@ -972,10 +972,10 @@ infarctVol3 <- subset(
 )     
 
 # View the new data subset
-View(infarctVol3)  
+head(infarctVol3, n=20)  
 ```
 
-Have a look at the new R window that opened when you ran the code and check that the only studies remaining are those where the location of drug administration is "Central".
+Have a look at the table above and check that the only studies remaining are those where the location of drug administration is "Central".
 
 Next run a meta-analysis on this new data set:
 
@@ -1105,10 +1105,10 @@ For this exercise, we will use the function "metabin" for meta-analysis of binar
 mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv", 
                       fileEncoding = "UTF-8-BOM")
 
-View(mortality)
+head(mortality, n=10)
 ```
 
-Take a look at the data sheet that has opened in a new R window and compare the outcome data to that from the infarct volume (continuous) data above.
+Take a look at the table above and compare the outcome data to that from the infarct volume (continuous) data above.
 
 ```{r quiz1_3_1, echo=FALSE}
 
@@ -1362,7 +1362,7 @@ neurobehMA <- metagen(
 # load and view the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
 
-View(neurobeh)
+head(neurobeh)
 ```
 
 
