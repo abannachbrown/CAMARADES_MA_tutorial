@@ -1,0 +1,726 @@
+﻿Pub ID,User Defined 2b,,Higher score is ?,Mean in Control Group,Mean in Treatment Group,Time of Administration (mins),ESi,SEi,lower 95% CL,Upper 95% CL,Drug,Ventiliation,Outcome Measure,Outcome Measure Text,Mean in Sham,ApprovedGeneName,User Defined 1,User Defined 2,User Defined 2a,Transgene,Author ID,Time of Assessment (hrs),Dose,Method of Induction of Injury,User Defined 1a,Strain,DocumentLink,Species ID,Monitoring of Physiological Variables,Unit,Fresh Or Frozen,Type of Culture Medium,Group letter,Drug Group,Quality Score,True No of C,Control%,Treatment%,Outcome Measure ID,Publication Type,Entry Completed,Author for Correspondance,Type of Disease,Year,Sex,Animal,Type of Ischaemia,Anaesthetic ID,Method of Quantification of Injury,Neurological Scale,Method of Haemorrage Identification,Funding Source,Number in Sham,Outcome Measure Type,tblOutcomeMeasure.Notes,Single/ Multiple,Duration of Ischaemia (mins),Route of Drug Delivery,Comorbidity,Cotreatment in both Groups,Cotreatment in Treatment Group Only,Peer Review Publication,Control of Temperature,Random Allocation to Group,Blinded Induction of Ischaemia,Blinded Assessment of Outcome,Use of Comorbid Animals,Sample Size Calculation,Compliance with Animal Welfare Regulations,Statement of Potential Conflicts of Interest,tblPublicationData.Notes,JournalName,Publication Reference,Number in Control Group,Number Affectd by Outcome Measure in Control Group,Number in Treatment Group,Number Affectd by Outcome Measure in Treatment Group,Standard Error (C),Standard Deviation (C),Standard Error (Rx),Standard Deviation (Rx),°C hrs,neutral or not,Stem cell origin,Stem cell detail,Number of Passages,Transfection Or Selection,Transgenic Model Group,Sham data not present when required,Sham data is worse than control,AD drug group,Blinded Assessment of Neurological Score,Effect Size1,SE1,User,Assay Conditions,Assay,Radioligand,BrainAreaSubsection,Last Time Point,Treatment Groups per Control,PublicationID,Blinded Assessment of Infarct Volume,Anaesthetic without marked intrinsic neuroprotective activity,Calculated SD (C),Calculated SD (Rx),Control SD,Treatment SD,Mean(Sham),Mean Rx-Sham,Mean C - Sham,MeanC-Sham',MeanRx-Sham',HigherMeanScore,WhichDenominator,WhichNumerator,Anaestetic,Expr1025,Method of Induction of MCAO,Quantification Method,Effect Size_new,SE_new,MultiplicationFactor,Better Scoring Group,Calculated SD (C)New,Calculated SD (Rx)New,Control SDNew,Treatment SDNew,PooledSE,RawMeanDiff,RawMeanDiff_SE,Age (weeks),Weight of animals (lower) (g),Weight of animals (upper) (g),Mean Weight,SD of Weight
+125,Neurological deficit,Motor/sensory,better,7.94,13.29,0,53.18091451,24.38351748,5.389220244,100.9726088,IL1-RA,Unknown,NeurobehaviouralScore,Fig 2 Garcia. 6 motor sensory tests,18,,no correction for oedema,peripheral,Protein,,138,168,2500,17,White blood cell counts,Wistar,#http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1869513/?tool=pubmed#,248,FALSE,mg/kg,,,a,Anti-Inflammatory,4,5,100,46.81908549,98,Full Publication,TRUE,138,Focal,1995,Male,Rat,Permanent,5,2,1,,unknown,,,,Multiple,10080,IVenous,2,,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,"Protein
+8.11.11:
+Changed spp to Wistar (PS)
+Added animal weights (PS)
+Blinded assesment of neurological score (PS)
+Sham operation performed (PS)
+
+Behavioural scale details in excel (PS)
+
+23-3-12 (SR):  Behavioural data in outcome measures does not match w",10,"Garcia JH, Liu KF, Relton JK. Interleukin-1 receptor antagonist decreases the number of necrotic neurons in rats with middle cerebral artery occlusion. American Journal of Pathology 147 (5) 1995 1477-1486 1995;1477-1486.",5,,4,,,4.34,,3,,1,other,other,,,,FALSE,FALSE,,TRUE,13.29,1.5,,,Garcia. 6 motor sensory tests,,,FALSE,1,109,TRUE,FALSE,4.34,3,43.14115308,-29.82107356,18,-4.71,-10.06,10.06,4.71,13.29,-10.06,-5.35,Ketamine,17,Intraluminal filament/suture,H & E,53.18091451,24.38351748,1,Treatment,4.34,3,-43.14115308,-29.82107356,3.823655693,-5.35,2.564986216,,270,290,,
+1002,OFT - Vertical activity,Motor/sensory,,4.2,2.3,30,54.28571429,72.22812998,-87.28142048,195.8528491,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - jumping,0.7,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,45.71428571,47974,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,7.8,,6.3,,0,other,other,,,,FALSE,FALSE,,FALSE,2.3,1.527974438,SM,,,,,FALSE,1,19176,FALSE,TRUE,7.8,6.3,-222.8571429,180,0.7,1.6,3.5,3.5,1.6,4.2,3.5,1.9,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,54.28571429,72.22812998,1,Treatment,7.8,6.3,222.8571429,180,7.039886363,1.9,2.493851262,,,,,
+1002,OFT - Anxiety,Social interaction/anxiety/depression,,0.0008,0.002,30,54.54545455,13.0813988,28.90591289,80.1849962,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - center/total distance,0.003,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,45.45454545,47980,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,0.0006,,0.001,,1,other,other,,,,FALSE,FALSE,,FALSE,0.002,0.000242536,SM,,,,,FALSE,1,19176,FALSE,TRUE,0.0006,0.001,27.27272727,-45.45454545,0.003,-0.001,-0.0022,0.0022,0.001,0.002,-0.0022,-0.0012,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,54.54545455,13.0813988,1,Treatment,0.0006,0.001,-27.27272727,-45.45454545,0.000837456,-0.0012,0.000296666,,,,,
+1002,OFT - Anxiety,Social interaction/anxiety/depression,,36,24.2,30,98.33333333,107.2017319,-111.7820613,308.4487279,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - latency to rear,24,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,1.666666667,47979,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,49,,9.6,,0,other,other,,,,FALSE,FALSE,,FALSE,24.2,2.328342,SM,,,,,FALSE,1,19176,FALSE,TRUE,49,9.6,-408.3333333,80,24,0.2,12,12,0.2,36,12,11.8,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,98.33333333,107.2017319,1,Treatment,49,9.6,408.3333333,80,34.19968811,11.8,12.11510115,,,,,
+1002,OFT - Anxiety,Social interaction/anxiety/depression,,0.2,0.2,30,0,141.6983817,-277.7288281,277.7288281,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - urinations,0.1,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,100,47978,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,0.4,,0.4,,0,other,other,,,,FALSE,FALSE,,FALSE,0.2,0.09701425,SM,,,,,FALSE,1,19176,FALSE,TRUE,0.4,0.4,-400,400,0.1,0.1,0.1,0.1,0.1,0.2,0.1,0,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,0,141.6983817,1,Treatment,0.4,0.4,400,400,0.4,0,0.141698382,,,,,
+1002,OFT - Anxiety,Social interaction/anxiety/depression,,2.2,0.8,30,100,52.72297303,-3.337027132,203.3370271,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - droppings,0.8,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,0,47977,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,2.7,,1,,0,other,other,,,,FALSE,FALSE,,FALSE,0.8,0.242535625,SM,,,,,FALSE,1,19176,FALSE,TRUE,2.7,1,-192.8571429,71.42857143,0.8,0,1.4,1.4,0,2.2,1.4,1.4,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,100,52.72297303,1,Treatment,2.7,1,192.8571429,71.42857143,1.983767459,1.4,0.702741597,,,,,
+1002,OFT - Anxiety,Social interaction/anxiety/depression,,8.7,5,30,90.24390244,32.09962214,27.32864305,153.1591618,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - grooming,4.6,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,9.756097561,47975,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,4.7,,2.1,,1,other,other,,,,FALSE,FALSE,,FALSE,5,0.509324813,SM,,,,,FALSE,1,19176,FALSE,TRUE,4.7,2.1,-114.6341463,51.2195122,4.6,0.4,4.1,4.1,0.4,8.7,4.1,3.7,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,90.24390244,32.09962214,1,Treatment,4.7,2.1,114.6341463,51.2195122,3.558183057,3.7,1.260471952,,,,,
+1002,OFT - Vertical activity,Motor/sensory,,24.1,55.9,30,138.8646288,33.90850383,72.40396131,205.3252963,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - centre rearings,47,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,-38.86462882,47973,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,15.4,,27.5,,1,other,other,,,,FALSE,FALSE,,FALSE,55.9,6.669729688,SM,,,,,FALSE,1,19176,FALSE,TRUE,15.4,27.5,67.2489083,-120.0873362,47,8.9,-22.9,22.9,8.9,55.9,-22.9,-31.8,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,138.8646288,33.90850383,1,Treatment,15.4,27.5,-67.2489083,-120.0873362,22.67174453,-31.8,8.031373775,,,,,
+1002,OFT - Vertical activity,Motor/sensory,,51.9,54.9,30,-24,63.78833626,-149.0251391,101.0251391,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - wall rearings,39.4,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,124,47972,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,20.8,,24.3,,0,other,other,,,,FALSE,FALSE,,FALSE,54.9,5.893615688,SM,,,,,FALSE,1,19176,FALSE,TRUE,20.8,24.3,-166.4,194.4,39.4,15.5,12.5,12.5,15.5,54.9,15.5,3,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,19.35483871,63.78833626,1,Treatment,20.8,24.3,134.1935484,156.7741935,22.73382209,-3,8.053364498,,,,,
+1002,OFT - Horizontal,Motor/sensory,,150.8,131.2,30,560,623.7712563,-662.5916624,1782.591662,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - number of zone changes,147.3,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,-460,47884,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,65.9,,56.4,,0,other,other,,,,FALSE,FALSE,,FALSE,131.2,13.67900925,SM,,,,,FALSE,1,19176,FALSE,TRUE,65.9,56.4,-1882.857143,1611.428571,147.3,-16.1,3.5,3.5,16.1,150.8,-16.1,-19.6,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,121.7391304,623.7712563,1,Treatment,65.9,56.4,-409.3167702,-350.310559,61.01767503,19.6,21.61526452,,,,,
+1002,OFT - Horizontal,Motor/sensory,,30.9,29.5,30,41.17647059,65.02803312,-86.27847432,168.6314155,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - total distance,27.5,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,58.82352941,47882,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,7.6,,4.2,,0,other,other,,,,FALSE,FALSE,,FALSE,29.5,1.018649625,SM,,,,,FALSE,1,19176,FALSE,TRUE,7.6,4.2,-223.5294118,123.5294118,27.5,2,3.4,3.4,2,30.9,3.4,1.4,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,41.17647059,65.02803312,1,Treatment,7.6,4.2,223.5294118,123.5294118,6.030146488,1.4,2.136154997,,,,,
+1002,Hargreaves test,Thermal nociception,,-0.8,-0.4,30,9.302325581,14.18563536,-18.50151973,37.10617089,IL1-RA,Unknown,NeurobehaviouralScore,Table S6 Right (ipsilateral),3.5,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,90.69767442,47881,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,1.3,,2.1,,0,other,other,,,,FALSE,FALSE,,FALSE,-0.4,0.509324813,SM,,,,,FALSE,1,19176,FALSE,TRUE,1.3,2.1,30.23255814,-48.8372093,3.5,-3.9,-4.3,4.3,3.9,-0.4,-4.3,-0.4,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,9.302325581,14.18563536,1,Treatment,1.3,2.1,-30.23255814,-48.8372093,1.772192616,-0.4,0.627792064,,,,,
+1002,Hargreaves test,Thermal nociception,,-1.9,-0.7,30,23.52941176,13.86592624,-3.647803671,50.7066272,IL1-RA,Unknown,NeurobehaviouralScore,Table S6 Left (contralateral),3.2,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,76.47058824,47880,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,1.9,,2.1,,0,other,other,,,,FALSE,FALSE,,FALSE,-0.7,0.509324813,SM,,,,,FALSE,1,19176,FALSE,TRUE,1.9,2.1,37.25490196,-41.17647059,3.2,-3.9,-5.1,5.1,3.9,-0.7,-5.1,-1.2,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,23.52941176,13.86592624,1,Treatment,1.9,2.1,-37.25490196,-41.17647059,2.009145755,-1.2,0.711731755,,,,,
+1002,OFT - Horizontal,Motor/sensory,,51.7,49.3,30,41.37931034,63.46442382,-83.01096034,165.769581,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - mean velocity,45.9,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,58.62068966,47883,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,12.6,,7.1,,0,other,other,,,,FALSE,FALSE,,FALSE,49.3,1.722002938,SM,,,,,FALSE,1,19176,FALSE,TRUE,12.6,7.1,-217.2413793,122.4137931,45.9,3.4,5.8,5.8,3.4,51.7,5.8,2.4,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,41.37931034,63.46442382,1,Treatment,12.6,7.1,217.2413793,122.4137931,10.04854882,2.4,3.559657764,,,,,
+1002,OFT - Anxiety,Social interaction/anxiety/depression,,15.8,8.1,30,48.73417722,34.4661814,-18.81953833,116.2878928,IL1-RA,Unknown,NeurobehaviouralScore,Table S7 - digging,0,,unknown,Peripheral,IL-1 RA Tg BM cells,328,18705,24,10000000,17,None,,,1280,TRUE,cells,,,e,Anti-Inflammatory,7,15,100,51.26582278,47976,Full Publication,TRUE,18705,Focal,2016,Male,Mouse,Temporary,2,82,,,Multiple see paper,,,,Single,40,IVenous,2,BM cells,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,"3/4 Outcomes complete
+
+Fig 6i grip asymmetry no sham exclude
+
+
+
+Right MCAo",7,,15,,17,,,20.4,,5.7,,0,other,other,,,,FALSE,FALSE,,FALSE,8.1,1.382453063,SM,,,,,FALSE,1,19176,FALSE,TRUE,20.4,5.7,-129.1139241,36.07594937,0,8.1,15.8,15.8,8.1,15.8,15.8,7.7,Isoflurane,17,Intraluminal filament/suture,Toluidine blue,48.73417722,34.4661814,1,Treatment,20.4,5.7,129.1139241,36.07594937,14.54427723,7.7,5.152251364,,,,,
+1003,Movement score,Motor/sensory,,0.531,0.826,0,80.86622807,45.70552424,-8.716599443,170.4490556,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA release,0.8958,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,19.13377193,48070,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.09753,,0.09368,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.826,0.09368,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.30841694,0.209474848,84.54411738,-57.42183337,0.8958,-0.0698,-0.3648,0.3648,0.0698,0.826,-0.3648,-0.295,Isoflurane,17,Intraluminal filament/suture,H & E,80.86622807,45.70552424,1,Treatment,0.30841694,0.209474848,-84.54411738,-57.42183337,0.26362921,-0.295,0.166733752,12,,,,
+1003,Movement score,Motor/sensory,,0.797,0.994,0,97.04433498,92.63287129,-84.51609276,278.6047627,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Advance,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,2.955665025,48058,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1329,,0.006,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.994,0.006,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.420266701,0.013416408,207.0279315,-6.609067914,1,-0.006,-0.203,0.203,0.006,0.994,-0.203,-0.197,Isoflurane,17,Intraluminal filament/suture,H & E,97.04433498,92.63287129,1,Treatment,0.420266701,0.013416408,-207.0279315,-6.609067914,0.297324822,-0.197,0.188044729,12,,,,
+1003,Movement score,Motor/sensory,,0.797,0.988,1440,94.08866995,92.77422439,-87.74880985,275.9261498,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Advance,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,5.911330049,48059,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1329,,0.012,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.988,0.012,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.420266701,0.026832816,207.0279315,-13.21813583,1,-0.012,-0.203,0.203,0.012,0.988,-0.203,-0.191,Isoflurane,17,Intraluminal filament/suture,H & E,94.08866995,92.77422439,1,Treatment,0.420266701,0.026832816,-207.0279315,-13.21813583,0.297778525,-0.191,0.188331676,12,,,,
+1003,Movement score,Motor/sensory,,0.755,0.932,0,72.24489796,76.69107271,-78.06960455,222.5594005,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Digits open,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,27.75510204,48060,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1272,,0.05426,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.932,0.05426,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.402241718,0.121329048,164.1802932,-49.5220606,1,-0.068,-0.245,0.245,0.068,0.932,-0.245,-0.177,Isoflurane,17,Intraluminal filament/suture,H & E,72.24489796,76.69107271,1,Treatment,0.402241718,0.121329048,-164.1802932,-49.5220606,0.297085121,-0.177,0.187893128,12,,,,
+1003,Movement score,Motor/sensory,,0.755,0.932,1440,72.24489796,75.24362209,-75.23260134,219.7223973,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Digits open,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,27.75510204,48061,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1272,,0.0403,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.932,0.0403,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.402241718,0.090113539,164.1802932,-36.78103653,1,-0.068,-0.245,0.245,0.068,0.932,-0.245,-0.177,Isoflurane,17,Intraluminal filament/suture,H & E,72.24489796,75.24362209,1,Treatment,0.402241718,0.090113539,-164.1802932,-36.78103653,0.291478001,-0.177,0.184346874,12,,,,
+1003,Movement score,Motor/sensory,,0.487,0.632,0,35.25407245,34.26933247,-31.91381919,102.4219641,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Pronation,0.8983,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,64.74592755,48062,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.08756,,0.06733,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.632,0.06733,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.276889032,0.150554457,67.32045512,-36.60453609,0.8983,-0.2663,-0.4113,0.4113,0.2663,0.632,-0.4113,-0.145,Isoflurane,17,Intraluminal filament/suture,H & E,35.25407245,34.26933247,1,Treatment,0.276889032,0.150554457,-67.32045512,-36.60453609,0.222861146,-0.145,0.140949764,12,,,,
+1003,Movement score,Motor/sensory,,0.487,0.576,1440,21.63870654,31.23055523,-39.5731817,82.85059478,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Pronation,0.8983,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,78.36129346,48063,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.08756,,0.03415,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.576,0.03415,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.276889032,0.076361721,67.32045512,-18.56594248,0.8983,-0.3223,-0.4113,0.4113,0.3223,0.576,-0.4113,-0.089,Isoflurane,17,Intraluminal filament/suture,H & E,21.63870654,31.23055523,1,Treatment,0.276889032,0.076361721,-67.32045512,-18.56594248,0.203099297,-0.089,0.128451274,12,,,,
+1003,Movement score,Motor/sensory,,0.39,0.636,0,49.6969697,25.97156514,-1.207297973,100.6012374,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Grasp,0.885,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,50.3030303,48064,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.07494,,0.07277,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.636,0.07277,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.236981088,0.162718667,47.87496724,-32.87245792,0.885,-0.249,-0.495,0.495,0.249,0.636,-0.495,-0.246,Isoflurane,17,Intraluminal filament/suture,H & E,49.6969697,25.97156514,1,Treatment,0.236981088,0.162718667,-47.87496724,-32.87245792,0.203270018,-0.246,0.128559247,12,,,,
+1003,Movement score,Motor/sensory,,0.39,0.388,1440,-0.404040404,22.80770978,-45.10715157,44.29907076,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Grasp,0.885,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,100.4040404,48065,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.07494,,0.03891,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.388,0.03891,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.236981088,0.087005405,47.87496724,-17.5768495,0.885,-0.497,-0.495,0.495,0.497,0.39,-0.497,-0.002,Isoflurane,17,Intraluminal filament/suture,H & E,0.402414487,22.80770978,1,Treatment,0.236981088,0.087005405,-47.68231144,-17.50611771,0.17850767,0.002,0.112898163,12,,,,
+1003,Movement score,Motor/sensory,,0.531,0.48,1440,-13.98026316,40.63474471,-93.62436279,65.66383648,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA release,0.8958,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,113.9802632,48071,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.09753,,0.05431,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.48,0.05431,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.30841694,0.121440852,84.54411738,-33.2897072,0.8958,-0.4158,-0.3648,0.3648,0.4158,0.531,-0.4158,-0.051,Isoflurane,17,Intraluminal filament/suture,H & E,12.26551227,40.63474471,1,Treatment,0.30841694,0.121440852,-74.17434829,-29.20655408,0.234380982,0.051,0.148235549,12,,,,
+1003,Movement score,Motor/sensory,,0.477,0.688,1440,44.06850459,26.56757457,-8.003941566,96.14095076,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA supination ii,0.9558,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,55.93149541,48069,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.08508,,0.04128,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.688,0.04128,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.269046583,0.092304886,56.19185115,-19.27838056,0.9558,-0.2678,-0.4788,0.4788,0.2678,0.688,-0.4788,-0.211,Isoflurane,17,Intraluminal filament/suture,H & E,44.06850459,26.56757457,1,Treatment,0.269046583,0.092304886,-56.19185115,-19.27838056,0.20112963,-0.211,0.127205547,12,,,,
+1003,Movement score,Motor/sensory,,0.477,0.884,0,85.00417711,26.51982414,33.0253218,136.9830324,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA supination ii,0.9558,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,14.99582289,48068,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.08508,,0.04057,,,1,other,other,,,,FALSE,FALSE,,FALSE,0.884,0.04057,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.269046583,0.090717278,56.19185115,-18.94679988,0.9558,-0.0718,-0.4788,0.4788,0.0718,0.884,-0.4788,-0.407,Isoflurane,17,Intraluminal filament/suture,H & E,85.00417711,26.51982414,1,Treatment,0.269046583,0.090717278,-56.19185115,-18.94679988,0.200768136,-0.407,0.126976918,12,,,,
+1003,Movement score,Motor/sensory,,0.783,1,1440,100,85.76520959,-68.09981079,268.0998108,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Aim,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,0,48057,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1316,,0,,,0,other,other,,,,FALSE,FALSE,,FALSE,1,0,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.41615574,0,191.7768387,0,1,0,-0.217,0.217,0,1,-0.217,-0.217,Isoflurane,17,Intraluminal filament/suture,H & E,100,85.76520959,1,Treatment,0.41615574,0,-191.7768387,0,0.294266546,-0.217,0.186110505,12,,,,
+1003,Movement score,Motor/sensory,,0.515,0.516,1440,0.223463687,36.97672808,-72.25092335,72.69785072,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA pronation,0.9625,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,99.77653631,48067,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1016,,0.08207,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.516,0.08207,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.32128741,0.183514099,71.79606933,-41.00873719,0.9625,-0.4465,-0.4475,0.4475,0.4465,0.516,-0.4475,-0.001,Isoflurane,17,Intraluminal filament/suture,H & E,0.223463687,36.97672808,1,Treatment,0.32128741,0.183514099,-71.79606933,-41.00873719,0.261632399,-0.001,0.165470858,12,,,,
+1003,Skilled reaching,Motor/sensory,better,52,68,0,100.5025126,90.30882069,-76.502776,277.5078011,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3B acute IL1-RA % pellet,67.92,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-0.502512563,48048,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,9.752,,4.062,,,0,other,other,,,,FALSE,FALSE,,FALSE,68,4.062,SM,,,,,FALSE,2,19177,FALSE,TRUE,30.83853174,9.082908125,193.7093702,-57.05344299,67.92,0.08,-15.92,15.92,0.08,68,-15.92,-16,Isoflurane,17,Intraluminal filament/suture,H & E,100.5025126,90.30882069,1,Treatment,30.83853174,9.082908125,-193.7093702,-57.05344299,22.73229267,-16,14.37716425,12,,,,
+1003,Movement score,Motor/sensory,,0.515,0.772,0,57.4301676,36.63700719,-14.3783665,129.2387017,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA pronation,0.9625,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,42.5698324,48066,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1016,,0.07896,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.772,0.07896,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.32128741,0.176559928,71.79606933,-39.4547324,0.9625,-0.1905,-0.4475,0.4475,0.1905,0.772,-0.4475,-0.257,Isoflurane,17,Intraluminal filament/suture,H & E,57.4301676,36.63700719,1,Treatment,0.32128741,0.176559928,-71.79606933,-39.4547324,0.259228671,-0.257,0.163950607,12,,,,
+1003,Skilled walking,Motor/sensory,,5.623,5.586,0,50.68493151,204.7462526,-350.6177236,451.9875866,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4D ipsi acute IL1-RA,5.55,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,49.31506849,48074,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.05127,,0.1307,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.586,0.1307,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.162129976,0.292254085,-222.095857,400.3480612,5.55,0.036,0.073,0.073,0.036,5.623,0.073,0.037,Isoflurane,17,Intraluminal filament/suture,H & E,50.68493151,204.7462526,1,Treatment,0.162129976,0.292254085,222.095857,400.3480612,0.236324543,0.037,0.149464764,12,,,,
+1003,latency of first interaction,Social interaction/anxiety/depression,,10.41,4.03,0,108.8737201,55.63532514,-0.171517139,217.9189574,IL1-RA,Unknown,NeurobehaviouralScore,acute - Fig 6c,4.55,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-8.873720137,48084,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,195,2,46,,"CIHR, WT, University of Manchester, GASM & MRC",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Originally ES, changed to SM for Fig 6 outcomes (SM not extracted)",20,,10,,5,,2.25,,0.71,,,0,other,other,,,,FALSE,FALSE,,FALSE,4.03,0.71,SM,,,,,FALSE,2,19168,FALSE,TRUE,7.115124735,1.587608264,-121.4185108,27.09229119,4.55,-0.52,5.86,5.86,0.52,10.41,5.86,6.38,Isofluorane,17,Intraluminal filament/suture,H & E,108.8737201,55.63532514,1,Treatment,7.115124735,1.587608264,121.4185108,27.09229119,5.154876332,6.38,3.260230053,12,,,,
+1003,latency of first interaction,Social interaction/anxiety/depression,,10.41,6.93,1440,59.38566553,72.55550478,-82.82312383,201.5944549,IL1-RA,Unknown,NeurobehaviouralScore,delayed - Fig6c,4.55,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,40.61433447,48085,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,195,2,46,,"CIHR, WT, University of Manchester, GASM & MRC",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Originally ES, changed to SM for Fig 6 outcomes (SM not extracted)",20,,10,,5,,2.25,,2.82,,,0,other,other,,,,FALSE,FALSE,,FALSE,6.93,2.82,SM,,,,,FALSE,2,19168,FALSE,TRUE,7.115124735,6.305711697,-121.4185108,107.6060016,4.55,2.38,5.86,5.86,2.38,10.41,5.86,3.48,Isofluorane,17,Intraluminal filament/suture,H & E,59.38566553,72.55550478,1,Treatment,7.115124735,6.305711697,121.4185108,107.6060016,6.7226111,3.48,4.25175258,12,,,,
+1003,time spent interacting,Social interaction/anxiety/depression,,35.33,63.78,0,116.9819079,59.30050444,0.752919201,233.2108966,IL1-RA,Unknown,NeurobehaviouralScore,acute - Fig 6d,59.65,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-16.98190789,48086,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,195,2,46,,"CIHR, WT, University of Manchester, GASM & MRC",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Originally ES, changed to SM for Fig 6 outcomes (SM not extracted)",20,,10,,5,,5.73,,11.93,,,1,other,other,,,,FALSE,FALSE,,FALSE,63.78,11.93,SM,,,,,FALSE,2,19168,FALSE,TRUE,18.11985099,26.67629097,74.50596625,-109.6886964,59.65,4.13,-24.32,24.32,4.13,63.78,-24.32,-28.45,Isofluorane,17,Intraluminal filament/suture,H & E,116.9819079,59.30050444,1,Treatment,18.11985099,26.67629097,-74.50596625,-109.6886964,22.80299871,-28.45,14.42188268,12,,,,
+1003,time spent interacting,Social interaction/anxiety/depression,,35.33,29.59,1440,-23.60197368,37.81739222,-97.72406244,50.52011507,IL1-RA,Unknown,NeurobehaviouralScore,delayed - Fig 6d,59.65,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,123.6019737,48087,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,195,2,46,,"CIHR, WT, University of Manchester, GASM & MRC",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Originally ES, changed to SM for Fig 6 outcomes (SM not extracted)",20,,10,,5,,5.73,,4.35,,,0,other,other,,,,FALSE,FALSE,,FALSE,29.59,4.35,SM,,,,,FALSE,2,19168,FALSE,TRUE,18.11985099,9.726895702,74.50596625,-39.9954593,59.65,-30.06,-24.32,24.32,30.06,35.33,-30.06,-5.74,Isofluorane,17,Intraluminal filament/suture,H & E,19.09514305,37.81739222,1,Treatment,18.11985099,9.726895702,-60.27894542,-32.35826914,14.5420339,5.74,9.197189788,12,,,,
+1003,latency to first float,Social interaction/anxiety/depression,,43.76,43.38,0,-1.26413839,85.07877207,-168.0185316,165.4902549,IL1-RA,Unknown,NeurobehaviouralScore,acute - Fig 6f,73.82,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,101.2641384,48088,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,195,2,46,,"CIHR, WT, University of Manchester, GASM & MRC",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Originally ES, changed to SM for Fig 6 outcomes (SM not extracted)",20,,10,,5,,12.93,,17.88,,,0,other,other,,,,FALSE,FALSE,,FALSE,43.38,17.88,SM,,,,,FALSE,2,19168,FALSE,TRUE,40.88825015,39.98089544,136.0221229,-133.0036442,73.82,-30.44,-30.06,30.06,30.44,43.76,-30.44,-0.38,Isofluorane,17,Intraluminal filament/suture,H & E,1.248357424,85.07877207,1,Treatment,40.88825015,39.98089544,-134.3240806,-131.3432833,40.43711785,0.38,25.57467888,12,,,,
+1003,latency to first float,Social interaction/anxiety/depression,,43.76,71.54,1440,92.41516966,104.3597005,-112.1298434,296.9601827,IL1-RA,Unknown,NeurobehaviouralScore,delayed - Fig 6f,73.82,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#Publications\IL1-RA\IL1RA_Update2016\1003_Girard_2014.pdf#,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,7.584830339,48089,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,195,2,46,,"CIHR, WT, University of Manchester, GASM & MRC",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Originally ES, changed to SM for Fig 6 outcomes (SM not extracted)",20,,10,,5,,12.93,,25.49,,,0,other,other,,,,FALSE,FALSE,,FALSE,71.54,25.49,SM,,,,,FALSE,2,19168,FALSE,TRUE,40.88825015,56.99737275,136.0221229,-189.6120185,73.82,-2.28,-30.06,30.06,2.28,71.54,-30.06,-27.78,Isofluorane,17,Intraluminal filament/suture,H & E,92.41516966,104.3597005,1,Treatment,40.88825015,56.99737275,-136.0221229,-189.6120185,49.60115674,-27.78,31.37052598,12,,,,
+1003,Movement score,Motor/sensory,,0.8,1,0,100,94.25733393,-84.74437451,284.7443745,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Orient,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,0,48050,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1333,,0,,,0,other,other,,,,FALSE,FALSE,,FALSE,1,0,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.421531612,0,210.7658061,0,1,0,-0.2,0.2,0,1,-0.2,-0.2,Isoflurane,17,Intraluminal filament/suture,H & E,100,94.25733393,1,Treatment,0.421531612,0,-210.7658061,0,0.298067861,-0.2,0.188514668,12,,,,
+1003,Skilled reaching,Motor/sensory,better,28,28,1440,0,58.13707765,-113.9486722,113.9486722,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3 A delayed IL-1 RA % success,50.83,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,100,48047,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,6.506,,9.566,,,0,other,other,,,,FALSE,FALSE,,FALSE,28,9.566,SM,,,,,FALSE,2,19177,FALSE,TRUE,20.57377846,21.39022627,90.11729504,-93.69350098,50.83,-22.83,-22.83,22.83,22.83,28,-22.83,0,Isoflurane,17,Intraluminal filament/suture,H & E,0,58.13707765,1,Treatment,20.57377846,21.39022627,-90.11729504,-93.69350098,20.98597317,0,13.27269483,12,,,,
+1003,Movement score,Motor/sensory,,0.783,1,0,100,85.76520959,-68.09981079,268.0998108,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Aim,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,0,48056,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1316,,0,,,0,other,other,,,,FALSE,FALSE,,FALSE,1,0,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.41615574,0,191.7768387,0,1,0,-0.217,0.217,0,1,-0.217,-0.217,Isoflurane,17,Intraluminal filament/suture,H & E,100,85.76520959,1,Treatment,0.41615574,0,-191.7768387,0,0.294266546,-0.217,0.186110505,12,,,,
+1003,Skilled reaching,Motor/sensory,better,52,52,1440,0,96.64017071,-189.4147346,189.4147346,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3B delayed IL-1 RA % pellet,67.92,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,100,48049,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,9.752,,6.819,,,0,other,other,,,,FALSE,FALSE,,FALSE,52,6.819,SM,,,,,FALSE,2,19177,FALSE,TRUE,30.83853174,15.24774754,193.7093702,-95.77730866,67.92,-15.92,-15.92,15.92,15.92,52,-15.92,0,Isoflurane,17,Intraluminal filament/suture,H & E,0,96.64017071,1,Treatment,30.83853174,15.24774754,-193.7093702,-95.77730866,24.32600301,0,15.38511518,12,,,,
+1003,Skilled walking,Motor/sensory,,5.39,5.104,1440,-146.6666667,163.6773417,-467.4742564,174.1409231,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4Dcontra delayed IL1-RA,5.585,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,246.6666667,48073,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.2034,,0.1383,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.104,0.1383,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.643207276,0.309248201,329.8498852,-158.5888212,5.585,-0.481,-0.195,0.195,0.481,5.39,-0.481,-0.286,Isoflurane,17,Intraluminal filament/suture,H & E,59.45945946,163.6773417,1,Treatment,0.643207276,0.309248201,-133.7229264,-64.29276534,0.504653371,0.286,0.319170816,12,,,,
+1003,Movement score,Motor/sensory,,0.8,1,1440,100,94.25733393,-84.74437451,284.7443745,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Orient,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,0,48051,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1333,,0,,,0,other,other,,,,FALSE,FALSE,,FALSE,1,0,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.421531612,0,210.7658061,0,1,0,-0.2,0.2,0,1,-0.2,-0.2,Isoflurane,17,Intraluminal filament/suture,H & E,100,94.25733393,1,Treatment,0.421531612,0,-210.7658061,0,0.298067861,-0.2,0.188514668,12,,,,
+1003,Movement score,Motor/sensory,,0.772,0.976,0,93.57798165,84.59912053,-72.23629459,259.3922579,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Limb lift,0.99,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,6.422018349,48052,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1293,,0.024,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.976,0.024,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.408882501,0.053665631,187.5607805,-24.61726214,0.99,-0.014,-0.218,0.218,0.014,0.976,-0.218,-0.204,Isoflurane,17,Intraluminal filament/suture,H & E,93.57798165,84.59912053,1,Treatment,0.408882501,0.053665631,-187.5607805,-24.61726214,0.291603241,-0.204,0.184426083,12,,,,
+1003,Movement score,Motor/sensory,,0.772,0.926,1440,70.64220183,85.9075026,-97.73650326,239.0209069,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Limb lift,0.99,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,29.35779817,48053,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1293,,0.04045,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.926,0.04045,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.408882501,0.09044895,187.5607805,-41.49034389,0.99,-0.064,-0.218,0.218,0.064,0.926,-0.218,-0.154,Isoflurane,17,Intraluminal filament/suture,H & E,70.64220183,85.9075026,1,Treatment,0.408882501,0.09044895,-187.5607805,-41.49034389,0.29611308,-0.154,0.187278356,12,,,,
+1003,Movement score,Motor/sensory,,0.767,1,0,100,79.02601108,-54.89098172,254.8909817,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D acute IL1-RA Digits close,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,0,48054,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1302,,0,,,0,other,other,,,,FALSE,FALSE,,FALSE,1,0,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.411728551,0,176.7075328,0,1,0,-0.233,0.233,0,1,-0.233,-0.233,Isoflurane,17,Intraluminal filament/suture,H & E,100,79.02601108,1,Treatment,0.411728551,0,-176.7075328,0,0.291136051,-0.233,0.184130606,12,,,,
+1003,Movement score,Motor/sensory,,0.767,0.898,1440,56.22317597,81.02155153,-102.579065,215.025417,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3D delayed IL1-RA Digits close,1,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,43.77682403,48055,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.1302,,0.04164,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.898,0.04164,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.411728551,0.093109871,176.7075328,-39.96131785,1,-0.102,-0.233,0.233,0.102,0.898,-0.233,-0.131,Isoflurane,17,Intraluminal filament/suture,H & E,56.22317597,81.02155153,1,Treatment,0.411728551,0.093109871,-176.7075328,-39.96131785,0.298487728,-0.131,0.188780215,12,,,,
+1003,Skilled reaching,Motor/sensory,better,28,45,0,74.46342532,42.04952205,-7.953637909,156.8804885,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3A acute IL1-RA % success,50.83,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,25.53657468,48046,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,6.506,,2.739,,,0,other,other,,,,FALSE,FALSE,,FALSE,45,2.739,SM,,,,,FALSE,2,19177,FALSE,TRUE,20.57377846,6.12459019,90.11729504,-26.82693907,50.83,-5.83,-22.83,22.83,5.83,45,-22.83,-17,Isoflurane,17,Intraluminal filament/suture,H & E,74.46342532,42.04952205,1,Treatment,20.57377846,6.12459019,-90.11729504,-26.82693907,15.17878396,-17,9.599905885,12,,,,
+1003,Skilled walking,Motor/sensory,,5.707,5.91,0,172.0338983,102.6161928,-29.09383956,373.1616362,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4F ipsi  acute IL1-RA hindlimb,5.825,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-72.03389831,48082,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.08406,,0.02302,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.91,0.02302,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.26582106,0.051474285,225.2720848,-43.62227529,5.825,0.085,-0.118,0.118,0.085,5.91,-0.118,-0.203,Isoflurane,17,Intraluminal filament/suture,H & E,172.0338983,102.6161928,1,Treatment,0.26582106,0.051474285,-225.2720848,-43.62227529,0.191455527,-0.203,0.121087107,12,,,,
+1003,Skilled walking,Motor/sensory,,5.39,5.79,0,205.1282051,62.23983896,83.13812076,327.1182895,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4D contra acute IL1-RA,5.585,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-105.1282051,48072,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.06892,,0.07232,,,1,other,other,,,,FALSE,FALSE,,FALSE,5.79,0.07232,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.217944176,0.161712436,111.7662443,-82.92945443,5.585,0.205,-0.195,0.195,0.205,5.79,0.205,0.4,Isoflurane,17,Intraluminal filament/suture,H & E,195.1219512,62.23983896,1,Treatment,0.217944176,0.161712436,106.3142324,78.88411519,0.191899161,-0.4,0.121367686,12,,,,
+1003,Skilled walking,Motor/sensory,,5.707,5.816,1440,92.37288136,144.9652189,-191.7589476,376.5047103,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4F ipsi  delayed IL1-RA hindlimb,5.825,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,7.627118644,48083,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.08406,,0.123,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.816,0.123,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.26582106,0.275036361,225.2720848,-233.0816621,5.825,-0.009,-0.118,0.118,0.009,5.816,-0.118,-0.109,Isoflurane,17,Intraluminal filament/suture,H & E,92.37288136,144.9652189,1,Treatment,0.26582106,0.275036361,-225.2720848,-233.0816621,0.270467961,-0.109,0.171058958,12,,,,
+1003,Skilled walking,Motor/sensory,,5.583,5.596,1440,5.098039216,83.4329278,-158.4304993,168.6265777,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4F contra delayed IL1-RA hindlimb,5.838,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,94.90196078,48081,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.123,,0.1225,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.596,0.1225,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.388960152,0.273918327,152.533393,-107.4189519,5.838,-0.242,-0.255,0.255,0.242,5.596,-0.255,-0.013,Isoflurane,17,Intraluminal filament/suture,H & E,5.098039216,83.4329278,1,Treatment,0.388960152,0.273918327,-152.533393,-107.4189519,0.336393557,-0.013,0.212753966,12,,,,
+1003,Skilled walking,Motor/sensory,,5.583,5.896,0,122.745098,69.10623363,-12.70311987,258.193316,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4F contra acute IL1-RA hindlimb,5.838,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-22.74509804,48080,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.123,,0.02821,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.896,0.02821,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.388960152,0.063079478,152.533393,-24.73705006,5.838,0.058,-0.255,0.255,0.058,5.896,-0.255,-0.313,Isoflurane,17,Intraluminal filament/suture,H & E,122.745098,69.10623363,1,Treatment,0.388960152,0.063079478,-152.533393,-24.73705006,0.278629701,-0.313,0.176220896,12,,,,
+1003,Skilled walking,Motor/sensory,,0,0.6,1440,259.965338,106.1091854,51.99133449,467.9393414,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4E ipsi  delayed  IL1-RA Nb errors,0.2308,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,-159.965338,48079,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0,,0.2449,,,1,other,other,,,,FALSE,FALSE,,FALSE,0.6,0.2449,SM,,,,,FALSE,2,19177,FALSE,TRUE,0,0.547613048,0,-237.2673517,0.2308,0.3692,-0.2308,0.2308,0.3692,0.6,0.3692,0.6,Isoflurane,17,Intraluminal filament/suture,H & E,162.5135428,106.1091854,1,Treatment,0,0.547613048,0,148.3242274,0.387220899,-0.6,0.2449,12,,,,
+1003,Skilled walking,Motor/sensory,,0,0.5,0,216.6377816,216.6377816,-207.9722704,641.2478336,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4E ipsi  acute IL1-RA Nb errors,0.2308,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,-116.6377816,48078,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0,,0.5,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.5,0.5,SM,,,,,FALSE,2,19177,FALSE,TRUE,0,1.118033989,0,-484.4168062,0.2308,0.2692,-0.2308,0.2308,0.2692,0.5,0.2692,0.5,Isoflurane,17,Intraluminal filament/suture,H & E,185.7355126,216.6377816,1,Treatment,0,1.118033989,0,415.3172321,0.790569415,-0.5,0.5,12,,,,
+1003,Skilled walking,Motor/sensory,,0.3,1.4,1440,-752.3939808,398.8339189,-1534.108462,29.32050027,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4E contra   delayed  IL1-RA Nb errors,0.1538,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,852.3939808,48077,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.3,,0.4,,,0,other,other,,,,FALSE,FALSE,,FALSE,1.4,0.4,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.948683298,0.894427191,-648.8941847,611.7833044,0.1538,1.2462,0.1462,0.1462,1.2462,1.4,1.2462,1.1,Isoflurane,17,Intraluminal filament/suture,H & E,88.26833574,398.8339189,1,Treatment,0.948683298,0.894427191,76.12608715,71.77236326,0.921954446,-1.1,0.583095189,12,,,,
+1003,Skilled walking,Motor/sensory,,0.3,0.5,0,-136.7989056,448.5252069,-1015.908311,742.3104998,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4E contra acute IL1-RA Nb errors,0.1538,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,8,5,100,236.7989056,48076,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.3,,0.5,,,0,other,other,,,,FALSE,FALSE,,FALSE,0.5,0.5,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.948683298,1.118033989,-648.8941847,764.7291305,0.1538,0.3462,0.1462,0.1462,0.3462,0.5,0.3462,0.2,Isoflurane,17,Intraluminal filament/suture,H & E,57.7700751,448.5252069,1,Treatment,0.948683298,1.118033989,274.0275269,322.9445375,1.036822068,-0.2,0.655743852,12,,,,
+1003,Skilled walking,Motor/sensory,,5.623,5.528,1440,130.1369863,159.5281952,-182.5382764,442.812249,IL1-RA,Unknown,NeurobehaviouralScore,Fig 4D ipsi delayed IL1-RA,5.55,,unknown,Peripheral,Protein,,18732,600,100,17,MRI,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,8,5,100,-30.1369863,48075,Full Publication,TRUE,18732,Focal,2014,Male,Rat,Temporary,2,2,46,,Multiple see paper,,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,"Conflict of interest: NJR is a non-executive director of AstraZeneca but this has no relationship to the research described here. The other authorsdeclare no competing financial interests.
+
+MRI
+
+Fig 2F Done
+*Fig 3A sham, control, acute & delayed day 25 on",20,,10,,5,,0.05127,,0.09113,,,0,other,other,,,,FALSE,FALSE,,FALSE,5.528,0.09113,SM,,,,,FALSE,2,19177,FALSE,TRUE,0.162129976,0.203772875,-222.095857,279.1409244,5.55,-0.022,0.073,0.073,0.022,5.623,0.073,0.095,Isoflurane,17,Intraluminal filament/suture,H & E,130.1369863,159.5281952,1,Treatment,0.162129976,0.203772875,222.095857,279.1409244,0.184132444,0.095,0.116455583,12,,,,
+1005,Neurological deficit,Motor/sensory,worse,2.57,1.14,30,55.64202335,12.89257874,30.37256901,80.91147768,IL1-RA,Unknown,NeurobehaviouralScore,Fig 5,,,corrected,Peripheral,Protein,,18741,168,200,17,None,C57BL/6,,1206,FALSE,mg/kg,,,a,Anti-Inflammatory,8,7,100,44.35797665,47806,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Temporary,2,3,46,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,45,SubCut,2,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Budapest 2013
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive director of
+A",62,,7,,7,,,0.79,,0.38,,1,other,other,,,,FALSE,FALSE,,FALSE,1.14,0.1436265,SM,,,,,FALSE,1,19186,FALSE,TRUE,0.79,0.38,30.73929961,14.78599222,0,1.14,2.57,2.57,1.14,2.57,2.57,1.43,Isoflurane,17,Intraluminal filament/suture,CresylViolet,55.64202335,12.89257874,1,Treatment,0.79,0.38,30.73929961,14.78599222,0.61987902,1.43,0.331339274,11,,,,
+1005,Corner test,Motor/sensory,worse,4.5,3.79,30,15.77777778,16.14767972,-15.87167447,47.42723002,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6,,,unknown,Peripheral,Protein,,18741,672,200,5,MRI,Balb/c,,255,FALSE,mg/kg,,,d,Anti-Inflammatory,8,15,100,84.22222222,47820,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Permanent,2,4,46,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,,SubCut,7,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Manchester 2012 (10 month)
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive ",62,,15,,14,,,1.61,,2.23,,0,other,other,,,,FALSE,FALSE,,FALSE,3.79,0.595992569,SM,,,,,FALSE,1,19191,FALSE,TRUE,1.61,2.23,35.77777778,49.55555556,0,3.79,4.5,4.5,3.79,4.5,4.5,0.71,Isoflurane,5,electrocoagulation,MRI,15.77777778,16.14767972,1,Treatment,1.61,2.23,35.77777778,49.55555556,1.933497119,0.71,0.718510106,43,,,,
+1005,Corner test,Motor/sensory,worse,0.05,0.04,30,20,287.7498914,-543.9897871,583.9897871,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6,,,corrected,Peripheral,Protein,,18741,168,200,5,None,C57BL/6,,1206,FALSE,mg/kg,,,j,Anti-Inflammatory,8,11,100,80,47830,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Permanent,15,14,151,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,,SubCut,2,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Lubeck 2011
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive director of
+Ast",62,,11,,12,,,0.33,,0.36,,0,other,other,,,,FALSE,FALSE,,FALSE,0.04,0.103923048,SM,,,,,FALSE,1,19197,FALSE,TRUE,0.33,0.36,660,720,0,0.04,0.05,0.05,0.04,0.05,0.05,0.01,Tribromoethanol,5,electrocoagulation,Silver Staining,20,287.7498914,1,Treatment,0.33,0.36,660,720,0.346038809,0.01,0.14444475,11,,,,
+1005,Neurological deficit,Motor/sensory,worse,13.94,5.71,30,59.03873745,6.868955362,45.57558494,72.50188996,IL1-RA,Unknown,NeurobehaviouralScore,Fig 5 (Fil + tPA),,,corrected,Peripheral,Protein,,18741,24,200,17,None,C57BL/6,,1206,FALSE,mg/kg,,,g,Anti-Inflammatory,8,9,100,40.96126255,47825,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Temporary,2,3,84,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,30,SubCut,2,tPA,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Manchester 2011 (Fil/Fil+tPA)
+
+Labels wrong in Figures 5 & 7
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this",62,,9,,7,,,2.17,,1.66,,1,other,other,,,,FALSE,FALSE,,FALSE,5.71,0.627421025,SM,,,,,FALSE,1,19194,FALSE,TRUE,2.17,1.66,15.56671449,11.90817791,0,5.71,13.94,13.94,5.71,13.94,13.94,8.23,Isoflurane,17,Intraluminal filament/suture,CresylViolet,59.03873745,6.868955362,1,Treatment,2.17,1.66,15.56671449,11.90817791,1.96768174,8.23,0.991618389,11,,,,
+1005,Corner test,Motor/sensory,worse,0.66,0.057,30,91.36363636,19.03654735,54.05200355,128.6752692,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6,,,corrected,Peripheral,Protein,,18741,168,200,17,None,C57BL/6,,1206,FALSE,mg/kg,,,a,Anti-Inflammatory,8,7,100,8.636363636,47814,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Temporary,2,3,46,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,45,SubCut,2,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Budapest 2013
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive director of
+A",62,,7,,7,,,0.32,,0.09,,1,other,other,,,,FALSE,FALSE,,FALSE,0.057,0.034016803,SM,,,,,FALSE,1,19186,FALSE,TRUE,0.32,0.09,48.48484848,13.63636364,0,0.057,0.66,0.66,0.057,0.66,0.66,0.603,Isoflurane,17,Intraluminal filament/suture,CresylViolet,91.36363636,19.03654735,1,Treatment,0.32,0.09,48.48484848,13.63636364,0.235053185,0.603,0.125641213,11,,,,
+1005,Neurological deficit,Motor/sensory,worse,5,1,30,80,10.90164823,58.63276948,101.3672305,IL1-RA,Unknown,NeurobehaviouralScore,Fig 5,,,corrected,Peripheral,Protein,,18741,168,200,5,MRI,Balb/c,,255,FALSE,mg/kg,,,c,Anti-Inflammatory,8,13,100,20,47816,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Permanent,2,4,46,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,,SubCut,2,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Manchester 2012 (2.5 month)
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive",62,,13,,14,,,1.42,,1.41,,1,other,other,,,,FALSE,FALSE,,FALSE,1,0.376838351,SM,,,,,FALSE,1,19190,FALSE,TRUE,1.42,1.41,28.4,28.2,0,1,5,5,1,5,5,4,Isoflurane,5,electrocoagulation,MRI,80,10.90164823,1,Treatment,1.42,1.41,28.4,28.2,1.414808821,4,0.544934052,11,,,,
+1005,Corner test,Motor/sensory,worse,5,3,30,40,13.93111843,12.69500788,67.30499212,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6,,,corrected,Peripheral,Protein,,18741,168,200,5,MRI,Balb/c,,255,FALSE,mg/kg,,,c,Anti-Inflammatory,8,11,100,60,47817,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Permanent,2,4,46,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,,SubCut,2,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Manchester 2012 (2.5 month)
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive",62,,11,,12,,,1.46,,1.87,,1,other,other,,,,FALSE,FALSE,,FALSE,3,0.539822502,SM,,,,,FALSE,1,19190,FALSE,TRUE,1.46,1.87,29.2,37.4,0,3,5,5,3,5,5,2,Isoflurane,5,electrocoagulation,MRI,40,13.93111843,1,Treatment,1.46,1.87,29.2,37.4,1.687233577,2,0.704291038,11,,,,
+1005,Neurological deficit,Motor/sensory,worse,3.43,0.93,30,72.88629738,13.4056451,46.61123299,99.16136177,IL1-RA,Unknown,NeurobehaviouralScore,Fig 5,,,unknown,Peripheral,Protein,,18741,672,200,5,MRI,Balb/c,,255,FALSE,mg/kg,,,d,Anti-Inflammatory,8,14,100,27.11370262,47819,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Permanent,2,4,46,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,,SubCut,7,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Manchester 2012 (10 month)
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this article: NJR was a non-executive ",62,,14,,14,,,1.4,,1,,1,other,other,,,,FALSE,FALSE,,FALSE,0.93,0.267261242,SM,,,,,FALSE,1,19191,FALSE,TRUE,1.4,1,40.81632653,29.15451895,0,0.93,3.43,3.43,0.93,3.43,3.43,2.5,Isoflurane,5,electrocoagulation,MRI,72.88629738,13.4056451,1,Treatment,1.4,1,40.81632653,29.15451895,1.216552506,2.5,0.459813627,43,,,,
+1005,Neurological deficit,Motor/sensory,worse,12.33,6,30,51.33819951,10.59607938,30.56988393,72.1065151,IL1-RA,Unknown,NeurobehaviouralScore,Fig 5 (Fil),,,corrected,Peripheral,Protein,,18741,24,200,17,None,C57BL/6,,1206,FALSE,mg/kg,,,f,Anti-Inflammatory,8,6,100,48.66180049,47824,Full Publication,TRUE,9569,Focal,2015,Male,Mouse,Temporary,2,3,84,,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",,,,Multiple,30,SubCut,2,,,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,"Outcomes complete
+
+Manchester 2011 (Fil/Fil+tPA)
+
+Labels wrong in Figures 5 & 7
+
+Declaration of conflicting interests
+The author(s) declared the following potential conflicts of
+interest with respect to the research, authorship, and/or publication
+of this",62,,6,,6,,,3.04,,1,,1,other,other,,,,FALSE,FALSE,,FALSE,6,0.40824829,SM,,,,,FALSE,1,19194,FALSE,TRUE,3.04,1,24.65531225,8.110300081,0,6,12.33,12.33,6,12.33,12.33,6.33,Isoflurane,17,Intraluminal filament/suture,CresylViolet,51.33819951,10.59607938,1,Treatment,3.04,1,24.65531225,8.110300081,2.26291847,6.33,1.306496588,11,,,,
+1006,Neurological deficit,Motor/sensory,worse,1,1.17,-30,-17,16.73817991,-49.80683262,15.80683262,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,corrected,Peripheral,Protein,,426,24,300,17,None,C57BL/6J,,810,FALSE,mg/kg,,,a,Anti-Inflammatory,7,6,100,117,47768,Full Publication,TRUE,426,Focal,2007,Unknown,Mouse,Temporary,1,3,84,,"Medical Research Council, United Kingdom",,,,Multiple,30,IPeritoneal,2,,,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,Outcomes completed,65,,6,,6,,,0,,0.41,,0,other,other,,,,FALSE,FALSE,,FALSE,1.17,0.167381799,SM,,,,,FALSE,1,19179,FALSE,TRUE,0,0.41,0,41,0,1.17,1,1,1.17,1.17,1.17,0.17,Halothane,17,Intraluminal filament/suture,CresylViolet,-14.52991453,16.73817991,-1,Control,0,0.41,0,35.04273504,0.28991378,-0.17,0.167381799,11,25,30,,
+1006,Neurological deficit,Motor/sensory,worse,2,1.5,-30,25,19.13594847,-12.506459,62.506459,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,corrected,Peripheral,Protein,,426,24,300,17,None,C57BL/6J,,810,FALSE,mg/kg,,,b,Anti-Inflammatory,7,7,100,75,47769,Full Publication,TRUE,426,Focal,2007,Unknown,Mouse,Temporary,1,3,84,,"Medical Research Council, United Kingdom",,,,Multiple,30,IPeritoneal,22,,,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,Outcomes completed,65,,7,,6,,,0.82,,0.55,,0,other,other,,,,FALSE,FALSE,,FALSE,1.5,0.22453656,SM,,,,,FALSE,1,19179,FALSE,TRUE,0.82,0.55,41,27.5,0,1.5,2,2,1.5,2,2,0.5,Halothane,17,Intraluminal filament/suture,CresylViolet,25,19.13594847,1,Treatment,0.82,0.55,41,27.5,0.710115228,0.5,0.395071641,11,25,30,,
+1009,Neurological deficit,Motor/sensory,worse,9.4,7.56,360,19.57446809,8.255209475,3.394257514,35.75467866,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,5,17,None,Wistar,,400,FALSE,mg/kg,,,d,Anti-Inflammatory,2,1.666666667,100,80.42553191,47789,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.77,,1.11,,1,other,other,,,,FALSE,FALSE,,FALSE,7.56,0.496407091,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.77,1.11,8.191489362,11.80851064,0,7.56,9.4,9.4,7.56,9.4,9.4,1.84,Unknown,17,Intraluminal filament/suture,TTC,19.57446809,8.255209475,1,Treatment,0.77,1.11,8.191489362,11.80851064,1.068075706,1.84,0.955315954,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.23,7.01,720,24.05200433,7.662800287,9.032915772,39.0710929,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,20,17,None,Wistar,,400,FALSE,mg/kg,,,i,Anti-Inflammatory,2,1.666666667,100,75.94799567,47794,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.77,,0.85,,1,other,other,,,,FALSE,FALSE,,FALSE,7.01,0.380131556,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.77,0.85,8.342361863,9.209100758,0,7.01,9.23,9.23,7.01,9.23,9.23,2.22,Unknown,17,Intraluminal filament/suture,TTC,24.05200433,7.662800287,1,Treatment,0.77,0.85,8.342361863,9.209100758,0.839038565,2.22,0.750458907,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.23,7.43,720,19.50162514,9.09185449,1.681590336,37.32165994,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,10,17,None,Wistar,,400,FALSE,mg/kg,,,h,Anti-Inflammatory,2,1.666666667,100,80.49837486,47793,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.77,,1.32,,1,other,other,,,,FALSE,FALSE,,FALSE,7.43,0.590321946,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.77,1.32,8.342361863,14.30119177,0,7.43,9.23,9.23,7.43,9.23,9.23,1.8,Unknown,17,Intraluminal filament/suture,TTC,19.50162514,9.09185449,1,Treatment,0.77,1.32,8.342361863,14.30119177,1.256258618,1.8,1.123631867,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.23,7.18,720,22.21018418,13.47310346,-4.19709859,48.61746695,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,5,17,None,Wistar,,400,FALSE,mg/kg,,,g,Anti-Inflammatory,2,1.666666667,100,77.78981582,47792,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.77,,2.44,,0,other,other,,,,FALSE,FALSE,,FALSE,7.18,1.091201173,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.77,2.44,8.342361863,26.43553629,0,7.18,9.23,9.23,7.18,9.23,9.23,2.05,Unknown,17,Intraluminal filament/suture,TTC,22.21018418,13.47310346,1,Treatment,0.77,2.44,8.342361863,26.43553629,2.277671116,2.05,2.037210979,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.4,6.41,360,31.80851064,8.017070967,16.09505154,47.52196973,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,10,17,None,Wistar,,400,FALSE,mg/kg,,,e,Anti-Inflammatory,2,1.666666667,100,68.19148936,47790,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.77,,1.03,,1,other,other,,,,FALSE,FALSE,,FALSE,6.41,0.460630003,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.77,1.03,8.191489362,10.95744681,0,6.41,9.4,9.4,6.41,9.4,9.4,2.99,Unknown,17,Intraluminal filament/suture,TTC,31.80851064,8.017070967,1,Treatment,0.77,1.03,8.191489362,10.95744681,0.997016979,2.99,0.891759096,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.57,5.17,180,45.97701149,6.088063411,34.04440721,57.90961578,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,20,17,None,Wistar,,400,FALSE,mg/kg,,,c,Anti-Inflammatory,2,1.666666667,100,54.02298851,47788,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.565,,0.86,,1,other,other,,,,FALSE,FALSE,,FALSE,5.17,0.384603692,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.565,0.86,5.903866249,8.986415883,0,5.17,9.57,9.57,5.17,9.57,9.57,4.4,Unknown,17,Intraluminal filament/suture,TTC,45.97701149,6.088063411,1,Treatment,0.565,0.86,5.903866249,8.986415883,0.824346061,4.4,0.737317532,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.57,7.43,180,22.3615465,8.134781138,6.417375469,38.30571753,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,10,17,None,Wistar,,400,FALSE,mg/kg,,,b,Anti-Inflammatory,2,1.666666667,100,77.6384535,47787,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.51,,1.5,,1,other,other,,,,FALSE,FALSE,,FALSE,7.43,0.670820393,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.51,1.5,5.329153605,15.67398119,0,7.43,9.57,9.57,7.43,9.57,9.57,2.14,Unknown,17,Intraluminal filament/suture,TTC,22.3615465,8.134781138,1,Treatment,0.51,1.5,5.329153605,15.67398119,1.402044426,2.14,1.254026657,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.57,8.42,180,12.01671891,5.936419072,0.381337532,23.65210029,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,5,17,None,Wistar,,400,FALSE,mg/kg,,,a,Anti-Inflammatory,2,1.666666667,100,87.98328109,47786,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.565,,0.81,,1,other,other,,,,FALSE,FALSE,,FALSE,8.42,0.362243012,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.565,0.81,5.903866249,8.463949843,0,8.42,9.57,9.57,8.42,9.57,9.57,1.15,Unknown,17,Intraluminal filament/suture,TTC,12.01671891,5.936419072,1,Treatment,0.565,0.81,5.903866249,8.463949843,0.779727517,1.15,0.697409492,,250,350,,
+1009,Neurological deficit,Motor/sensory,worse,9.4,5.6,360,40.42553191,9.983122924,20.85861098,59.99245285,IL1-RA,Unknown,NeurobehaviouralScore,Fig 1C,,,unknown,Peripheral,Protein - Anakinra,,18473,24,20,17,None,Wistar,,400,FALSE,mg/kg,,,f,Anti-Inflammatory,2,1.666666667,100,59.57446809,47791,Full Publication,TRUE,18473,Focal,2014,Male,Rat,Temporary,6,1,82,,Unknown,,,,Single,120,IVenous,2,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,"Outcomes completed
+
+Conflict of Interest
+The author declare no conflict of interest",1224,,5,,5,,,0.77,,1.62,,1,other,other,,,,FALSE,FALSE,,FALSE,5.6,0.724486025,SM,,,,,FALSE,3,19181,FALSE,FALSE,0.77,1.62,8.191489362,17.23404255,0,5.6,9.4,9.4,5.6,9.4,9.4,3.8,Unknown,17,Intraluminal filament/suture,TTC,40.42553191,9.983122924,1,Treatment,0.77,1.62,8.191489362,17.23404255,1.527804213,3.8,1.366509631,,250,350,,
+1010,Cylinder test,Motor/sensory,,122.84381,108.3916,270,63.26528379,180.5759653,-290.6636082,417.1941758,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 1C Young Wistar Contra,99.99998613,,Unknown,Peripheral,Protein,,18730,672,100,18,MRI,Wistar,,400,FALSE,mg/kg,,,c,Anti-Inflammatory,8,8,100,36.73471621,48108,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,70,SubCut,2,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZeneca when this work was compl",,,8,,8,,,102.4477304,,55.832456,,0,other,other,,,,FALSE,FALSE,,FALSE,108.3916,19.73975412,SM,,,,,FALSE,1,19183,FALSE,TRUE,102.4477304,55.832456,-448.4701466,244.4094138,99.99998613,8.39161387,22.84382387,22.84382387,8.39161387,122.84381,22.84382387,14.45221,Isofluorane,18,Ligation,MRI,63.26528379,180.5759653,1,Treatment,102.4477304,55.832456,448.4701466,244.4094138,82.50091093,14.45221,41.25045546,9,200,250,,
+1010,Behaviour test,Motor/sensory,,16.44444444,19.44444444,270,53.99999996,14.45683228,25.66460868,82.33539123,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3B Aged Cp,22,,unknown,Peripheral,Protein,,18730,168,25,18,MRI,,,1183,FALSE,mg/kg,,,b,Anti-Inflammatory,8,9,100,46.00000004,48093,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,23,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,9,,9,,,1.943650632,,1.424000624,,1,other,other,,,,FALSE,FALSE,,FALSE,19.44444444,0.474666875,SM,,,,,FALSE,1,19182,FALSE,TRUE,1.943650632,1.424000624,34.98571135,-25.63201121,22,-2.55555556,-5.55555556,5.55555556,2.55555556,19.44444444,-5.55555556,-3,Isofluorane,18,Ligation,MRI,53.99999996,14.45683228,1,Treatment,1.943650632,1.424000624,-34.98571135,-25.63201121,1.703754025,-3,0.80315735,56,900,1000,,
+1010,motor,Motor/sensory,,98.91466667,106.389,270,688.6653013,662.2142771,-609.2746817,1986.605284,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 2C Young Wistar Total rears,100.0000028,,Unknown,Peripheral,Protein,,18730,672,100,18,MRI,Wistar,,400,FALSE,mg/kg,,,c,Anti-Inflammatory,8,8,100,-588.6653013,48109,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,70,SubCut,2,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZeneca when this work was compl",,,8,,8,,,17.77146337,,9.870546236,,0,other,other,,,,FALSE,FALSE,,FALSE,106.389,3.489765089,SM,,,,,FALSE,1,19183,FALSE,TRUE,17.77146337,9.870546236,1637.415624,-909.4460198,100.0000028,6.3889972,-1.08533613,1.08533613,6.3889972,106.389,6.3889972,7.47433333,Isofluorane,18,Ligation,MRI,116.9875819,662.2142771,1,Treatment,17.77146337,9.870546236,278.1573197,154.4928872,14.37450161,-7.47433333,7.187250807,9,200,250,,
+1010,motor,Motor/sensory,,95.26814625,89.16929889,270,-128.8890246,257.4799904,-633.5498058,375.7717567,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 2A Aged lean total rears,100.0000056,,unknown,Peripheral,Protein,,18730,168,50,18,MRI,,,1183,FALSE,mg/kg,,,a,Anti-Inflammatory,8,10,100,228.8890246,48110,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,7,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,10,,10,,,31.62855863,,22.00075399,,0,other,other,,,,FALSE,FALSE,,FALSE,89.16929889,6.957249285,SM,,,,,FALSE,1,19182,FALSE,TRUE,31.62855863,22.00075399,668.4171335,-464.9494493,100.0000056,-10.83070671,-4.73185935,4.73185935,10.83070671,95.26814625,-10.83070671,-6.09884736,Isofluorane,18,Ligation,MRI,56.31070551,257.4799904,1,Treatment,31.62855863,22.00075399,-292.0267299,-203.1331341,27.24333769,6.09884736,12.183591,56,400,500,,
+1010,Behaviour test,Motor/sensory,,18,20.33333333,270,58.33333325,15.30931089,28.3270839,88.3395826,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3A Aged lean,22,,unknown,Peripheral,Protein,,18730,168,50,18,MRI,,,1183,FALSE,mg/kg,,,a,Anti-Inflammatory,8,10,100,41.66666675,48091,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,7,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,10,,10,,,1.322875656,,1.414213562,,1,other,other,,,,FALSE,FALSE,,FALSE,20.33333333,0.447213595,SM,,,,,FALSE,1,19182,FALSE,TRUE,1.322875656,1.414213562,33.0718914,-35.35533905,22,-1.66666667,-4,4,1.66666667,20.33333333,-4,-2.33333333,Isofluorane,18,Ligation,MRI,58.33333325,15.30931089,1,Treatment,1.322875656,1.414213562,-33.0718914,-35.35533905,1.369306394,-2.33333333,0.612372436,56,400,500,,
+1010,motor,Motor/sensory,,4.333333333,1.444444444,270,66.66666667,17.15746771,33.03802996,100.2953034,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3A Aged lean,0,,unknown,Peripheral,Protein,,18730,168,50,18,MRI,,,1183,FALSE,mg/kg,,,a,Anti-Inflammatory,8,10,100,33.33333333,48092,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,7,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,10,,10,,,1.58113883,,1.740051085,,1,other,other,,,,FALSE,FALSE,,FALSE,1.444444444,0.550252467,SM,,,,,FALSE,1,19182,FALSE,TRUE,1.58113883,1.740051085,-36.48781916,40.15502504,0,1.444444444,4.333333333,4.333333333,1.444444444,4.333333333,4.333333333,2.888888889,Isofluorane,18,Ligation,MRI,66.66666667,17.15746771,1,Treatment,1.58113883,1.740051085,36.48781916,40.15502504,1.662494779,2.888888889,0.743490267,56,400,500,,
+1010,motor,Motor/sensory,,2.777777778,1.222222222,270,56.00000001,11.3137085,33.82513134,78.17486868,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3B Aged Cp,0,,unknown,Peripheral,Protein,,18730,168,25,18,MRI,,,1183,FALSE,mg/kg,,,b,Anti-Inflammatory,8,9,100,43.99999999,48094,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,23,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,9,,9,,,0.666666667,,0.666666667,,1,other,other,,,,FALSE,FALSE,,FALSE,1.222222222,0.222222222,SM,,,,,FALSE,1,19182,FALSE,TRUE,0.666666667,0.666666667,-24.00000001,24.00000001,0,1.222222222,2.777777778,2.777777778,1.222222222,2.777777778,2.777777778,1.555555556,Isofluorane,18,Ligation,MRI,56.00000001,11.3137085,1,Treatment,0.666666667,0.666666667,24.00000001,24.00000001,0.666666667,1.555555556,0.314269681,56,900,1000,,
+1010,Cylinder test,Motor/sensory,,84.84846875,103.0302938,270,119.9999673,203.7363429,-279.3232648,519.3231995,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 1A Aged lean Contra,99.99999375,,unknown,Peripheral,Protein,,18730,168,50,18,MRI,,,1183,FALSE,mg/kg,,,a,Anti-Inflammatory,8,10,100,-19.99996733,48101,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,7,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,10,,10,,,50.18656182,,83.72789986,,0,other,other,,,,FALSE,FALSE,,FALSE,103.0302938,26.47708673,SM,,,,,FALSE,1,19182,FALSE,TRUE,50.18656182,83.72789986,331.2310927,-552.6037799,99.99999375,3.03030005,-15.151525,15.151525,3.03030005,103.0302938,-15.151525,-18.18182505,Isofluorane,18,Ligation,MRI,119.9999673,203.7363429,1,Treatment,50.18656182,83.72789986,-331.2310927,-552.6037799,69.02554673,-18.18182505,30.86916293,56,400,500,,
+1010,Cylinder test,Motor/sensory,,49.27536,32.85023778,270,-32.38095901,54.90457617,-139.9939283,75.23201027,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 1B Aged Cp Ipsi,99.99999176,,unknown,Peripheral,Protein,,18730,168,25,18,MRI,,,1183,FALSE,mg/kg,,,b,Anti-Inflammatory,8,9,100,132.380959,48102,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,23,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,9,,9,,,36.95652,,74.93257207,,0,other,other,,,,FALSE,FALSE,,FALSE,32.85023778,24.97752402,SM,,,,,FALSE,1,19182,FALSE,TRUE,36.95652,74.93257207,72.85714793,-147.7242308,99.99999176,-67.14975398,-50.72463176,50.72463176,67.14975398,49.27536,-67.14975398,-16.42512222,Isofluorane,18,Ligation,MRI,24.46043544,54.90457617,1,Treatment,36.95652,74.93257207,-55.0359723,-111.5902407,59.07907721,16.42512222,27.85014408,56,900,1000,,
+1010,Cylinder test,Motor/sensory,,36.7346875,65.306105,270,45.16128165,37.46064268,-28.261578,118.5841413,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 1A Aged lean Ipsi,99.99998125,,unknown,Peripheral,Protein,,18730,168,50,18,MRI,,,1183,FALSE,mg/kg,,,a,Anti-Inflammatory,8,10,100,54.83871835,48095,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,7,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,10,,10,,,47.59959425,,57.88766897,,0,other,other,,,,FALSE,FALSE,,FALSE,65.306105,18.30568824,SM,,,,,FALSE,1,19182,FALSE,TRUE,47.59959425,57.88766897,75.23808304,-91.49988175,99.99998125,-34.69387625,-63.26529375,63.26529375,34.69387625,65.306105,-63.26529375,-28.5714175,Isofluorane,18,Ligation,MRI,45.16128165,37.46064268,1,Treatment,47.59959425,57.88766897,-75.23808304,-91.49988175,52.99388451,-28.5714175,23.69958563,56,400,500,,
+1010,Cylinder test,Motor/sensory,,25.18517778,37.77776667,270,16.83167523,33.66335045,-49.14849165,82.8118421,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 1B Aged Cp Contra,100.0000059,,unknown,Peripheral,Protein,,18730,168,25,18,MRI,,,1183,FALSE,mg/kg,,,b,Anti-Inflammatory,8,9,100,83.16832477,48103,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,23,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,9,,9,,,49.97528784,,56.66665,,0,other,other,,,,FALSE,FALSE,,FALSE,37.77776667,18.88888333,SM,,,,,FALSE,1,19182,FALSE,TRUE,49.97528784,56.66665,66.79864018,-75.74253851,100.0000059,-62.22223923,-74.81482812,74.81482812,62.22223923,37.77776667,-74.81482812,-12.59258889,Isofluorane,18,Ligation,MRI,16.83167523,33.66335045,1,Treatment,49.97528784,56.66665,-66.79864018,-75.74253851,53.42582997,-12.59258889,25.18517778,56,900,1000,,
+1010,Cylinder test,Motor/sensory,,106.61374,90.21165,270,248.0000423,284.1201498,-308.8754514,804.875536,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 1C Young Wistar Ipsi,99.99999516,,Unknown,Peripheral,Protein,,18730,672,100,18,MRI,Wistar,,400,FALSE,mg/kg,,,c,Anti-Inflammatory,8,8,100,-148.0000423,48107,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,70,SubCut,2,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZeneca when this work was compl",,,8,,8,,,37.5819455,,37.5819815,,0,other,other,,,,FALSE,FALSE,,FALSE,90.21165,13.28723698,SM,,,,,FALSE,1,19183,FALSE,TRUE,37.5819455,37.5819815,-568.2400275,568.2405719,99.99999516,-9.78834516,6.61374484,6.61374484,9.78834516,106.61374,-9.78834516,-16.40209,Isofluorane,18,Ligation,MRI,167.5675483,284.1201498,1,Treatment,37.5819455,37.5819815,-383.9458548,-383.9462226,37.5819635,16.40209,18.79098175,9,200,250,,
+1010,motor,Motor/sensory,,28.55297356,38.43669456,270,13.83363406,12.17588867,-10.03110773,37.69837584,IL1-RA,Unknown,NeurobehaviouralScore,Supp Fig 2B Aged Cp total rears,100.0000059,,unknown,Peripheral,Protein,,18730,168,25,18,MRI,,,1183,FALSE,mg/kg,,,b,Anti-Inflammatory,8,9,100,86.16636594,48111,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,90,SubCut,23,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Injury confirmed visually 
+
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZe",,,9,,9,,,14.36071658,,21.79155671,,0,other,other,,,,FALSE,FALSE,,FALSE,38.43669456,7.263852237,SM,,,,,FALSE,1,19182,FALSE,TRUE,14.36071658,21.79155671,20.09980836,-30.50029651,100.0000059,-61.56331134,-71.44703234,71.44703234,61.56331134,38.43669456,-71.44703234,-9.883721,Isofluorane,18,Ligation,MRI,13.83363406,12.17588867,1,Treatment,14.36071658,21.79155671,-20.09980836,-30.50029651,18.45402564,-9.883721,8.699311113,56,900,1000,,
+1010,motor,Motor/sensory,,0.5,0.25,270,50,54.00617248,-55.85209805,155.8520981,IL1-RA,Unknown,NeurobehaviouralScore,Fig 3C Young Wistar,0,,Unknown,Peripheral,Protein,,18730,672,100,18,MRI,Wistar,,400,FALSE,mg/kg,,,c,Anti-Inflammatory,8,8,100,50,48100,Unpublished,TRUE,9569,Focal,2016,Male,Rat,Temporary,195,4,46,,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",,,,Multiple,70,SubCut,2,,,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"Supp file requested - received from Pradillo, methods updated
+
+Fig 3 Neurobehaviour median and IQR - raw data received from Pradillo
+
+Supp Figs 1 & 2?
+
+Competing interest statement
+N.J.R. was a nonexecutive director of AstraZeneca when this work was compl",,,8,,8,,,0.577350269,,0.5,,0,other,other,,,,FALSE,FALSE,,FALSE,0.25,0.176776695,SM,,,,,FALSE,1,19183,FALSE,TRUE,0.577350269,0.5,-115.4700538,100,0,0.25,0.5,0.5,0.25,0.5,0.5,0.25,Isofluorane,18,Ligation,MRI,50,54.00617248,1,Treatment,0.577350269,0.5,115.4700538,100,0.540061725,0.25,0.270030862,9,200,250,,
+1011,Neurological deficit,Motor/sensory,better,13.57,17.59,120,47.68683274,10.02425122,28.03930036,67.33436512,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6K Pneumo,22,,corrected,Peripheral,Protein,,18726,24,100,18,Blood/plasma biomarkers,Wistar,,400,FALSE,mg/kg,,,d,Anti-Inflammatory,9,7,100,52.31316726,47805,Full Publication,TRUE,18726,Focal,2014,Male,Rat,Temporary,2,3,22,,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",,,,Single,60,SubCut,20,,,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"
+Fig 6L??
+
+
+
+Potential Conflicts of Interest
+D.H.D.: funding, Wellcome Trust, MRC, GSK (no
+direct conflict of interest in the results of this research).
+N.J.R.: nonexecutive director of AstraZeneca (no involvement
+in this work).",15,,7,,6,,0.65,,0.54,,,1,other,other,,,,FALSE,FALSE,,FALSE,17.59,0.54,SM,,,,,FALSE,1,19185,FALSE,TRUE,1.719738352,1.322724461,20.4002177,-15.69068163,22,-4.41,-8.43,8.43,4.41,17.59,-8.43,-4.02,Isoflurane,18,Ligation,CresylViolet,47.68683274,10.02425122,1,Treatment,1.719738352,1.322724461,-20.4002177,-15.69068163,1.551919632,-4.02,0.863408377,8,250,300,,
+1011,Neurological deficit,Motor/sensory,better,16.32,18.08,120,30.98591549,15.24794255,1.099948093,60.87188289,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6K Control,22,,corrected,Peripheral,Protein,,18726,24,100,18,Blood/plasma biomarkers,Wistar,,400,FALSE,mg/kg,,,c,Anti-Inflammatory,9,7,100,69.01408451,47804,Full Publication,TRUE,18726,Focal,2014,Male,Rat,Temporary,2,3,22,,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",,,,Single,60,SubCut,2,,,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"
+Fig 6L??
+
+
+
+Potential Conflicts of Interest
+D.H.D.: funding, Wellcome Trust, MRC, GSK (no
+direct conflict of interest in the results of this research).
+N.J.R.: nonexecutive director of AstraZeneca (no involvement
+in this work).",15,,7,,7,,0.51,,0.7,,,1,other,other,,,,FALSE,FALSE,,FALSE,18.08,0.7,SM,,,,,FALSE,1,19185,FALSE,TRUE,1.349333169,1.852025918,23.75586565,-32.6060901,22,-3.92,-5.68,5.68,3.92,18.08,-5.68,-1.76,Isoflurane,18,Ligation,CresylViolet,30.98591549,15.24794255,1,Treatment,1.349333169,1.852025918,-23.75586565,-32.6060901,1.620293183,-1.76,0.866083137,8,250,300,,
+1011,Neurological deficit,Motor/sensory,worse,2.17,1.17,90,46.08294931,16.08068241,14.56481178,77.60108684,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6D   Pneumo,,,corrected,Peripheral,Protein,,18726,24,100,17,Blood/plasma biomarkers,C57BL/6J,,810,FALSE,mg/kg,,,b,Anti-Inflammatory,9,6,100,53.91705069,47801,Full Publication,TRUE,18726,Focal,2014,Male,Mouse,Temporary,2,15,22,,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",,,,Single,30,IPeritoneal,20,,,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"
+Fig 6L??
+
+
+Potential Conflicts of Interest
+D.H.D.: funding, Wellcome Trust, MRC, GSK (no
+direct conflict of interest in the results of this research).
+N.J.R.: nonexecutive director of AstraZeneca (no involvement
+in this work).",15,,6,,6,,,0.75,,0.41,,1,other,other,,,,FALSE,FALSE,,FALSE,1.17,0.167381799,SM,,,,,FALSE,1,19184,FALSE,TRUE,0.75,0.41,34.56221198,18.89400922,0,1.17,2.17,2.17,1.17,2.17,2.17,1,Isoflurane,17,Intraluminal filament/suture,Nissl,46.08294931,16.08068241,1,Treatment,0.75,0.41,34.56221198,18.89400922,0.604400529,1,0.348950808,,,,,
+1011,Neurological deficit,Motor/sensory,worse,1.14,1,90,12.28070175,25.8405288,-38.3667347,62.92813821,IL1-RA,Unknown,NeurobehaviouralScore,Fig 6D  Control,,,corrected,Peripheral,Protein,,18726,24,100,17,Blood/plasma biomarkers,C57BL/6J,,810,FALSE,mg/kg,,,a,Anti-Inflammatory,9,7,100,87.71929825,47800,Full Publication,TRUE,18726,Focal,2014,Male,Mouse,Temporary,2,15,22,,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",,,,Single,30,IPeritoneal,2,,,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,"
+Fig 6L??
+
+
+Potential Conflicts of Interest
+D.H.D.: funding, Wellcome Trust, MRC, GSK (no
+direct conflict of interest in the results of this research).
+N.J.R.: nonexecutive director of AstraZeneca (no involvement
+in this work).",15,,7,,6,,,0.38,,0.63,,0,other,other,,,,FALSE,FALSE,,FALSE,1,0.257196423,SM,,,,,FALSE,1,19184,FALSE,TRUE,0.38,0.63,33.33333333,55.26315789,0,1,1.14,1.14,1,1.14,1.14,0.14,Isoflurane,17,Intraluminal filament/suture,Nissl,12.28070175,25.8405288,1,Treatment,0.38,0.63,33.33333333,55.26315789,0.509090097,0.14,0.283231583,,25,30,,
+1012,Sucrose consumption,Social interaction/anxiety/depression,better,1.929501507,3.104225928,8640,48.56395635,22.07067268,5.305437898,91.82247481,IL1-RA,Spontaneous,NeurobehaviouralScore,Fig 3,4.348423912,,corrected,Central,Protein,,13130,168,12.96,17,None,C57BL/6,,1206,FALSE,microg/microl L,,,a,Anti-Inflammatory,4,8,100,51.43604365,47812,Full Publication,TRUE,13182,Focal,2006,Male,Mouse,Temporary,1,1,,,"National Institute
+of Neurological Disorders and Stroke (NINDS) (40267) and the
+American Heart Association (Established Investigator Award, to
+ACD).",8,,,Multiple,60,ICerebVentricular,2,,,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,"Outcomes completed
+
+Dose?",210,,8,,9,,0.489472837,,0.213157526,,,1,other,other,,,,FALSE,FALSE,,FALSE,3.104225928,0.213157526,SM,,,,,FALSE,1,19189,FALSE,TRUE,1.384438249,0.639472578,57.23367753,-26.43625842,4.348423912,-1.244197984,-2.418922405,2.418922405,1.244197984,3.104225928,-2.418922405,-1.174724421,Halothane,17,Intraluminal filament/suture,TTC,48.56395635,22.07067268,1,Treatment,1.384438249,0.639472578,-57.23367753,-26.43625842,1.054769684,-1.174724421,0.51252594,12.5,22,30,,
