@@ -47,14 +47,14 @@ knitr::opts_knit$set(root.dir = normalizePath("."))
 ## Welcome
 
 This web-based tutorial complements the workshop: <a href="https://www.bihealth.org/en/translation/innovation-enabler/quest-center/mission-approaches/education-and-training/how-to-conduct-a-preclinical-animal-systematic-review-and-meta-analysis" target="_blank" rel="noopener noreferrer">
-"Introduction to Systematic Review & Meta-Analysis of Animal Studies" 
+Introduction to Systematic Review & Meta-Analysis of Animal Studies 
 </a>
 
 <br>
 We will use the R programming language to work through a meta-analysis of animal data but you do not need any previous experience using R to complete the tutorial.  
 <br>
 
-We will use example data from the publication:
+For the tutorial, we will use example data from the publication:
 
 <p><a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">
 
@@ -66,23 +66,26 @@ We will use example data from the publication:
 
 **Background information on the data set: **
 <br>
-Interleukin-1 receptor antagonist (IL-1RA) is an anti-inflammatory protein used clinically to treat rheumatoid arthritis and is considered a promising candidate therapy for stroke. In this systematic review and meta-analysis, we seek to assess the efficacy of IL-1RA in animal models of ischaemic stroke, the range of conditions under which efficacy has been tested, and whether the data appear to be confounded due to reported study quality and publication bias. The outcomes we will assess are post-stroke infarct volume (brain damage), mortality, and neurobehavioural outcomes e.g. motor deficits.
+Interleukin-1 receptor antagonist (IL-1RA) is an anti-inflammatory protein used clinically to treat rheumatoid arthritis and is considered a promising candidate therapy for stroke. In this systematic review and meta-analysis, we sought to assess the efficacy of IL-1RA in animal models of ischaemic stroke, the range of conditions under which efficacy has been tested, and whether the data appear to be confounded due to reported study quality and publication bias. The outcomes we will assess in this tutorial are post-stroke infarct volume (brain damage), mortality, and neurobehavioural outcomes e.g. motor deficits, in IL-1RA treated vs. control animals.
 
 
 
-## Contents{#meta-analysis}
+## Overview{#meta-analysis}
 
-We will analyse the effect of IL-1Ra treatment on each of our three outcomes (infarct volume, mortality, and neurobehaviour) separately. 
+We will analyse the effect of IL-1RA treatment on each of our three outcomes (infarct volume, mortality, and neurobehaviour) separately. 
 
 For infarct volume and mortality, all of the R code is provided and you just need to click on the blue **Run Code** button on the top right of each code chunk to see the results.
 
 For neurobehaviour, you will have the opportunity to write your own code to analyse the data set provided.
 
-The tutorial comprises five main sections, each with multiple-choice questions to test your understanding:
+Within each section there are multiple-choice questions to test your understanding. If you answer a question incorrectly the first time, you can click the orange **Try Again** button.
+
+The tutorial comprises five main sections:
 <br>
+
 **1.  Meta-analysis of continuous data** (infarct volume)
 
-In the first section of the tutorial we will cover the steps of a meta-analysis of continuous data: 
+In the first section of the tutorial we will cover the steps to meta-analyse continuous data: 
 <br>
   1.1  Calculating effect sizes
 <br>
@@ -96,13 +99,18 @@ In the second section of the tutorial we will look at the binary outcome, mortal
 
 **3.  Test your skills: meta-analysis** (neurobehaviour)
 
-In this section we will provide you with the data set describing neurobehavioural outcomes (continuous data) and prompts to insert code to analyse the data. 
+In this section we provide you with the data set describing neurobehavioural outcomes (continuous data) and prompts to insert code to analyse the data. 
 
-You can copy and edit the code provided in Part 1 to perform the analyses. If you are unsure about what code to use, you can use the **Hint** button. You can compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. 
+You can copy and edit the code provided in Part 1 to perform the analyses. If you are unsure about what code to use, use the **Hint(s)** button. You can compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. 
 
-**4.  Small study effects**
+**4.  Small study effects** (infarct volume)
 
-**5.  Test your skills: small study effects**
+In this section we will assess the infarct volume data set for the presence of small study effects using funnel plot-based methods.
+
+**5.  Test your skills: small study effects** (neurobehaviour)
+
+Lastly, you will have the opportunity to apply your skills in assessing small study effects using the neurobehavioural data set.
+
 
 <br>
 For further information on systematic review and meta-analysis of animal studies, please see the <a href="http://camarades.de/intro.html" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page.</a>
@@ -458,7 +466,7 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
   question("How is the random effects model different to the fixed effect model and why? (check the model estimates and weights (%W))",
     answer("The random effects estimate is less precise because it assigns a wider range of weights to the individual studies"),
     answer("The random effects model estimates a higher effect size because it gives more weight to higher quality studies"),
-    answer("The fixed effect model estimates a mean of a distribution of effects while the random effects model estimates a common underying effect size"),
+    answer("The fixed effect model estimates a mean of a distribution of effects while the random effects model estimates a common underlying effect size"),
     answer("The fixed effect model assumes the only reason the effect size varies between studies is due to sampling error and assigns more weight to more precise studies", correct = TRUE),
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -743,7 +751,7 @@ quiz(caption = "Questions:",
   question("What does R^2 tell us?",
     answer("The proportion of heterogenity accounted for by the variable **Blinded induction of ischaemia**", correct = TRUE),
     answer("The proportion of heterogenity accounted for by failing to report blinded induction of ischaemia"),
-    answer("The proportion of heterogenity accounted for by reporting blinded induction of ischaemia"),
+    answer("The proportion of heterogenity accounted for by studies that did report blinded induction of ischaemia"),
     answer("The proportion of heterogeneity that remains in the data set"),
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -1246,40 +1254,51 @@ quiz(caption = "Questions:",
 ```
 
 
-## 3.  Test you skills: meta-analysis 
+## 3.  Test your skills: meta-analysis 
 
-Now you can explore the data set for neurobehavioural outcomes on your own.
-We have only included experiments where IL-1RA was administered in protein form and motor / sensory outcomes were assessed.
+Now you can explore the data set for neurobehavioural outcomes by writing your own code. We have only included experiments where IL-1RA was administered in protein form and motor / sensory outcomes were assessed.
 
 In this data set, a normalised mean difference effect size (column ESi) and standard error (column SEi) have already been calculated for each experiment. 
 
-You can edit the code we used for the infarct volume data above and compare your results to those in the paper (McCann et al 2016).
+You can edit the code we used to analyse the infarct volume data above and compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>.
 
 ```{r ex1_4_setup, include = FALSE}
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
 
-#neurobehMA <- metagen(
+```
+
+```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=10}
+# load and view the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+
+
+```
+
+
+```{r ex1_4_2_setup, include = FALSE}
+neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
+
+neurobehMA <- metagen(
 #  # specify the variable that contains the effect size for each 
 #  # experiment 
-#  ESi,  
+  ESi,  
 #  
 #  # specify the variable that contains the standard error for each 
 #  # experiment
-#  SEi,  
+  SEi,  
 #  
 #  # specify the data set
-#  data = neurobeh,  
+  data = neurobeh,  
 #  
 #  # specify the study labels
-#  studlab = Study.ID,  
+  studlab = Study.ID,  
 #  
 #  # specify a random effects model
-#  comb.random = TRUE,  
+  comb.random = TRUE,  
 #  
-#  # specify which method is used to estimate the between-study 
-#  # variance τ^2, restricted maximum-likelihood (REML) estimator
-#  method.tau = "REML",  
-#)
+  # specify which method is used to estimate the between-study 
+  # variance τ^2, restricted maximum-likelihood (REML) estimator
+  method.tau = "REML"  
+)
 #
 #neurobehFor <- forest(
 #  # specify the meta-analysis to plot
@@ -1326,21 +1345,16 @@ neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-
 #)
 ```
 
-```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
-# load the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
-
-
-```
-
-
 ```{r ex1_4_1-hint-1}
-# load the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+# load and view the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
 neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
+
+View(neurobeh)
 ```
 
 
-Then, perform a random-effects meta-analysis
-```{r ex1_4_2, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
+Then, perform a random-effects meta-analysis.
+```{r ex1_4_2, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=30}
 
 
 # use the function "metagen"
@@ -1367,13 +1381,19 @@ neurobehMA <- metagen(
   # specify a random effects model
   comb.random = TRUE,  
   
+  # specify not to print the fixed effect model
+  comb.fixed = FALSE,
+  
   # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
-  method.tau = "REML",  
+  method.tau = "REML"  
 )
+
+ # view the meta-analysis
+neurobehMA
 ```
 
 Next visualise the results of the meta-analysis with a forest plot. 
-```{r ex1_4_3, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
+```{r ex1_4_3, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_2_setup", exercise.lines=20}
 
 # Create a forest plot of the data using the function "forest".
 
@@ -1390,7 +1410,7 @@ neurobehFor <- forest(
   comb.fixed = FALSE,                           # do not plot the fixed effect estimate
   comb.random = TRUE,                           # plot the random effects estimate
   leftlabs = c("Study", "ES", "SE"),            # specify the labels for the left hand plot columns
-  xlab = "NMD (% reduction in infarct volume)", # specify the x axis label
+  xlab = "NMD (% improvement in neurobehavioural outcomes)", # specify the x axis label
   smlab = "NMD",                                # specify the effect size label
   label.right = "Favours IL-1RA",               # specify the graph label on right side of plot
   label.left = "Favours Control",               # specify the graph label on left side of plot
@@ -1409,20 +1429,12 @@ neurobehFor <- forest(
  ## - What effect does IL-1RA treatment have on neurobehavioural outcomes after stroke?
  ## - How much heterogeneity is in the data set?
   
-quiz(caption = "Questions:",
+quiz(caption = "Question:",
   question("What effect does IL-1RA treatment have on neurobehavioural outcomes after stroke?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("How much heterogeneity is in the data set?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Treatment with IL-1RA improves neurobehavioural outcomes overall but there is high heterogeneity in the data set that should be explored further", correct = TRUE),
+    answer("Treatment with IL-1RA significantly improves neurobehavioural outcomes with low heterogeneity in the data set"),
+    answer("Treatment with IL-1RA has no effect on neurobehavioural outcomes but there is high heterogeneity in the data set"),
+    answer("Treatment with IL-1RA results in highly heterogeneous effects and worsens outcome overall"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ))
@@ -1430,24 +1442,31 @@ quiz(caption = "Questions:",
 
 
 
+Next select some variables to investigate as possible sources of heterogeneity using the function "metareg" e.g. species, sex, dose, time of administration, route of drug delivery, use of comorbid animals, method of induction of ischaemia, type of ischaemia, anaesthetic used, time of assessment, single/ multiple administrations.
 
-Next select some variables to investigate as possible sources of heterogeneity using the function "metareg" e.g. species, sex, dose, time of administration, route of drug delivery, comorbidities, method of induction of ischaemia, type of ischaemia, anaesthetic used, time of assessment, single/ multiple administrations.
-```{r ex1_4_4, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=20}
+Remember that the variable name you use in your meta-regression model must match the column name in the data sheet. To see a list of all the column names, you can use the function "colnames".
+```{r ex1_4_4, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_2_setup", exercise.lines=30}
 # use the metareg() function
 
 
 ```
 
-
 ```{r ex1_4_4-hint-1}
-# Next select some variables to investigate as possible sources of heterogeneity using 
-# the function "metareg" e.g. species, sex, dose, time of administration, route of drug 
-# delivery, comorbidities, method of induction of ischaemia, type of ischaemia, anaesthetic 
-# used, time of assessment, single/ multiple administrations.
+
+# check the names of all the columns in the data set
+colnames(neurobeh)
+
+```
+
+```{r ex1_4_4-hint-2}
+
+# check the different levels of the variable and number of experiments in each
+table(neurobeh$Species)
+
 neurobehSpecies <- metareg(
   
   # specify the meta-analysis
-  neurobehMA2,   
+  neurobehMA,   
   
   # specify the experimental variable of interest
   ~ factor(Species)   
@@ -1467,35 +1486,19 @@ neurobehSpecies
 # * Why might it be important to analyse different types of outcomes (i.e. structural and functional)?
   
 quiz(caption = "Questions:",
-  question("Which variables are significant sources of heterogeneity and which are not?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("Which variables are significant sources of heterogeneity (p-value < 0.05) and which are not?",
+    answer("Significant: number of doses, route of drug delivery, and sex of the animals; non-significant: species, time of administration", correct = TRUE),
+    answer("Significant: number of doses, route of drug delivery, and type of anaesthetic; non-significant: sex and species of the animals"),
+    answer("Significant: route of drug delivery and sex of the animals; non-significant: dose of IL-1RA, use of comorbid animals, type of anaesthetic"),
+    answer("Significant: method of induction of ischaemia, route of drug delivery and sex of the animals; non-significant: time of outcome assessment, use of comorbid animals"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("How would you interpret these results in the context of translation?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("How do these results differ from the infarct volume results?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("Why might it be important to analyse different types of outcomes (i.e. structural and functional)?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("How might you interpret these results in the context of translation?",
+    answer("IL-1RA efficacy is maintained in comorbid animals and in animals assessed up to 28 days post-stroke, a positive indication when thinking about translation", correct = TRUE),
+    answer("IL-1RA is only effective in male animals so it should not be pursued further as a stroke therapy in humans"),
+    answer("IL-1RA efficacy is not maintained in comorbid animals and there is no dose response, negative indications for possible translation"),
+    answer("IL-1RA is effective at administration times >3h post-stroke (a clinically relevant timeframe) and study quality is high, positive indications for possible translation"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -1509,7 +1512,7 @@ Small study effects in meta-analysis can be assessed using a funnel plot, which 
 
 In this exercise, we will use the complete infarct volume data set and meta-analysis from the [first section of this exercise.]{#set-up}
 
-First, draw a funnel plot using the function "funnel". 
+First, draw a funnel plot using the function "funnel": 
 
 ```{r ex2_1, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVolFun <- funnel(
@@ -1531,14 +1534,14 @@ infarctVolFun <- funnel(
 
 ```{r quiz2_4_2, echo=FALSE}
 
-# Take a look at the funnel plot and answer the following questions:
+# Examine the funnel plot and answer the following questions:
 # 
 # * What does the short-dash vertical line represent?
 # * What do the longer-dash vertical and curved lines represent?
 # * Are the studies distributed symmetrically around the summary estimate?
 # * If there is asymmetry, where are studies "missing"? What might be a reason for this?
   
-quiz(caption = "Take a look at the funnel plot and answer the following questions:",
+quiz(caption = "Examine the funnel plot and answer the following questions:",
   question("What does the short-dash vertical line represent?",
     answer("The pooled random effects estimate", correct = TRUE),
     answer("The pooled fixed effect estimate"),
@@ -1547,27 +1550,27 @@ quiz(caption = "Take a look at the funnel plot and answer the following question
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What do the longer-dash vertical and curved lines represent?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("What do the longer-dash vertical and diagonal lines represent?",
+    answer("The idealised funnel-shape that we expect our studies to follow and the average effect size", correct = TRUE),
+    answer("The 95% confidence interval of where the studies should fall"),
+    answer("The funnel-shape indicating the limits of where studies should fall"),
+    answer("The pooled fixed effect estimate and 95% confidence interval"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Are the studies distributed symmetrically around the summary estimate?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("No, there are more studies with higher effect sizes and small standard errors than studies with lower effect sizes and small standard errors", correct = TRUE),
+    answer("No, there are more studies with lower effect sizes and low standard errors than any other study"),
+    answer("Yes, the studies with low standard errors are distributed fairly evenly around the summary effect"),
+    answer("No, the distribution of studies looks nothing like a funnel"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("If there is asymmetry, where are studies \"missing\"? What might be a reason for this?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("If there is asymmetry, what might be a reason for \"missing\" studies?",
+    answer("Missing studies on the bottom right of the plot might be due to the fact that small studies with small or negative effects often remain unpublished"),
+    answer("Missing studies on the top left of the plot might be due to the fact that studies with small or negative effects sometimes remain unpublished", correct = TRUE),
+    answer("Studies might be missing from the top left of the plot because they have small sample sizes so are probably unpublished pilot studies"),
+    answer("Studies might be missing from the bottom right of the plot because large effects sizes are rarely associated with large standard errors"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -1577,10 +1580,10 @@ quiz(caption = "Take a look at the funnel plot and answer the following question
 
 ### Funnel plot asymmetry
 
-In addition to assessing the funnel plot visually, we can test for asymmetry statistically. Here we will use the "Egger" test, based on a weighted linear regression of the treatment effect on its standard error.
+In addition to assessing the funnel plot visually, we can test for asymmetry statistically. Here we will use Egger's test, based on a weighted linear regression of the treatment effect on its standard error.
 
 
-Test for funnel plot asymmetry using the function "meta-bias"
+Test for funnel plot asymmetry using the function "meta-bias":
 ```{r ex2_2, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVolBias <- metabias(
  # specify the meta-analysis to analyse
@@ -1604,10 +1607,10 @@ infarctVolBias
 
 # Questions:
 #  
-# * Is there statistical evidence of funnel plot asymmetry using Egger regression?
+# * Is there statistical evidence of funnel plot asymmetry using Egger's regression?
   
 quiz(caption = "Question",
-  question("Is there statistical evidence of funnel plot asymmetry using Egger regression?",
+  question("Is there statistical evidence of funnel plot asymmetry using Egger's regression?",
     answer("Yes", correct = TRUE),
     answer("No", correct = TRUE),
     random_answer_order = TRUE,
@@ -1619,9 +1622,9 @@ quiz(caption = "Question",
 
 
 
-### Trim & Fill 
+### Trim and fill 
 
-We can also estimate and adjust for the number and outcomes of missing studies in a meta-analysis, using a method called trim-and-fill. 
+We can also estimate and adjust for the number and outcomes of missing studies in a meta-analysis, using a method called **trim and fill**. 
 We can test for and impute missing studies using the function "trimfill".
 
 ```{r ex2_3, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=16}
@@ -1657,8 +1660,6 @@ infarctVolTrimFun <- funnel(infarctVolTrim,
   # specify the measure plotted on the y axis, "invse" = inverse of the standard error
   yaxis = "se"  
 )
-
-infarctVolTrimFun
 ```
 
 ```{r quiz2_4_4, echo=FALSE}
@@ -1674,51 +1675,43 @@ infarctVolTrimFun
   
 quiz(caption = "Questions:",
   question("According to the trim and fill analysis, are there studies missing from the data set?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("Yes, 30 studies", correct = TRUE),
+    answer("Yes, 106 studies"),
+    answer("Yes, 105 studies"),
+    answer("No missing studies were detected"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("If yes, how many?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
-    allow_retry = TRUE
-  ),
-  question("What is the adjusted random effects summary estimate when these theoretically missing studies are included in the meta-analysis?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+  question("What is the adjusted random effects summary estimate and 95% CI when these theoretically missing studies are included in the meta-analysis?",
+    answer("21.73, [15.97; 27.49]", correct = TRUE),
+    answer("25.22, [20.71; 30.56]"),
+    answer("-2.46, [20.26; 25.67]"),
+    answer("20.65 [19.13; 22.16]"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("What happens to the heterogeneity estimates when missing studies are added?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("The estimates of heterogeneity have increased and remain significant", correct = TRUE),
+    answer("The estimates of heterogeneity have decreased and remain significant"),
+    answer("The estimates of heterogeneity have decreased and are no longer"),
+    answer("The estimates of heterogeneity have not changed"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("When taken together, what do the results of our funnel plot-based analyses tell us about the available data for infarct volume outcomes after treatment with IL-1RA?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
+    answer("All analyses suggest the presence of small study effects that should be investigated further", correct = TRUE),
+    answer("All analyses confirm the presence of publication bias in the data set and the efficacy of IL-1RA is likely overestimated"),
+    answer("Egger's test and trim and fill analyses confirm that studies are missing from the data set due to publication bias"),
+    answer("The analyses give diverging results and we cannot confirm anything about the available data"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What are some possible reasons for these results?",
-    answer("8", correct = TRUE),
-    answer("14"),
-    answer("1"),
-    answer("23"),
-    random_answer_order = TRUE,
+  question("What are some possible reasons for the results of these analyses?",
+    answer("Publication bias"),
+    answer("Heterogeneity"),
+    answer("Selective outcome reporting"),
+    answer("All of the above", correct = TRUE),
+    random_answer_order = FALSE,
     allow_retry = TRUE
   )
 )
@@ -1727,64 +1720,91 @@ quiz(caption = "Questions:",
 
 ## 5.  Test your skills: small study effects
 
+We have now explored the code to assess and visaulise small study effects in the context of systematic review and meta-analysis. 
 
+Next you will use neurobehavioural data to create a funnel plot, test for asymmetry, and impute missing studies using the "funnel, "metabias", and "trimfill" functions above. In part **3. Test your skills: meta-analysis** we used only those comparisons where IL-1RA was administered in protein form and motor / sensory outcomes were assessed. To assess for small study effects, we will use the entire neurobehavioural data set.
 
-We have covered the code and visualisation of investigating small study effects in the context of systematic review and meta-analysis. 
+We have provided the first part of the code, to perform the meta-analysis, below:
 
+```{r ex1_5_setup, include = FALSE}
+neurobeh2 <- read.csv("IL1-RA_Neurobehaviour_Prenest_Part1.5.csv", fileEncoding = "UTF-8-BOM")
 
-
-
-Now use the analyses from Test your skills - Meta-analysis to create a funnel plot, test for asymmetry and calculate missing studies in the neurobehavioural data set, using the "funnel, "metabias", and "trimfill" functions above.
-
-
-
-
-```{r ex2_5, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=80}
-# firstly load the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
-neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
-
-# Perform a random-effects meta-analysis using the function "metagen".
-neurobehMA <- metagen(
+neurobehMA2 <- metagen(
+  # specify the variable that contains the effect size for each 
+  # experiment 
   ESi,  
+ 
+  # specify the variable that contains the standard error for each 
+  # experiment
   SEi,  
-  data = neurobeh,  
-  studlab = Study.ID,  
+  
+  # specify the data set
+  data = neurobeh2,  
+  
+  # specify a random effects model
   comb.random = TRUE,  
+
+  # specify which method is used to estimate the between-study 
+  # variance τ^2, restricted maximum-likelihood (REML) estimator
   method.tau = "REML",  
 )
 
-# use the funnel() function to generate a funnel plot
-
-
-
-# use the metabias() to conduct funnel plot asymmetry analysis
-
-
-
-# 
 
 ```
 
-```{r ex2_5-hint-1}
+```{r ex2_5_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_5_setup", exercise.lines=30}
+
+# first, load the data set "IL1-RA_Neurobehaviour_Prenest_Part1.5.csv" using the function read.csv().
+neurobeh2 <- read.csv("IL1-RA_Neurobehaviour_Prenest_Part1.5.csv", fileEncoding = "UTF-8-BOM")
+
+# perform a random-effects meta-analysis using the function "metagen".
+neurobehMA2 <- metagen(
+  ESi,  
+  SEi,  
+  data = neurobeh2,  
+  comb.random = TRUE,
+  comb.fixed = FALSE,
+  method.tau = "REML"  
+)
+# view the results of the meta-analysis
+neurobehMA2
+
+# use the funnel() function to generate a funnel plot and visually assess the plot for asymmetry
+
+```
+
+
+
+```{r ex2_5_1-hint}
 neurobehFun <- funnel(
  # specify the meta-analysis to plot
- neurobehMA,  
+ neurobehMA2,  
  
  # plot the random effects estimate
  comb.random = TRUE,  
  
  # specify the x axis label
- xlab = "NMD (% reduction in neurobehavioural outcome)",  
+ xlab = "NMD (% improvement in neurobehavioural outcome)",  
  
- # specify the measure plotted on the y axis, "invse" = inverse of the standard error
- yaxis = "invse"   
+ # specify the measure plotted on the y axis, "se" = inverse of the standard error
+ yaxis = "se"   
 )
 ```
 
-```{r ex2_5-hint-2}
+```{r ex2_5_2, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_5_setup", exercise.lines=20}
+
+# use the metabias() function to test for funnel plot asymmetry 
+
+
+
+
+```
+
+
+```{r ex2_5_2-hint}
 neurobehBias <- metabias(
  # specify the meta-analysis to analyse
- neurobehMA,  
+ neurobehMA2,  
  
  # specify the method behind the test statistic
  method.bias = "Egger", 
@@ -1797,10 +1817,35 @@ neurobehBias <- metabias(
 neurobehBias
 ```
 
-```{r ex2_5-hint-3}
+```{r ex2_5_3, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_5_setup", exercise.lines=35}
+
+# use the trimfill() function to test for "missing" studies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# use the funnel() function to plot the filled data set 
+
+```
+
+```{r ex2_5_3-hint-1}
 neurobehTrim <- trimfill(
-  # specify the meta-analysis to plot
-  neurobehMA,
+  # specify the meta-analysis to assess
+  neurobehMA2,
   
   # specify the side of the plot where missing studies are expected
   left = TRUE,  
@@ -1816,38 +1861,58 @@ neurobehTrim <- trimfill(
 neurobehTrim 
 ```
 
-```{r ex2_5-hint-4}
+```{r ex2_5_3-hint-2}
 neurobehTrimFun <- funnel(neurobehTrim,
   # plot the random effects estimate
   comb.random = TRUE,  
   
   # specify the x axis label
-  xlab = "NMD (% reduction in neurobehavioural outcome)", 
+  xlab = "NMD (% improvement in neurobehavioural outcome)", 
   
-  # specify the measure plotted on the y axis, "invse" = inverse of the standard error
-  yaxis = "invse"  
+  # specify the measure plotted on the y axis, "se" = inverse of the standard error
+  yaxis = "se"  
 )
 ```
+
+```{r quiz2_4_5, echo=FALSE}
+
+# Questions:
+# 
+# * What do the results of the analyses for small study effects tell us about the neurobehavioural data set?
+  
+quiz(caption = "Question:",
+  question("What do the results of the analyses for small study effects tell us about the neurobehavioural data set?",
+    answer("There is statistically significant evidence for funnel plot asymmetry and missing studies in the data set but the overall efficacy of IL-1RA is not shifted greatly when these missing studies are added", correct = TRUE),
+    answer("There is no statistically significant evidence of funnel plot asymmetry but there are missing studies detected via trim and fill, evidence of publication bias"),
+    answer("There is evidence of statistically significant funnel plot asymmetry and the addition of missing studies leads to a large reduction in the estimated efficacy of IL-1RA"),
+    answer("There is strong evidence for publication bias and a significant number of studies missing from the data set"),
+    random_answer_order = TRUE,
+    allow_retry = TRUE
+  )
+)
+```
+
+
 
 ## About CAMARADES
 
 
 
-The materials presented here have been developed by CAMARADES Berlin. CAMARADES (Collaborative Approach to Meta-Analysis and Review of Animal Data from Experimental Studies) provide a supporting framework for researchers to systematically review data from experimental animal studies, including best practice methodological assistance and access to collaborative tools such as our online review facility, [SyRF](http://syrf.org.uk/){target="_blank"}. 
+The materials presented here have been developed by CAMARADES Berlin. CAMARADES (Collaborative Approach to Meta-Analysis and Review of Animal Data from Experimental Studies) provide a framework to support researchers perform systematic reviews of data from experimental animal studies. This support includes best practice methodological assistance and access to collaborative tools such as our online review facility, [SyRF](http://syrf.org.uk/){target="_blank"}. 
 
-We have put together this tutorial to guide your through your preclinical meta-analysis. These resources have been put together using many CC-BY-4.0 sources including; [Viechtbauer, W. (2010). Conducting meta-analyses in R with the metafor package. Journal of Statistical Software, 36(3), 1-48.](https://doi.org/10.18637/jss.v036.i03){target="_blank"}. 
+We have put together this tutorial to guide you through a preclinical meta-analysis. This resource has been created using CC-BY-4.0 sources including; [Viechtbauer W. Conducting meta-analyses in R with the metafor package. *Journal of Statistical Software* 36(3), 1-48 (2010)](https://doi.org/10.18637/jss.v036.i03){target="_blank"}. 
    
   
 This resource was last updated on: `r format(Sys.time(), '%d %B, %Y')`
 
-If you have questions about the resources, or would like to ask a question about your specific review, get in touch: [Email us here](mailto:CAMARADES.berlin@charite.de)
+If you have questions about this resource, or would like to seek support for your systematic review, please [email us here](mailto:CAMARADES.berlin@charite.de).
 
-This resource is supported by Charité 3Rs. For more information about 3Rs at Charité – Universitätsmedizin Berlin, visit the [Charité 3Rs Toolbox](https://charite3r.charite.de/en/charite_3r_toolbox/){target="_blank"}. 
+This resource is supported by Charité 3R. For more information about the 3Rs at Charité – Universitätsmedizin Berlin, visit the [Charité 3R Toolbox](https://charite3r.charite.de/en/charite_3r_toolbox/){target="_blank"}. 
 <center>
 ![](images/C3R_Screen_Farbe.jpg){#id .class width=20%} 
 
 <br>
 
-CAMARADES Berlin are located in the QUEST Center, Berlin Institute for Health
+CAMARADES Berlin are located at the QUEST Center for Responsible Research, Berlin Institute of Health (BIH) at Charité
 <center>
 ![](images/charite-BIHquest.jpg){#id .class width=30%}
