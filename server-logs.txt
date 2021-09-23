@@ -1,0 +1,29 @@
+
+20210915-074852-42438
+
+su: ignoring --preserve-environment, it's mutually exclusive with --login
+Loading required package: learnr
+Loading required package: meta
+Loading 'meta' package (version 4.18-2).
+Type 'help(meta)' for a brief overview.
+Loading required package: metafor
+Loading required package: Matrix
+
+ 
+
+Loading the 'metafor' package (version 3.0-2). For an
+introduction to the package please type: help(metafor)
+
+ 
+
+
+Listening on http://127.0.0.1:42438
+Quitting from lines 3-22 (exercise.Rmd)
+Warning in selectChildren(jobs, timeout) :
+  cannot wait for child 907 as it does not exist
+Quitting from lines 3-22 (exercise.Rmd)
+Warning in selectChildren(jobs, timeout) :
+  cannot wait for child 919 as it does not exist
+Quitting from lines 3-22 (exercise.Rmd)
+Warning in selectChildren(jobs, timeout) :
+  cannot wait for child 931 as it does not exist
