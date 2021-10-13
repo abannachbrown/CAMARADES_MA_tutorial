@@ -1,0 +1,182 @@
+﻿study_id,drug,outcome_measure,drug_delivery_mode,unit,species,type_of_ischaemia,route_of_delivery,control_group_n,treatment_group_n,dose,number_of_doses,time_of_administration,drug_delivery_location,outcome_measure_type,funding_source,method_of_mcao,sex,strain,anaesthetic,comorbidity,random_allocation,blinded_induction_of_ischaemia,blinded_assessment_of_outcome,use_of_comorbid_animals,sample_size_calculation,animal_welfare_compliance,statement_of_potential_coi,time_of_assessment,ESi,SEi
+Garcia 1995a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Permanent,IVenous,5,4,400,Multiple,0,peripheral,Neurological deficit score 3-18,unknown,Intraluminal filament/suture,Male,Wistar,Ketamine,None,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,168,53.18091451,24.38351748
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,latency of first interaction,"CIHR, WT, University of Manchester, GASM & MRC",Intraluminal filament/suture,Male,Wistar,Isofluorane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,108.8737201,55.63532514
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,latency of first interaction,"CIHR, WT, University of Manchester, GASM & MRC",Intraluminal filament/suture,Male,Wistar,Isofluorane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,59.38566553,72.55550478
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,time spent interacting,"CIHR, WT, University of Manchester, GASM & MRC",Intraluminal filament/suture,Male,Wistar,Isofluorane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,116.9819079,59.30050444
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,time spent interacting,"CIHR, WT, University of Manchester, GASM & MRC",Intraluminal filament/suture,Male,Wistar,Isofluorane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-23.60197368,37.81739222
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,latency to first float,"CIHR, WT, University of Manchester, GASM & MRC",Intraluminal filament/suture,Male,Wistar,Isofluorane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-1.26413839,85.07877207
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,latency to first float,"CIHR, WT, University of Manchester, GASM & MRC",Intraluminal filament/suture,Male,Wistar,Isofluorane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,92.41516966,104.3597005
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,Hargreaves test,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,23.52941176,13.86592624
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,Hargreaves test,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,9.302325581,14.18563536
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Horizontal,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,41.17647059,65.02803312
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Horizontal,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,41.37931034,63.46442382
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Horizontal,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,560,623.7712563
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Vertical activity,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,-24,63.78833626
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Vertical activity,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,138.8646288,33.90850383
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Vertical activity,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,54.28571429,72.22812998
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Anxiety,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,90.24390244,32.09962214
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Anxiety,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,48.73417722,34.4661814
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Anxiety,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,100,52.72297303
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Anxiety,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,0,141.6983817
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Anxiety,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,98.33333333,107.2017319
+Clausen 2016e,IL1-RA,NeurobehaviouralScore,IL-1 RA Tg BM cells,cells,Mouse,Temporary,IVenous,15,17,10000000,Single,30,Peripheral,OFT - Anxiety,Multiple see paper,Intraluminal filament/suture,Male,,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,24,54.54545455,13.0813988
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,74.46342532,42.04952205
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,0,58.13707765
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,100.5025126,90.30882069
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,0,96.64017071
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,100,94.25733393
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,100,94.25733393
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,93.57798165,84.59912053
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,70.64220183,85.9075026
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,100,79.02601108
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,56.22317597,81.02155153
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,100,85.76520959
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,100,85.76520959
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,97.04433498,92.63287129
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,94.08866995,92.77422439
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,72.24489796,76.69107271
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,72.24489796,75.24362209
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,35.25407245,34.26933247
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,21.63870654,31.23055523
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,49.6969697,25.97156514
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-0.404040404,22.80770978
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,57.4301676,36.63700719
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,0.223463687,36.97672808
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,85.00417711,26.51982414
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,44.06850459,26.56757457
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,80.86622807,45.70552424
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled reaching,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-13.98026316,40.63474471
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,205.1282051,62.23983896
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-146.6666667,163.6773417
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,50.68493151,204.7462526
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,130.1369863,159.5281952
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-136.7989056,448.5252069
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,-752.3939808,398.8339189
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,216.6377816,216.6377816
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,259.965338,106.1091854
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,122.745098,69.10623363
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,5.098039216,83.4329278
+Girard 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,0,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,172.0338983,102.6161928
+Girard 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,5,100,Single,1440,Peripheral,Skilled walking,Multiple see paper,Intraluminal filament/suture,Male,Wistar,Isoflurane,None,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,600,92.37288136,144.9652189
+McColl 2007a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,IPeritoneal,6,6,300,Multiple,-30,Peripheral,Neurological deficit,"Medical Research Council, United Kingdom",Intraluminal filament/suture,Unknown,C57BL/6J,Halothane,None,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,24,-17,16.73817991
+McColl 2007b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,IPeritoneal,7,6,300,Multiple,-30,Peripheral,Neurological deficit,"Medical Research Council, United Kingdom",Intraluminal filament/suture,Unknown,C57BL/6J,Halothane,LPS injection,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,24,25,19.13594847
+Xia 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,5,Single,180,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,12.01671891,5.936419072
+Xia 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,10,Single,180,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,22.3615465,8.134781138
+Xia 2014c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,20,Single,180,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,45.97701149,6.088063411
+Xia 2014d,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,5,Single,360,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,19.57446809,8.255209475
+Xia 2014e,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,10,Single,360,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,31.80851064,8.017070967
+Xia 2014f,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,20,Single,360,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,40.42553191,9.983122924
+Xia 2014g,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,5,Single,720,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,22.21018418,13.47310346
+Xia 2014h,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,10,Single,720,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,19.50162514,9.09185449
+Xia 2014i,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,IVenous,5,5,20,Single,720,Peripheral,Neurological deficit,Unknown,Intraluminal filament/suture,Male,Wistar,Unknown,None,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,24,24.05200433,7.662800287
+Pradillo 2016a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,10,50,Multiple,270,Peripheral,Behaviour test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,58.33333325,15.30931089
+Pradillo 2016a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,10,50,Multiple,270,Peripheral,motor,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,66.66666667,17.15746771
+Pradillo 2016b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,9,9,25,Multiple,270,Peripheral,Behaviour test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged Corpulent,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,53.99999996,14.45683228
+Pradillo 2016b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,9,9,25,Multiple,270,Peripheral,motor,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged Corpulent,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,56.00000001,11.3137085
+Pradillo 2016a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,10,50,Multiple,270,Peripheral,Cylinder test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,45.16128165,37.46064268
+Pradillo 2016a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,10,50,Multiple,270,Peripheral,Cylinder test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,119.9999673,203.7363429
+Pradillo 2016b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,9,9,25,Multiple,270,Peripheral,Cylinder test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged Corpulent,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,-32.38095901,54.90457617
+Pradillo 2016b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,9,9,25,Multiple,270,Peripheral,Cylinder test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged Corpulent,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,16.83167523,33.66335045
+Pradillo 2016a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,10,10,50,Multiple,270,Peripheral,motor,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,-128.8890246,257.4799904
+Pradillo 2016b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,9,9,25,Multiple,270,Peripheral,motor,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,,Isoflurane,Aged Corpulent,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,168,13.83363406,12.17588867
+Pradillo 2016c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,8,8,100,Multiple,270,Peripheral,motor,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,Wistar,Isoflurane,None,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,672,50,54.00617248
+Pradillo 2016c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,8,8,100,Multiple,270,Peripheral,Cylinder test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,Wistar,Isoflurane,None,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,672,248.0000423,284.1201498
+Pradillo 2016c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,8,8,100,Multiple,270,Peripheral,Cylinder test,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,Wistar,Isoflurane,None,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,672,63.26528379,180.5759653
+Pradillo 2016c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,8,8,100,Multiple,270,Peripheral,motor,"This work was supported by an Investing in Success grant from the University of
+Manchester; by the MRC grant G0802001/1 (UK) and by grants SAF2014-52225-R and
+SAF2015-68632-R from the Spanish Ministry of Economy and Innovation.",Ligation,Male,Wistar,Isoflurane,None,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,672,688.6653013,662.2142771
+Denes 2014a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,IPeritoneal,7,6,100,Single,90,Peripheral,Neurological deficit,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",Intraluminal filament/suture,Male,C57BL/6J,Isoflurane,None,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,24,12.28070175,25.8405288
+Denes 2014b,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,IPeritoneal,6,6,100,Single,90,Peripheral,Neurological deficit,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",Intraluminal filament/suture,Male,C57BL/6J,Isoflurane,Pneumonia,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,24,46.08294931,16.08068241
+Denes 2014c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,7,7,100,Single,120,Peripheral,Neurological deficit,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",Ligation,Male,Wistar,Isoflurane,None,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,24,30.98591549,15.24794255
+Denes 2014d,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Rat,Temporary,SubCut,7,6,100,Single,120,Peripheral,Neurological deficit,"Funding was provided by the Medical Research Council
+(NJR MRC Research Professorship; S.M.A.) and the
+European Union’s Seventh Framework Programme (FP7/
+2008-2013) under grant agreements 201024 and 202213
+(European Stroke Network; N.J.R., A.D.).",Ligation,Male,Wistar,Isoflurane,Pneumonia,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,24,47.68683274,10.02425122
+Maysami 2015a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,SubCut,7,7,200,Multiple,30,Peripheral,Neurological deficit,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",Intraluminal filament/suture,Male,C57BL/6,Isoflurane,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,168,55.64202335,12.89257874
+Maysami 2015a,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,SubCut,7,7,200,Multiple,30,Peripheral,Corner test,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",Intraluminal filament/suture,Male,C57BL/6,Isoflurane,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,168,91.36363636,19.03654735
+Craft 2006a,IL1-RA,NeurobehaviouralScore,Protein,µg,Mouse,Temporary,ICerebVentricular,8,9,6,Multiple,8640,Central,Sucrose consumption,"National Institute
+of Neurological Disorders and Stroke (NINDS) (40267) and the
+American Heart Association (Established Investigator Award, to
+ACD).",Intraluminal filament/suture,Male,C57BL/6,Halothane,None,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,168,48.56395635,22.07067268
+Maysami 2015c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Permanent,SubCut,13,14,200,Multiple,30,Peripheral,Neurological deficit,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",electrocoagulation,Male,Balb/c,Isoflurane,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,168,80,10.90164823
+Maysami 2015c,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Permanent,SubCut,11,12,200,Multiple,30,Peripheral,Corner test,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",electrocoagulation,Male,Balb/c,Isoflurane,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,168,40,13.93111843
+Maysami 2015d,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Permanent,SubCut,14,14,200,Multiple,30,Peripheral,Neurological deficit,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",electrocoagulation,Male,Balb/c,Isoflurane,Aged,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,672,72.88629738,13.4056451
+Maysami 2015d,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Permanent,SubCut,15,14,200,Multiple,30,Peripheral,Corner test,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",electrocoagulation,Male,Balb/c,Isoflurane,Aged,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,672,15.77777778,16.14767972
+Maysami 2015f,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,SubCut,6,6,200,Multiple,30,Peripheral,Neurological deficit,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",Intraluminal filament/suture,Male,C57BL/6,Isoflurane,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,24,51.33819951,10.59607938
+Maysami 2015g,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Temporary,SubCut,9,7,200,Multiple,30,Peripheral,Neurological deficit,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",Intraluminal filament/suture,Male,C57BL/6,Isoflurane,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,24,59.03873745,6.868955362
+Maysami 2015j,IL1-RA,NeurobehaviouralScore,Protein,mg/kg,Mouse,Permanent,SubCut,11,12,200,Multiple,30,Peripheral,Corner test,"European Union’s Seventh Framework Programme (FP7/
+2008-2013), the Medical Research Council, INSERM, the
+University of Caen, the Regional Council of Lower
+Normandy and the Deutsche Forschungsgemeinschaft
+(grant SCHW 416/7-1).",electrocoagulation,Male,C57BL/6,Tribromoethanol,None,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,168,20,287.7498914

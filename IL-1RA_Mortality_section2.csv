@@ -1,0 +1,11 @@
+study_id,drug,number_affected_in_control_group,number_affected_in_treatment_group,control_group_n,treatment_group_n,outcome_measure,blinded_assessment_of_outcome,blinded_induction_of_ischaemia,method_of_mcao,random_allocation,sample_size_calculation,sex,type_of_ischaemia,comorbidity,dose,unit,time_of_administration,time_of_assessment
+Maysami 2015a,IL-1RA,0,1,10,8,Mortality,TRUE,TRUE,Intraluminal filament/suture,TRUE,FALSE,Male,Temporary,None,200,mg/kg,30,168
+Maysami 2015b,IL-1RA,1,2,16,16,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,Aged,200,mg/kg,30,672
+Maysami 2015c,IL-1RA,1,1,12,15,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,None,200,mg/kg,30,168
+Maysami 2015d,IL-1RA,0,2,15,16,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,Aged,200,mg/kg,30,672
+Maysami 2015e,IL-1RA,0,0,6,6,Mortality,TRUE,TRUE,Intraluminal filament/suture,TRUE,FALSE,Male,Temporary,None,200,mg/kg,30,168
+Maysami 2015f,IL-1RA,0,0,9,9,Mortality,TRUE,TRUE,Intraluminal filament/suture,TRUE,FALSE,Male,Temporary,None,200,mg/kg,30,168
+Maysami 2015g,IL-1RA,0,0,5,6,Mortality,TRUE,TRUE,thrombin,TRUE,FALSE,Male,Thrombotic,None,200,mg/kg,30,168
+Maysami 2015h,IL-1RA,0,0,7,8,Mortality,TRUE,TRUE,thrombin,TRUE,FALSE,Male,Thrombotic,None,200,mg/kg,30,168
+Maysami 2015i,IL-1RA,8,6,19,18,Mortality,TRUE,TRUE,electrocoagulation,TRUE,FALSE,Male,Permanent,None,200,mg/kg,30,168
+Garcia 1995a,IL-1RA,2,1,13,13,Mortality,TRUE,FALSE,Intraluminal filament/suture,FALSE,FALSE,Male,Permanent,None,400,mg/kg,0,168

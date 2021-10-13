@@ -1,6 +1,6 @@
 ---
 title: "CAMARADES Berlin Meta-Analysis Tutorial"
-output:
+output: 
   learnr::tutorial:
     progressive: true
     allow_skip: true
@@ -30,12 +30,15 @@ description: >
 # require('meta')
 # require('metafor')
 # require('tidyverse')
+# require('kableExtra')
 
 
 library(learnr)
 library(tidyverse)
 library(meta)
 library(metafor)
+library(kableExtra)
+
 
 # tutorial_options(exercise.timelimit = 60)
 knitr::opts_chunk$set(error = TRUE)
@@ -47,11 +50,10 @@ knitr::opts_knit$set(root.dir = normalizePath("."))
 ## Welcome
 
 This web-based tutorial complements the workshop: <a href="https://www.bihealth.org/en/translation/innovation-enabler/quest-center/mission-approaches/education-and-training/how-to-conduct-a-preclinical-animal-systematic-review-and-meta-analysis" target="_blank" rel="noopener noreferrer">
-Introduction to Systematic Review & Meta-Analysis of Animal Studies 
-</a>
-
+Introduction to Systematic Review & Meta-Analysis of Animal Studies</a>
 <br>
-We will use the R programming language to work through a meta-analysis of animal data but you do not need any previous experience with R to complete the tutorial.
+
+We will use the R programming language to work through a meta-analysis of animal data but you do not need to have used R previously to complete the exercises.
 <br>
 
 For the tutorial, we will use example data from the publication:
@@ -74,34 +76,42 @@ Interleukin-1 receptor antagonist (IL-1RA) is an anti-inflammatory protein used 
 
 We will analyse the effect of IL-1RA treatment on each of our three outcomes (infarct volume, mortality, and neurobehaviour) separately. 
 
-For infarct volume and mortality, all of the R code is provided and you just need to click on the blue **Run Code** button on the top right of each code chunk to see the results.
+For infarct volume and mortality, all of the R code is provided and you just need to click on the blue **Run Code** button on the top right of each code chunk to view and interpret the results.
 
 For neurobehaviour, you will have the opportunity to write your own code to analyse the data set provided.
 
-Within each section there are multiple-choice questions to test your understanding. If you answer a question incorrectly the first time, you can click the orange **Try Again** button.
+Within each section, there are multiple-choice questions to test your understanding. If you answer a question incorrectly the first time, you can click the orange **Try Again** button.
 
-The tutorial comprises five main sections:
+The tutorial comprises five main sections and at the end of the first three sections are data dictionaries describing the variables included in each data set:
 <br>
 
 **1.  Meta-analysis of continuous data** (infarct volume)
 
 In the first section of the tutorial we will cover the steps to meta-analyse continuous data: 
 <br>
-  1.1  Calculating effect sizes
+  **1.1**  Calculating effect sizes using normalised mean difference (NMD)
 <br>
-  1.2  Performing a random effects meta-analysis
+  **1.2**  Performing a random effects meta-analysis
 <br>
-  1.3  Exploring heterogeneity
-
+  **1.3**  Exploring heterogeneity using univariable meta-regression
+<br>
+  **1.4** Data dictionary: infarct volume 
+  
 **2.  Meta-analysis of binary data** (mortality)
 
-In the second section of the tutorial we will look at the binary outcome, mortality, calculate effect sizes and perform a random effects meta-analysis.
+In the second section we will look at the binary outcome, mortality, calculate odds ratio effect sizes and perform a random effects meta-analysis.
+<br>
+
+  **2.1** Data dictionary: mortality
 
 **3.  Test your skills: meta-analysis** (neurobehaviour)
 
-In this section we provide you with the data set describing neurobehavioural outcomes (continuous data) and prompts to insert code to analyse the data. 
+In this section we provide you with a data set that describes neurobehavioural outcomes (continuous data) from the studies included in the systematic review, along with prompts to insert code to analyse the data. 
 
-You can copy and edit the code provided in Part 1 to perform the analyses. If you are unsure about what code to use, click on the **Hint(s)** buttons. You can compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. 
+You can copy and edit the code provided in section 1 to perform the analyses. If you are unsure about what code to use, click on the **Hint(s)** buttons. You can also compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>.
+<br>
+
+  **3.1** Data dictionary: neurobehaviour
 
 **4.  Small study effects** (infarct volume)
 
@@ -109,7 +119,7 @@ In this section we will assess the infarct volume data set for the presence of s
 
 **5.  Test your skills: small study effects** (neurobehaviour)
 
-Lastly, you will have the opportunity to apply your skills in assessing small study effects using the neurobehavioural data set.
+Lastly, you will have the opportunity to apply your skills in assessing small study effects using a neurobehaviour data set.
 
 
 <br>
@@ -117,10 +127,11 @@ For further information on systematic review and meta-analysis of animal studies
 
 <br>
 
+
 ## 1.  Meta-analysis of continuous data{#set-up}
 
 ```{r ex1_1_setup_1, include = FALSE}
-infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv", 
+infarctVol <- read.csv("./IL-1RA_InfarctVolume_section1.csv", 
                        fileEncoding = "UTF-8-BOM"
                        )
 ```
@@ -128,12 +139,14 @@ infarctVol <- read.csv("./IL1-RA_InfarctVolume_Part1.1-2.csv",
 First, let's load the data we will use for the meta-analysis of infarct volume:
 
 ```{r ex1_1_1, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
-infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv", 
+infarctVol <- read.csv("IL-1RA_InfarctVolume_section1.csv", 
                        fileEncoding = "UTF-8-BOM")
 ```
 
 <br>
-It is good practice to take a look at the data you import to make sure there are no errors. After you run the next section of code, the imported data will open in a table below:
+It's good practice to take a look at the data you import to make sure there are no errors. After you run the next section of code, the imported data will open in a table below. To explore the table you can use the arrowhead to the right of the column headings to move through the columns and the blue numbers at the bottom right to move through the rows.
+
+You can find a description of each variable in the data dictionary table in section 1.4.
 
 ```{r ex1_1_2, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
 head(infarctVol, n=76)
@@ -157,18 +170,18 @@ quiz(caption = "Examine the data set and answer the following:",
     allow_retry = TRUE
   ),
   question("Which columns are the control group data (mean, standard deviation, N)?",
-    answer("Mean.in.control.group; SD.in.control.group; True.No.of.C"),
-    answer("Mean.in.control.group; SD.in.treatment.group; Number.in.treatment.group"),
-    answer("Mean.in.treatment.group; Type.of.Ischaemia; TreatmentGroupsPerControl"),
-    answer("Mean.in.control.group; SD.in.control.group; Number.in.control.group", correct = TRUE),
+    answer("control_group_mean; control_group_sd; control_group_calc_n"),
+    answer("control_group_mean; treatment_group_sd; treatment_group_n"),
+    answer("treatment_group_mean; type_of_ischaemia; treatment_groups_per_control"),
+    answer("control_group_mean; control_group_sd; control_group_n", correct = TRUE),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
   question("Which columns are the intervention group data (mean, standard deviation, N)?",
-    answer("Mean.in.treatment.group; SD.in.control.group; True.No.of.C"),
-    answer("Mean.in.treatment.group; SD.in.treatment.group; Number.in.treatment.group", correct = TRUE),
-    answer("Mean.in.treatment.group; SD.in.treatment.group; TreatmentGroupsPerControl"),
-    answer("Mean.in.treatment.group; SD.in.treatment.group; True.No.of.C"),
+    answer("treatment_group_mean; control_group_sd; control_group_calc_n"),
+    answer("treatment_group_mean; treatment_group_sd; treatment_group_n", correct = TRUE),
+    answer("treatment_group_mean; treatment_group_sd; treatment_groups_per_control"),
+    answer("treatment_group_mean; treatment_group_sd; control_group_calc_n"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -187,30 +200,32 @@ quiz(caption = "Examine the data set and answer the following:",
 ## 1.1  Calculating effect sizes
 
 Now we will calculate an effect size for each experiment in the data set. An <a href="https://www.camarades.de/meta-analysis.html#step-1.-calculate-effect-size" target="_blank" rel="noopener noreferrer">effect size</a> is a measure of the difference between two experimental cohorts.
-
 <br>
+
 Infarct volume is a continuous variable and we will calculate a [normalised mean difference](https://www.camarades.de/meta-analysis.html#continuous){target="_blank"} (NMD) effect size using the control (vehicle-treated) and treatment (IL-1RA-treated) groups. The effect size is expressed as the proportional or percentage improvement in the treatment group compared with the control group. NMD is not widely used in clinical systematic reviews and there is no NMD effect size calculator included in the meta-analysis package we are using. Therefore, we will calculate NMD effect sizes manually.
-
 </br>
+
 Note that green text following a hash symbol (#) in the code chunk is not read by R but simply provides a description of the code to make it easier to follow.
-
 </br>
+
+First, specify the columns in the data set that contain the mean, standard deviation, and number of animals in the **control** groups:
+
 ```{r ex1_1_setup_2, include = FALSE}
-infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv", 
+infarctVol <- read.csv("IL-1RA_InfarctVolume_section1.csv", 
                          fileEncoding = "UTF-8-BOM")
 
 # specify the column that contains the mean of the control group
-mCi <-  infarctVol$Mean.in.control.group
+mCi <-  infarctVol$control_group_mean
 # specify the column that contains the standard deviation of the control group 
-sdCi <- infarctVol$SD.in.control.group 
+sdCi <- infarctVol$control_group_sd 
 # specify the column that contains the number of animals in the control group
-nCi <- infarctVol$True.No.of.C 
+nCi <- infarctVol$control_group_calc_n 
 # specify the column that contains to mean of the treatment group 
-mTi <- infarctVol$Mean.in.treatment.group
+mTi <- infarctVol$treatment_group_mean
 # specify the column that contains the standard deviation of the treatment group 
-sdTi <- infarctVol$SD.in.treatment.group 
+sdTi <- infarctVol$treatment_group_sd 
 # specify the column that contains the number of animals in the treatment group
-nTi <- infarctVol$Number.in.treatment.group
+nTi <- infarctVol$treatment_group_n
 
 # calculate an NMD effect size for each experiment 
 ESi <- (mCi - mTi) / mCi * 100
@@ -219,44 +234,43 @@ ESi <- (mCi - mTi) / mCi * 100
 infarctVol <- cbind(infarctVol, ESi)  
 ```
 
-First, specify the columns in the data set that contain the mean, standard deviation, and number of animals in the **control** group:
 
 ```{r ex1_1_3, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9}
 # save the group means to a variable called mCi
-mCi <- infarctVol$Mean.in.control.group
+mCi <- infarctVol$control_group_mean
 
 # save the group standard deviations to a variable called sdCi 
-sdCi <- infarctVol$SD.in.control.group
+sdCi <- infarctVol$control_group_sd
 
 # save the number of animals to a variable called nCi
-nCi <- infarctVol$True.No.of.C 
+nCi <- infarctVol$control_group_calc_n 
 ```
 
 
-...and the columns that contain the mean, standard deviation, and number of animals in the **treatment** group:
+...and the columns that contain the mean, standard deviation, and number of animals in the **treatment** groups:
 
 ```{r ex1_1_4, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9}
 # save the group means to a variable called mTi
-mTi <- infarctVol$Mean.in.treatment.group
+mTi <- infarctVol$treatment_group_mean
 
 # save the group standard deviations to a variable called sdTi 
-sdTi <- infarctVol$SD.in.treatment.group 
+sdTi <- infarctVol$treatment_group_sd 
 
 # save the number of animals to a variable called nTi
-nTi <- infarctVol$Number.in.treatment.group
+nTi <- infarctVol$treatment_group_n
 ```
 
-You have just created six new variables that you will use to calculate effect sizes. You can view variables to check that they contain the correct data. For example, running the following section of code will show you the list of values in the mCi variable (data for the mean in the control group). This should match the corresponding column in the data set. You can edit this code to view the other variables if you wish.
+You have just created six new variables that you will use to calculate effect sizes. You can view variables to check that they contain the correct data. For example, running the following section of code will show you the list of values in the mCi variable (data for the mean in the control group). This should match the corresponding column in the data set. You can edit this code to view the other variables if you wish:
 
 ```{r ex1_1_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=3}
 
 mCi
 ```
+<br>
 
-
-Now let's calculate an NMD effect size for each experiment (ESi) and add the effect size data as a new column in the infarctVol data set. The function "cbind" takes a table of data and binds a new column to the right side. Remember: each variable in this equation is a list of numbers, with each entry corresponding to a single experiment.
-
+Now let's calculate an NMD effect size for each experiment (ESi) and add the effect size data as a new column in the infarctVol data set. The function ***cbind***takes a table of data and binds a new column to the right side. Remember, each variable in this equation is a list of numbers, with each entry corresponding to a single experiment.
 <br> 
+
 **Note**: we are using a truncated form of the NMD equation here because we know that a sham animal that has not suffered a stroke will have no infarct. This reduces the corresponding parts of the NMD equation to zero; see the <a href="http://camarades.de/meta-analysis.html#continuous" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page</a> for more information.
 
 ```{r ex1_1_5, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=6}
@@ -268,21 +282,21 @@ infarctVol <- cbind(infarctVol, ESi)
 ```
 
 ```{r ex1_1_setup_3, include = FALSE}
-infarctVol <- read.csv("IL1-RA_InfarctVolume_Part1.1-2.csv", 
+infarctVol <- read.csv("IL-1RA_InfarctVolume_section1.csv", 
                          fileEncoding = "UTF-8-BOM")
 
 # specify the column that contains the mean of the control group
-mCi <-  infarctVol$Mean.in.control.group
+mCi <-  infarctVol$control_group_mean
 # specify the column that contains the standard deviation of the control group 
-sdCi <- infarctVol$SD.in.control.group 
+sdCi <- infarctVol$control_group_sd 
 # specify the column that contains the number of animals in the control group
-nCi <- infarctVol$True.No.of.C 
+nCi <- infarctVol$control_group_calc_n 
 # specify the column that contains to mean of the treatment group 
-mTi <- infarctVol$Mean.in.treatment.group
+mTi <- infarctVol$treatment_group_mean
 # specify the column that contains the standard deviation of the treatment group 
-sdTi <- infarctVol$SD.in.treatment.group 
+sdTi <- infarctVol$treatment_group_sd 
 # specify the column that contains the number of animals in the treatment group
-nTi <- infarctVol$Number.in.treatment.group
+nTi <- infarctVol$treatment_group_n
 
 # calculate an NMD effect size for each experiment 
 ESi <- (mCi - mTi) / mCi * 100
@@ -304,21 +318,21 @@ infarctVolMA <- metagen(
   ESi,  # specify the variable that contains the effect size for each experiment 
   SEi,  # specify the variable that contains the standard error for each experiment
   data = infarctVol,  # specify the data set
-  studlab = Study.ID,  # specify the study labels
+  studlab = study_id,  # specify the study labels
   comb.random = TRUE,  # specify a random effects model
   method.tau = "REML",  # specify which method is used to estimate the between-study variance τ^: restricted maximum-likelihood (REML) estimator
  )
 
-# table(infarctVol$Blinded.Induction.of.Ischaemia)  # check the different levels of the variable and number of experiments in each
+# table(infarctVol$blinded_induction_of_ischaemia)  # check the different levels of the variable and number of experiments in each
  
 infarctVolBlind <- metareg(
   infarctVolMA,  # specify the meta-analysis
-  ~ Blinded.Induction.of.Ischaemia  # specify the experimental variable of interest 
+  ~ blinded_induction_of_ischaemia  # specify the experimental variable of interest 
 )   
 
 infarctVol2 <- subset(
   infarctVol,  # specify the data to subset
-  !(Drug.delivery.mode %in%  # specify the relevant variable
+  !(drug_delivery_mode %in%  # specify the relevant variable
       c("Transgenic", "Vector", "IL-1RA Tg BM cells", "IL-1 RA Tg BM cells"))  # specify the variable levels to exclude from analysis  
 )  
 
@@ -326,24 +340,24 @@ infarctVolMA2 <- metagen(
   ESi,  # specify the variable that contains the effect size for each experiment 
   SEi,  # specify the variable that contains the standard error for each experiment
   data = infarctVol2,  # specify the data set
-  studlab = Study.ID,  # specify the study labels
+  studlab = study_id,  # specify the study labels
   comb.random = TRUE,  # specify a random effects model
   method.tau = "REML",  # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
 )
 
 infarctVolRoute <- metareg(
   infarctVolMA2,   # specify the meta-analysis
-  ~ factor(Route.of.Drug.Delivery)  # specify the experimental variable of interest
+  ~ factor(route_of_delivery)  # specify the experimental variable of interest
 ) 
 
-infarctVolSpecies <- metareg(
+infarctVolspecies <- metareg(
   infarctVolMA2,   # specify the meta-analysis
-  ~ factor(Species)   # specify the experimental variable of interest
+  ~ factor(species)   # specify the experimental variable of interest
 )   
 
 infarctVol3 <- subset(
  infarctVol2,  # specify the data to subset 
- Location.of.drug.administration %in%  # specify the relevant variable
+ drug_delivery_location %in%  # specify the relevant variable
    "Central"  # specify the experiments to include in the analysis
 ) 
 
@@ -351,14 +365,14 @@ infarctVolMA3 <-  metagen(
   ESi,  # specify the variable that contains the effect size for each experiment 
   SEi,  # specify the variable that contains the standard error for each experiment
   data = infarctVol3,  # specify the data set
-  studlab = Study.ID,  # specify the study labels
+  studlab = study_id,  # specify the study labels
   comb.random = TRUE,  # specify a random effects model
   method.tau = "REML",  # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
 )
 
-infarctVolDose <- metareg(
+infarctVoldose <- metareg(
  infarctVolMA3,  # specify the meta-analysis 
- ~ "Dose"   # specify the experimental variable of interest
+ ~ "dose"   # specify the experimental variable of interest
 )  
 
 infarctVolTrim <- trimfill(
@@ -409,7 +423,7 @@ head(infarctVol)
 ## 1.2  Random effects meta-analysis
 
 ### Building the meta-analysis model
-Next we combine the individual effect sizes with meta-analysis using the function "metagen". This gives us an overall summary estimate of the effect of IL-1RA on infarct volume, compared to control. Note that to begin with, we will print both the random effects and fixed effect estimates so that we can compare the results:
+Next we combine the individual effect sizes with meta-analysis using the function ***metagen*** from the ***{meta}*** package. This gives us an overall summary estimate of the effect of IL-1RA on infarct volume, compared to control. Note that to begin with, we will print both the random effects and fixed effect estimates so that we can compare the results:
 
 ```{r ex1_1_9, exercise = TRUE, exercise.setup = "ex1_1_setup_3",  exercise.lines=23}
 infarctVolMA <- metagen(
@@ -423,7 +437,7 @@ infarctVolMA <- metagen(
   data = infarctVol,  
   
   # specify the study labels
-  studlab = Study.ID,  
+  studlab = study_id,  
   
   # specify a random effects model
   comb.random = TRUE, 
@@ -507,7 +521,7 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
 
 ### Forest plot
 
-A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> is a way to visualise the effect size and confidence interval for each individual study in a meta-analysis, it is created using the function "forest":
+A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> is a way to visualise the effect size and confidence interval for each individual study in a meta-analysis. We can create a forest plot using the function ***forest***:
 
 ```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=44}
 
@@ -597,24 +611,26 @@ quiz(caption = "Questions:",
 
 ## 1.3 Exploring heterogeneity
 
-Here we will <a href="http://www.camarades.de/meta-analysis.html#step-3.-investigate-heterogeneity" target="_blank" rel="noopener noreferrer">investigate patterns of heterogeneity</a> in our data and what might be causing them. Different study-level variables (e.g. species) can be added to a meta-regression model to predict differences in true effect sizes. We will investigate four variables in different subsets of the infarct volume data set, as performed in the publication <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann et al. (2016)</a>. For this analysis we will use the function "metareg".
+Next we will <a href="http://www.camarades.de/meta-analysis.html#step-3.-investigate-heterogeneity" target="_blank" rel="noopener noreferrer">investigate sources of heterogeneity</a> in our data set using meta-regression. A meta-regression model uses one or more explanatory variables to predict differences in the true effect sizes of our outcome variable. These explanatory variables can be continuous or categorical and are sometimes called 'potential effect modifiers' or 'covariates'. We will investigate each variable individually, using univariable models, but multivariable meta-regression models can also be implemented, if there is an adequate number of included studies. For more information on multivariable, or multiple, meta-regression <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/metareg.html#multiple-metareg" target="_blank" rel="noopener noreferrer">see here</a>.
+
+We will investigate four variables in different subsets of the infarct volume data, as performed in the publication <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. For this analysis we will use the function ***metareg*** from the ***{meta}*** package.
 
 ### Meta-regression: blinding
 
-Investigate the variable "Blinded induction of ischaemia" in the complete data set.
+First, investigate the variable "blinded induction of ischaemia" in the complete data set. This variable addresses whether authors reported blinding of researchers during stroke induction in the animals. Blinding is an important variable when assessing risks of bias.
 
-This variable addresses whether authors reported blinding of researchers during stroke induction in the animals. Blinding is an important variable when assessing risks of bias:
+Categorical variables like this one can be added to a meta-regression model using what are known as "dummy variables". In this tutorial we will allow R to handle the coding of these dummy variables automatically, but you can also code them manually. For more information <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/metareg.html#meta-regression-with-a-categorical-predictor" target="_blank" rel="noopener noreferrer"> see here</a>.
 
 ```{r ex1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14}
 # check the different levels of the variable and number of experiments in each
-table(infarctVol$Blinded.Induction.of.Ischaemia)  
+table(infarctVol$blinded_induction_of_ischaemia)  
 
 infarctVolBlind <- metareg(
   # specify the meta-analysis
   infarctVolMA,  
   
   # specify the experimental variable of interest
-  ~ Blinded.Induction.of.Ischaemia   
+  ~ blinded_induction_of_ischaemia   
 )  
 
 # view the meta-regression
@@ -624,13 +640,13 @@ infarctVolBlind
 <br>
 
 
-You can create a bar chart of these results using the code below. Do not worry about trying to understand the code at this stage, it is very long!
+You can create a bar chart of these results using the code below. Don't worry about trying to understand the code at this stage, it's very long!
 
-```{r plot1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=3, fig.width=5, fig.height=5.5, fig.fullwidth=FALSE}
+```{r plot1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=5, fig.width=5, fig.height=5.5, fig.fullwidth=FALSE}
 infarctVolBlind.p <- predict.rma(infarctVolBlind, addx = TRUE)
-blind <- as_tibble(infarctVolBlind.p)%>% group_by(X.Blinded.Induction.of.IschaemiaTRUE)
+blind <- as_tibble(infarctVolBlind.p)%>% group_by(X.blinded_induction_of_ischaemiaTRUE)
 blind.s <- blind %>% summarise(
-  Blind = mean(X.Blinded.Induction.of.IschaemiaTRUE),
+  Blind = mean(X.blinded_induction_of_ischaemiaTRUE),
   es = mean(pred),
   se = mean(se),
   ci.lb = mean(ci.lb),
@@ -638,10 +654,10 @@ blind.s <- blind %>% summarise(
 blind.s <- blind.s %>% 
   mutate(Blind=replace(Blind,Blind==0, "No"),
   Blind=replace(Blind,Blind==1, "Yes"))
-N <- (infarctVol$Number.in.treatment.group + infarctVol$True.No.of.C)
+N <- (infarctVol$treatment_group_n + infarctVol$control_group_calc_n)
 infarctVol <- cbind(infarctVol, N)
 blind.n <- infarctVol %>% 
-          group_by(Blinded.Induction.of.Ischaemia) %>%
+          group_by(blinded_induction_of_ischaemia) %>%
           summarise(
           sum.N = sum(N))
 
@@ -713,10 +729,10 @@ quiz(caption = "Questions:",
     allow_retry = TRUE
   ),
   question("What is the difference in effect size between the two groups?",
-    answer("-9.77", correct = TRUE),
-    answer("4.79"),
-    answer("39.45"),
-    answer("29.68"),
+    answer("9.77%", correct = TRUE),
+    answer("4.79%"),
+    answer("39.45%"),
+    answer("29.68%"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -753,7 +769,7 @@ quiz(caption = "Questions:",
     allow_retry = TRUE
   ),
   question("What does R^2 tell us?",
-    answer("The proportion of heterogenity accounted for by the variable *Blinded induction of ischaemia*", correct = TRUE),
+    answer("The proportion of heterogenity accounted for by the variable, blinded induction of ischaemia", correct = TRUE),
     answer("The proportion of heterogenity accounted for by failing to report blinded induction of ischaemia"),
     answer("The proportion of heterogenity accounted for by studies that did report blinded induction of ischaemia"),
     answer("The proportion of heterogeneity that remains in the data set"),
@@ -766,13 +782,13 @@ quiz(caption = "Questions:",
 
 ### Meta-regression: route of drug delivery
 
-Investigate the variable "Route of drug delivery " in the subset of data where the drug delivery mode is "Protein".
+Next, investigate the variable "route of delivery " in the subset of data where the drug delivery mode is "Protein".
 
-In this data set IL-1RA was administered using several different delivery modes (column "Drug.delivery.mode"). We will restrict subsequent analyses to those experiments where IL-1RA was delivered in protein form, due to uncertainty around the timing and effective dose achieved in transgenic and transfection studies (the alternative drug delivery modes).
+In this data set, IL-1RA was administered using several different delivery modes (column drug_delivery_mode). We will restrict subsequent analyses to those experiments where IL-1RA was delivered in protein form, due to uncertainty around the timing and effective dose achieved in transgenic and transfection studies (the alternative drug delivery modes).
 
-Route of drug delivery refers to how IL-1RA was administered e.g. intravenous, subcutaneous. Several different methods were used in these experiments, which may have an influence on effect sizes.
+Route of delivery refers to how IL-1RA was administered e.g. intravenous, subcutaneous. Several different methods were used in these experiments, which may have an influence on effect sizes.
 
-First we will create a new data set including only the protein studies using the function "subset":
+First we will create a new data set including only the protein studies using the function ***subset***:
 
 ```{r ex1_2_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14}
 infarctVol2 <- subset(
@@ -780,7 +796,7 @@ infarctVol2 <- subset(
   infarctVol,  
   
   # specify the relevant variable
-  !(Drug.delivery.mode %in%  
+  !(drug_delivery_mode %in%  
       
       # specify the variable levels to exclude from analysis  
       c("Transgenic", "Vector", "IL-1RA Tg BM cells", "IL-1 RA Tg BM cells"))  
@@ -789,6 +805,8 @@ infarctVol2 <- subset(
 # View the new data subset
 head(infarctVol2, n=65)
 ```
+
+<br>
 
 Have a look at the table above and check that the only studies remaining are those where the drug delivery mode is "Protein".
 
@@ -806,7 +824,7 @@ infarctVolMA2 <- metagen(
   data = infarctVol2,  
   
   # specify the study labels
-  studlab = Study.ID,  
+  studlab = study_id,  
   
   # specify a random effects model
   comb.random = TRUE,  
@@ -824,18 +842,18 @@ infarctVolMA2
 
 <br>
 
-Now check the variable data and perform the meta-regression investigating "Route of drug delivery":
+Now check the variable data and perform the meta-regression investigating "route of delivery":
 
 ```{r ex1_2_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 # check the different delivery routes and number of experiments using each
-table(infarctVol2$Route.of.Drug.Delivery)
+table(infarctVol2$route_of_delivery)
  
 infarctVolRoute <- metareg(
   # specify the meta-analysis
   infarctVolMA2,   
   
   # specify the experimental variable of interest
-  ~ factor(Route.of.Drug.Delivery)  
+  ~ factor(route_of_delivery)  
 )  
      
 # view the results of the meta-regression 
@@ -843,17 +861,89 @@ infarctVolRoute
 
 ```
 
+<br>
+
+We can also graph the results of a meta-regression using a forest plot:
+
+```{r ex1_3_3_1, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=5}
+
+
+infarctVolRoute.p <- predict.rma(infarctVolRoute, addx = TRUE)
+
+infarctVol2<- cbind(infarctVol2, infarctVolRoute.p$pred) 
+
+route <- as_tibble(infarctVolRoute.p)%>% group_by(pred)
+
+route.s <- route %>% summarise(
+  Route = mean(pred),
+  es = mean(pred),
+  se = mean(se),
+  ci.lb = mean(ci.lb),
+  ci.ub = mean(ci.ub),
+  IP = mean(X.factor.route_of_delivery.IPeritoneal),
+  IV = mean(X.factor.route_of_delivery.IVenous),
+  Stereo = mean(X.factor.route_of_delivery.Stereotactic),
+  SubCut = mean(X.factor.route_of_delivery.SubCut),
+  ICV = mean(X.intrcpt)
+)
+
+route.s <- route.s %>% 
+  mutate(Route=replace(Route,IP==1, "IP"),
+  Route=replace(Route,IV==1, "IV"),
+  Route=replace(Route,Stereo==1, "Stereo"),
+  Route=replace(Route,SubCut==1, "SubCut"),
+  Route=replace(Route,IP==0&IV==0&Stereo==0&SubCut==0&ICV==1, "ICV")
+)
+
+infarct.for.route <- forest.rma(
+  infarctVolRoute,
+  xlab = "NMD (% reduction in infarct volume)",
+  mlab = "NMD",
+  ylim = c(-2.5, 81),
+  xlim = c(-300, 300),
+  alim = c(-150, 150),
+  rows=c(75.5:60.5, 56.5:40.5, 36.5:13.5, 9.5:6.5, 2:-1),
+  header = c("Study label", "NMD [95% CI]"),
+  order = order(-infarctVol2$`infarctVolRoute.p$pred`, infarctVol2$ESi),
+  slab = infarctVol2$study_id,
+  addfit = FALSE,
+  digits = 1,
+  cex = 0.9,
+  cex.lab = 1,
+  efac = 0.5,
+  #top = 1
+  )
+text(-300, 
+     c(77, 58, 38, 11, 3.5), 
+     c("Intracerebroventricular", "Intravenous", "Subcutaneous", "Intraperitoneal", "Stereotactic"), 
+     adj = c(0,1),
+     font = 4,
+     cex = 0.9
+     )
+addpoly(rev(route.s$es), 
+        ci.lb = rev(route.s$ci.lb), 
+        ci.ub	= rev(route.s$ci.ub),
+        rows = c(59, 39, 12, 5, -2.5),
+        cex = 0.9,
+        col = "cadetblue",
+        border = "cadetblue4",
+        digits = 1,
+        efac = 0.8
+)
+```
+
+
 ```{r quiz1_2_2, echo=FALSE}
 
 # Questions:
 # 
 # * How many different drug delivery routes are there and how are the data distributed across these routes?
 # * What group does the intercept (intrcpt) in the Model Results represent?
-# * Is the route of drug delivery a significant source of heterogeneity?
+# * Is the route_of_delivery a significant source of heterogeneity?
 # * Which routes might be the most clinically relevant? 
 #   - How do their effect sizes compare to less clinically relevant routes?
 # * How have the heterogeneity estimates changed when compared with infarctVolMA2?
-# * How much heterogeneity is accounted for by the route of drug delivery?
+# * How much heterogeneity is accounted for by the route_of_delivery?
   
 quiz(caption = "Questions:",
   question("How many different drug delivery routes are there and how are the data distributed across these routes?",
@@ -872,7 +962,7 @@ quiz(caption = "Questions:",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Is the route of drug delivery a significant source of heterogeneity?",
+  question("Is the route of delivery a significant source of heterogeneity?",
     answer("Yes, p-val < .0001"),
     answer("It depends at what level the p-value is considered statistically significant", correct = TRUE),
     answer("No, p-val = 0.0267"),
@@ -888,11 +978,11 @@ quiz(caption = "Questions:",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("How much heterogeneity is accounted for by the route of drug delivery?",
-    answer("tau^2 and I^2 are reduced and R^2 is 43.3% meaning a large portion of the heterogeneity in this data set is accounted for by the route of drug delivery", correct = TRUE),
-    answer("There is still significant residual heterogeneity so the route of drug delivery does not account for a significant portion of the heterogeneity"),
-    answer("tau^2 and I^2 are reduced but R^2 is under 50% so route of drug delivery is not a significant source of heterogeneity"),
-    answer("tau^2 , I^2 , and R^2 are all high so route of drug delivery does not account for much heterogeneity"),
+  question("How much heterogeneity is accounted for by the route of delivery?",
+    answer("tau^2 and I^2 are reduced and R^2 is 43.3% meaning a large portion of the heterogeneity in this data set is accounted for by the route of delivery", correct = TRUE),
+    answer("There is still significant residual heterogeneity so the route of delivery does not account for a significant portion of the heterogeneity"),
+    answer("tau^2 and I^2 are reduced but R^2 is under 50% so route of delivery is not a significant source of heterogeneity"),
+    answer("tau^2 , I^2 , and R^2 are all high so route of delivery does not account for much heterogeneity"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
@@ -902,24 +992,22 @@ quiz(caption = "Questions:",
 
 ### Meta-regression: species
 
-Investigate the variable "Species" in the subset of data where the drug delivery mode is "Protein"
-  
 Using the same data set (infarctVol2) and meta-analysis (infarctVolMA2), now investigate whether animal species is a source of heterogeneity:
 
 ```{r ex1_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
-table(infarctVol2$Species)
+table(infarctVol2$species)
 
-infarctVolSpecies <- metareg(
+infarctVolspecies <- metareg(
   
   # specify the meta-analysis
   infarctVolMA2,   
   
   # specify the experimental variable of interest
-  ~ factor(Species)   
+  ~ factor(species)   
 )   
 
 # view the results of the meta-regression
-infarctVolSpecies    
+infarctVolspecies    
 ```
 
 ```{r quiz1_2_3, echo=FALSE}
@@ -951,13 +1039,13 @@ quiz(caption = "Questions:",
 ```
 
 
-### Meta-regresion: dose of IL-1RA
+### Meta-regression: dose of IL-1RA
 
-Investigate the variable "Dose" in the subset of data where the drug delivery mode is "Protein" and the location of administration is "Central".
+Lastly, investigate the variable "dose" in the subset of data where the drug delivery mode is "Protein" and the location of administration is "Central".
 
-Now let's check if the dose of IL1-RA is associated with effect size differences (i.e. is there a dose response) using only data where the drug was administered centrally (i.e. directly into the brain) and excluding data where the drug was administered peripherally. 
+Now let's check if the dose of IL-1RA is associated with effect size differences (i.e. is there a dose response) using only data where the drug was administered centrally (i.e. directly into the brain) and excluding data where the drug was administered peripherally. 
 
-First we will create a new data set including only the centrally-administered protein studies, again using the function "subset":
+First we will create a new data set including only the centrally-administered protein studies, again using the function ***subset***:
 
 ```{r ex1_2_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVol3 <- subset(
@@ -965,7 +1053,7 @@ infarctVol3 <- subset(
   infarctVol2,   
   
   # specify the relevant variable
-  Location.of.drug.administration %in%  
+  drug_delivery_location %in%  
     
     # specify the experiments to include in the analysis
     "Central"  
@@ -974,8 +1062,9 @@ infarctVol3 <- subset(
 # View the new data subset
 head(infarctVol3, n=20)  
 ```
+<br>
 
-Have a look at the table above and check that the only studies remaining are those where the location of drug administration is "Central".
+Have a look at the table above and check that the only studies remaining are those where the drug delivery location is "Central".
 
 Next run a meta-analysis on this new data set:
 
@@ -991,7 +1080,7 @@ infarctVolMA3 <-  metagen(
   data = infarctVol3,  
   
   # specify the study labels
-  studlab = Study.ID,  
+  studlab = study_id,  
   
   # specify a random effects model
   comb.random = TRUE,  
@@ -1006,32 +1095,33 @@ infarctVolMA3 <-  metagen(
 # view the results of the meta-analysis 
 infarctVolMA3   
 ```
+<br>
 
-Finally, perform the meta-regression investigating "Dose":
+Finally, perform the meta-regression investigating "dose":
 
 ```{r ex1_2_4_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
-infarctVolDose <- metareg(
+infarctVoldose <- metareg(
   # specify the meta-analysis
   infarctVolMA3,   
   
   # specify the experimental variable of interest
-  ~ "Dose"   
+  ~ "dose"   
 )  
  
 # view the results of the meta-regression
-infarctVolDose  
+infarctVoldose  
 ```
 
 <br>
 
-To graph a continuous variable we can use a bubble plot:
+To graph a meta-regression of a continuous variable we can use a bubble plot:
 
 ```{r ex1_2_4_4, fig.width = 6, fig.height = 5, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 # specify the meta-regression analysis to plot 
-bubble(infarctVolDose, 
+bubble(infarctVoldose, 
        
   # specify the x axis label 
-  xlab = "IL1-RA dose (µg)", 
+  xlab = "IL-1RA dose (µg)", 
   
   # specify the y axis label
   ylab = "NMD (% reduction in infarct volume)"  
@@ -1074,20 +1164,32 @@ quiz(caption = "Questions:",
 )
 ```
 
+## 1.4 Data dictionary: infarct volume
+
+```{r, context ="render", echo=FALSE}
+dictionary_infarct <- read.csv("DataDictionary_InfarctVol.csv", 
+                         fileEncoding = "UTF-8-BOM"
+                         )
+
+dictionary_infarct %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
 
 ## 2.  Meta-analysis of binary data
 
 ```{r ex1_3_setup, include = FALSE}
-mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv", 
+mortality <- read.csv("IL-1RA_Mortality_section2.csv", 
                       fileEncoding = "UTF-8-BOM")
 
 mortalityMA <- metabin(
-  event.e = NumberAffectdByOutcomeMeasureInTreatmentGroup,  # specify the number of events in experimental group
-  n.e = NumberInTreatmentGroup,  #specify the number of observations in the experimental group
-  event.c = NumberAffectdByOutcomeMeasureInControlGroup,  # specify the number of events in control group
-  n.c = NumberInControlGroup,  #specify the number of observations in the control group
+  event.e = number_affected_in_treatment_group,  # specify the number of events in experimental group
+  n.e = treatment_group_n,  #specify the number of observations in the experimental group
+  event.c = number_affected_in_control_group,  # specify the number of events in control group
+  n.c = control_group_n,  #specify the number of observations in the control group
   allstudies = TRUE,  # specify that the meta-analysis should include studies with zero or all events in both groups
-  studlab = Study.ID,   # specify the study labels
+  studlab = study_id,   # specify the study labels
   data = mortality,    # specify the data set
   method.tau = "REML",  # specify which method is used to estimate the between-study variance τ^2, restricted maximum-likelihood (REML) estimator
   sm = "OR",  # specify the summary measure, "OR" = odds ratio
@@ -1095,20 +1197,23 @@ mortalityMA <- metabin(
  )
 ```
 
-We will now move on to meta-analyse our second outcome of interest, mortality. Mortality is a binary outcome (animals are dead or alive) so we need to use an effect size appropriate for this data type. There are several such effect sizes but we will use an **odds ratio**, which represents the odds that our outcome (death) will occur given IL-1RA treatment, compared to the odds of our outcome occurring in the absence treatment (control).
+We will now move on to meta-analyse our second outcome of interest, mortality. Mortality is a binary outcome (animals are alive or deceased) so we need to use an effect size appropriate for this data type. There are several such effect sizes but we will use an **odds ratio**, which represents the odds that our outcome (death) will occur given IL-1RA treatment, compared to the odds of our outcome occurring in the absence of treatment (control).
 
-For this exercise, we will use the function "metabin" for meta-analysis of binary outcomes. "metabin" will calculate an odds ratio effect size directly if we provide the number of animals and events (deaths) in the treatment and control groups, so there is no need to manually calculate these values as we did for NMD effect sizes above.
+For this exercise, we will use the function ***metabin*** for meta-analysis of binary outcomes. ***metabin*** will calculate an odds ratio effect size directly if we provide the number of animals and events (deaths) in the treatment and control groups, so there is no need to manually calculate these values as we did for NMD effect sizes in section 1.
 
 ### Load and view the data
 
 ```{r ex1_3_1, exercise = TRUE, exercise.setup = "ex1_3_setup"}
-mortality <- read.csv("IL-1RA_Mortality_Part1.3.csv", 
+mortality <- read.csv("IL-1RA_Mortality_section2.csv", 
                       fileEncoding = "UTF-8-BOM")
 
 head(mortality, n=10)
 ```
+<br>
 
-Take a look at the table above and compare the outcome data to that from the infarct volume (continuous) data above.
+Take a look at the table above and compare the outcome data to that from the infarct volume (continuous) data in section 1.
+
+You can find a description of each variable in the data dictionary table in section 2.1.
 
 ```{r quiz1_3_1, echo=FALSE}
 
@@ -1131,27 +1236,27 @@ quiz(caption = "Question:",
 
 ### Meta-analysis
 
-Now perform a meta-analysis using the function "metabin": 
+Now perform a meta-analysis using the function ***metabin***: 
 
 ```{r ex1_3_2, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=34}
 mortalityMA <- metabin(
   # specify the number of events in experimental group
-  event.e = NumberAffectdByOutcomeMeasureInTreatmentGroup,
+  event.e = number_affected_in_treatment_group,
   
   # specify the number of observations in the experimental group
-  n.e = NumberInTreatmentGroup, 
+  n.e = treatment_group_n, 
   
   # specify the number of events in control group
-  event.c = NumberAffectdByOutcomeMeasureInControlGroup, 
+  event.c = number_affected_in_control_group, 
   
   # specify the number of observations in the control group
-  n.c = NumberInControlGroup,  
+  n.c = control_group_n,  
   
   # specify that the meta-analysis should include studies with zero or all events in both groups
   allstudies = TRUE,  
   
   # specify the study labels
-  studlab = Study.ID,   
+  studlab = study_id,   
   
   # specify the data set
   data = mortality,    
@@ -1200,7 +1305,7 @@ quiz(caption = "Questions:",
 
 ### Forest plot
 
-Next we will create a forest plot of the mortality data using the function "forest":
+Next we will create a forest plot of the mortality data using the function ***forest***:
 
 ```{r ex1_3_3, fig.width = 8.5, fig.height = 4, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=32}
 mortalityFor <- forest(
@@ -1240,7 +1345,7 @@ mortalityFor <- forest(
 
 # Questions:
 # 
-# * How is the forest plot different from the plot in Part 1.1?
+# * How is the forest plot different from the plot in section 1.1?
 # * Interpret the point estimates from Garcia1995a and Maysami2015b
 # * How confident would you be in the effect of IL-1RA on mortality based on these results?
   
@@ -1253,17 +1358,27 @@ quiz(caption = "Questions:",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Interpret the point estimates from Garcia1995a and Maysami2015b",
+  question("Interpret the point estimates from Garcia 1995a and Maysami 2015b",
     answer("In both studies there is no effect of IL-1RA on mortality because the confidence intervals cross 1", correct = TRUE),
-    answer("The odds of mortality in the IL-1RA treated group are 0.46 and 2.14 that of the control group in Garcia1995a and Maysami2015b, respectively"),
-    answer("With IL-1RA treatment, there is increased occurance of mortality in Garcia1995a and decreased occurance of mortality in Maysami2015b"),
-    answer("With IL-1RA treatment, there is decreased occurance of mortality in Garcia1995a and increased occurance of mortality in Maysami2015b"),
+    answer("The odds of mortality in the IL-1RA treated group are 0.46 and 2.14 that of the control group in Garcia 1995a and Maysami 2015b, respectively"),
+    answer("With IL-1RA treatment, there is increased occurance of mortality in Garcia 1995a and decreased occurance of mortality in Maysami 2015b"),
+    answer("With IL-1RA treatment, there is decreased occurance of mortality in Garcia 1995a and increased occurance of mortality in Maysami 2015b"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   )
 )
 ```
 
+## 2.1 Data dictionary: mortality
+
+```{r, context ="render", echo=FALSE}
+dictionary_mortality <- read.csv("DataDictionary_Mortality.csv", 
+                         fileEncoding = "UTF-8-BOM")
+
+dictionary_mortality %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
+```
 
 ## 3.  Test your skills: meta-analysis 
 
@@ -1271,24 +1386,24 @@ Now you can explore the neurobehavioural outcomes data set by writing your own c
 
 In this data set, a normalised mean difference effect size (column ESi) and standard error (column SEi) have already been calculated for each experiment. 
 
-You can edit the code we used to analyse the infarct volume data above and compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. If you are unsure about what code to use, click on the **Hint(s)** buttons. 
+You can edit the code we used to analyse the infarct volume data above and compare your results to those in the paper, <a href="https://doi.org/10.1007/s12975-016-0489-z" target="_blank" rel="noopener noreferrer">McCann *et al*. 2016</a>. If you are unsure what code to use, click on the **Hint(s)** buttons. 
 
-Start by loading and viewing the data set:
+Start by loading and viewing the data set, you can find a description of each variable in the data dictionary table in section 3.1:
 
 ```{r ex1_4_setup, include = FALSE}
-neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
+neurobeh <- read.csv("IL-1RA_Neurobehaviour_nested_section3.csv", fileEncoding = "UTF-8-BOM")
 
 ```
 
 ```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=10}
-# load and view the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
+# load and view the data set "IL-1RA_Neurobehaviour_nested_section3.csv" using the function read.csv().
 
 
 ```
 
 
 ```{r ex1_4_2_setup, include = FALSE}
-neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
+neurobeh <- read.csv("IL-1RA_Neurobehaviour_nested_section3.csv", fileEncoding = "UTF-8-BOM")
 
 neurobehMA <- metagen(
 #  # specify the variable that contains the effect size for each 
@@ -1303,7 +1418,7 @@ neurobehMA <- metagen(
   data = neurobeh,  
 #  
 #  # specify the study labels
-  studlab = Study.ID,  
+  studlab = study_id,  
 #  
 #  # specify a random effects model
   comb.random = TRUE,  
@@ -1359,25 +1474,25 @@ neurobehMA <- metagen(
 ```
 
 ```{r ex1_4_1-hint-1}
-# load and view the data set "IL1-RA_Neurobehaviour_Part1.4.csv" using the function read.csv().
-neurobeh <- read.csv("IL1-RA_Neurobehaviour_Part1.4.csv", fileEncoding = "UTF-8-BOM")
+# load and view the data set "IL-1RA_Neurobehaviour_nested_section3.csv" using the function read.csv().
+neurobeh <- read.csv("IL-1RA_Neurobehaviour_nested_section3.csv", fileEncoding = "UTF-8-BOM")
 
 head(neurobeh)
 ```
-
+<br>
 
 Then, perform a random effects meta-analysis:
 ```{r ex1_4_2, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=30}
 
 
-# use the function "metagen()"
+# use the function metagen()
 
 
 ```
 
 
 ```{r ex1_4_2-hint}
-# Perform a random effects meta-analysis using the function "metagen".
+# Perform a random effects meta-analysis using the function metagen().
 neurobehMA <- metagen(
   # specify the variable that contains the effect size for each experiment 
   ESi,  
@@ -1389,7 +1504,7 @@ neurobehMA <- metagen(
   data = neurobeh,  
   
   # specify the study labels
-  studlab = Study.ID,  
+  studlab = study_id,  
   
   # specify a random effects model
   comb.random = TRUE,  
@@ -1404,11 +1519,12 @@ neurobehMA <- metagen(
  # view the meta-analysis
 neurobehMA
 ```
+<br>
 
 Next, visualise the results of the meta-analysis with a forest plot: 
 ```{r ex1_4_3, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_2_setup", exercise.lines=20}
 
-# Create a forest plot of the data using the function "forest()".
+# Create a forest plot of the data using the function forest().
 
 
 ```
@@ -1416,7 +1532,7 @@ Next, visualise the results of the meta-analysis with a forest plot:
 
 
 ```{r ex1_4_3-hint}
-# Create a forest plot of the data using the function "forest".
+# Create a forest plot of the data using the function forest().
 neurobehFor <- forest(
   neurobehMA,                                   # specify the meta-analysis to plot
   sortvar = TE,                                 # sort the data according to effect size
@@ -1452,12 +1568,11 @@ quiz(caption = "Question:",
     allow_retry = TRUE
   ))
 ```
+<br>
 
+Now you can select some variables to investigate as possible sources of heterogeneity using the function ***metareg*** e.g. species, sex, dose, time of administration, route of delivery, use of comorbid animals, method of induction of ischaemia, type of ischaemia, anaesthetic used, time of assessment, single vs. multiple administrations.
 
-
-Now you can select some variables to investigate as possible sources of heterogeneity using the function "metareg" e.g. species, sex, dose, time of administration, route of drug delivery, use of comorbid animals, method of induction of ischaemia, type of ischaemia, anaesthetic used, time of assessment, single vs. multiple administrations.
-
-Remember that the variable name you use in your meta-regression model must match the column name in the data sheet exactly. To see a list of all the column names, you can use the function "colnames":
+Remember that the variable name you use in your meta-regression model must match the column name in the data sheet exactly. To see a list of all the column names, you can use the function ***colnames*** or check the data dictionary in section 3.1:
 ```{r ex1_4_4, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_2_setup", exercise.lines=30}
 # use the metareg() function
 
@@ -1474,19 +1589,19 @@ colnames(neurobeh)
 ```{r ex1_4_4-hint-2}
 
 # check the different levels of the variable and number of experiments in each
-table(neurobeh$Species)
+table(neurobeh$species)
 
-neurobehSpecies <- metareg(
+neurobehspecies <- metareg(
   
   # specify the meta-analysis
   neurobehMA,   
   
   # specify the experimental variable of interest
-  ~ factor(Species)   
+  ~ factor(species)   
 )   
 
 # view the results of the meta-regression
-neurobehSpecies 
+neurobehspecies 
 ```
 
 ```{r quiz1_4_2, echo=FALSE}
@@ -1500,10 +1615,10 @@ neurobehSpecies
   
 quiz(caption = "Questions:",
   question("Which variables are significant sources of heterogeneity (p-value < 0.05) and which are not?",
-    answer("Significant: number of doses, route of drug delivery, and sex of the animals; non-significant: species, time of administration", correct = TRUE),
-    answer("Significant: number of doses, route of drug delivery, and type of anaesthetic; non-significant: sex and species of the animals"),
-    answer("Significant: route of drug delivery and sex of the animals; non-significant: dose of IL-1RA, use of comorbid animals, type of anaesthetic"),
-    answer("Significant: method of induction of ischaemia, route of drug delivery and sex of the animals; non-significant: time of outcome assessment, use of comorbid animals"),
+    answer("Significant: number of doses, route of delivery, and sex of the animals; non-significant: species, time of administration", correct = TRUE),
+    answer("Significant: number of doses, route of delivery, and type of anaesthetic; non-significant: sex and species of the animals"),
+    answer("Significant: route of delivery and sex of the animals; non-significant: dose of IL-1RA, use of comorbid animals, type of anaesthetic"),
+    answer("Significant: method of induction of ischaemia, route of delivery and sex of the animals; non-significant: time of outcome assessment, use of comorbid animals"),
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
@@ -1518,6 +1633,17 @@ quiz(caption = "Questions:",
 )
 ```
 
+## 3.1 Data dictionary: neurobehaviour 
+
+```{r, context ="render", echo=FALSE}
+dictionary_neuro <- read.csv("DataDictionary_Neurobehaviour.csv", 
+                         fileEncoding = "UTF-8-BOM")
+
+dictionary_neuro %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
+```
+
 
 ## 4.  Small study effects
 
@@ -1525,7 +1651,7 @@ Small study effects in meta-analysis can be assessed using a funnel plot, which 
 
 In this exercise, we will use the complete infarct volume data set and meta-analysis from the [first section of this tutorial.]{#set-up}
 
-First, draw a funnel plot using the function "funnel": 
+First, draw a funnel plot using the function ***funnel***: 
 
 ```{r ex2_1, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVolFun <- funnel(
@@ -1563,9 +1689,9 @@ quiz(caption = "Examine the funnel plot and answer the following questions:",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("What do the longer-dash vertical and diagonal lines represent?",
-    answer("The idealised funnel-shape that we expect our studies to follow and the average effect size", correct = TRUE),
-    answer("The 95% confidence interval of where the studies should fall"),
+  question("What do the longer-dash diagonal and vertical lines (the traingle shape) represent?",
+    answer("The idealised funnel-shape that we expect our studies to follow and the line of no effect"),
+    answer("The region within which 95% of studies would be expected to lie in the absence of both biases and heterogeneity", correct = TRUE),
     answer("The funnel-shape indicating the limits of where studies should fall"),
     answer("The pooled fixed effect estimate and 95% confidence interval"),
     random_answer_order = TRUE,
@@ -1593,10 +1719,10 @@ quiz(caption = "Examine the funnel plot and answer the following questions:",
 
 ### Funnel plot asymmetry
 
-In addition to assessing the funnel plot visually, we can test for asymmetry statistically. Here we will use Egger's test, based on a weighted linear regression of the treatment effect on its standard error.
+In addition to assessing the funnel plot visually, we can test for asymmetry statistically. Here we will use Egger's test, which is a weighted linear regression of the treatment effect on its standard error.
 
 
-Test for funnel plot asymmetry using the function "meta-bias":
+Test for funnel plot asymmetry using the function ***metabias***:
 ```{r ex2_2, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
 infarctVolBias <- metabias(
  # specify the meta-analysis to analyse
@@ -1638,7 +1764,7 @@ quiz(caption = "Question",
 ### Trim and fill 
 
 We can also estimate and adjust for the number and outcomes of theoretically missing studies in a meta-analysis, using a method called **trim and fill**. 
-We can test for and impute missing studies using the function "trimfill":
+We can test for and impute missing studies using the function ***trimfill***:
 
 ```{r ex2_3, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=16}
 infarctVolTrim <- trimfill(
@@ -1661,7 +1787,7 @@ infarctVolTrim
 
 <br>
 
-Draw a funnel plot of the filled data using the function "funnel":
+You can draw a funnel plot of the filled data using the function ***funnel***:
 
 ```{r ex2_4, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=10}
 infarctVolTrimFun <- funnel(infarctVolTrim,
@@ -1734,14 +1860,12 @@ quiz(caption = "Questions:",
 
 ## 5.  Test your skills: small study effects
 
-We have now explored the code to assess and visaulise small study effects in the context of systematic review and meta-analysis. 
-
-Next you will use our neurobehavioural data to create a funnel plot, test for asymmetry, and impute missing studies using the "funnel, "metabias", and "trimfill" functions. In part **3. Test your skills: meta-analysis** we used only those experiments where IL-1RA was administered in protein form and motor / sensory outcomes were assessed. To assess for small study effects, we will use the entire neurobehavioural data set.
+Now you can assess and visaulise small study effects in the neurobehavioural data set. Create a funnel plot, test for asymmetry, and impute missing studies using the ***funnel***, ***metabias***, and ***trimfill*** functions. In section **3. Test your skills: meta-analysis** we used only those experiments where IL-1RA was administered in protein form and motor / sensory outcomes were assessed. To assess for small study effects, we will use the entire neurobehavioural data set.
 
 We have provided the first part of the code to load the data and perform the meta-analysis. Start by writing code to create a funnel plot visualising these data:
 
 ```{r ex1_5_setup, include = FALSE}
-neurobeh2 <- read.csv("IL1-RA_Neurobehaviour_Prenest_Part1.5.csv", fileEncoding = "UTF-8-BOM")
+neurobeh2 <- read.csv("IL-1RA_Neurobehaviour_prenest_section5.csv", fileEncoding = "UTF-8-BOM")
 
 neurobehMA2 <- metagen(
   # specify the variable that contains the effect size for each 
@@ -1768,10 +1892,10 @@ neurobehMA2 <- metagen(
 
 ```{r ex2_5_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_5_setup", exercise.lines=40}
 
-# first, load the data set "IL1-RA_Neurobehaviour_Prenest_Part1.5.csv" using the function read.csv().
-neurobeh2 <- read.csv("IL1-RA_Neurobehaviour_Prenest_Part1.5.csv", fileEncoding = "UTF-8-BOM")
+# first, load the data set "IL-1RA_Neurobehaviour_prenest_section5.csv" using the function read.csv().
+neurobeh2 <- read.csv("IL-1RA_Neurobehaviour_prenest_section5.csv", fileEncoding = "UTF-8-BOM")
 
-# perform a random effects meta-analysis using the function "metagen".
+# perform a random effects meta-analysis using the function metagen().
 neurobehMA2 <- metagen(
   ESi,  
   SEi,  
@@ -1808,6 +1932,7 @@ neurobehFun <- funnel(
  yaxis = "se"   
 )
 ```
+<br>
 
 Next, use Egger's test to assess funnel plot symmetry statistically:
 
@@ -1836,6 +1961,7 @@ neurobehBias <- metabias(
 # view the results of the funnel plot asymmetry analysis
 neurobehBias
 ```
+<br>
 
 Now use trim and fill to assess whether there are any theoretically missing studies in the data set and then create a funnel plot of the results:
 
@@ -1904,7 +2030,7 @@ neurobehTrimFun <- funnel(neurobehTrim,
   
 quiz(caption = "Question:",
   question("What do the results of the analyses for small study effects tell us about the neurobehavioural data set?",
-    answer("There is statistically significant evidence for funnel plot asymmetry and missing studies in the data set but the overall efficacy of IL-1RA is not changed greatly when these missing studies are added", correct = TRUE),
+    answer("There is statistically significant evidence for funnel plot asymmetry and missing studies in the data set but the overall efficacy of IL-1RA is not changed greatly when these theoretically missing studies are added", correct = TRUE),
     answer("There is no statistically significant evidence for funnel plot asymmetry but there are missing studies detected via trim and fill, evidence of publication bias"),
     answer("There is evidence for statistically significant funnel plot asymmetry and the addition of missing studies leads to a large reduction in the estimated efficacy of IL-1RA"),
     answer("There is strong evidence of publication bias and a significant number of studies missing from the data set"),
@@ -1914,22 +2040,37 @@ quiz(caption = "Question:",
 )
 ```
 
+## Notes and resources
 
+We have created this tutorial to guide users through a preclinical meta-analysis. 
+
+Meta-analysis comes with many researcher degrees of freedom and it’s important that when performing your own meta-analysis, your statistical analysis plan is specified *a priori* in your study protocol.
+
+In this tutorial we have implemented standard analyses, as performed in a published meta-analysis, but in the functions we have used (and the many others available), multiple details can be tailored to suit different analyses.
+
+If you use R to analyse your data (or any other statistical software package!), you should have a thorough understanding of how the analysis is run and why, and the assumptions and default settings that are built into the functions you use in different software applications. 
+
+There are many more things to explore in R, with lots of options to customise graphs and data visualisations for presentations and publications.
+
+For more information on any of the R packages and functions we have used, you can use the help function in R studio, which is described in detail on the <a href= https://www.r-project.org/help.html  target="_blank" rel="noopener noreferrer"> Getting Help with R </a>  page, along with multiple options on where else to look for information and help.
+
+A useful online resource that describes meta-analysis with R in detail is <a href=https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/ target="_blank" rel="noopener noreferrer">  “Doing Meta-Analysis with R: A Hands-On Guide” </a>.
+
+If you have specific problems developing code in R, there is also a thriving online community with whom to engage. Many platforms offer forums to submit problems and solutions, one of the most popular is <a href=https://stackexchange.com/ target="_blank" rel="noopener noreferrer">  Stack Exchange</a>.
+
+If you have questions about your own systematic review of animal data, you can contact [CAMARADES Berlin](mailto:CAMARADES.berlin@charite.de). Alternatively, you can contact the CAMARADES [SyRF help desk](mailto:syrf.info@ed.ac.uk).
+
+This resource has been created using CC-BY-4.0 sources including: [Viechtbauer W. Conducting meta-analyses in R with the metafor package. *Journal of Statistical Software* 36(3), 1-48 (2010)](https://doi.org/10.18637/jss.v036.i03){target="_blank"}. 
+
+This resource was last updated on: `r format(Sys.time(), '%d %B, %Y')`
 
 ## About CAMARADES
 
-
-
 The materials presented here have been developed by CAMARADES Berlin. CAMARADES (Collaborative Approach to Meta-Analysis and Review of Animal Data from Experimental Studies) provide a framework supporting researchers to perform systematic reviews of data from experimental animal studies. This support includes best practice methodological assistance and access to collaborative tools such as our online review facility, [SyRF](http://syrf.org.uk/){target="_blank"}. 
 
-We have put together this tutorial to guide you through a preclinical meta-analysis. This resource has been created using CC-BY-4.0 sources including: [Viechtbauer W. Conducting meta-analyses in R with the metafor package. *Journal of Statistical Software* 36(3), 1-48 (2010)](https://doi.org/10.18637/jss.v036.i03){target="_blank"}. 
-   
-  
-This application was last updated on: `r format(Sys.time(), '%d %B, %Y')`
+If you have questions about this resource, or would like to seek support for your systematic review, please [email us](mailto:CAMARADES.berlin@charite.de).
 
-If you have questions about this resource, or would like to seek support for your systematic review, please [email us here](mailto:CAMARADES.berlin@charite.de).
-
-CAMARADES Berlin are supported by Charité 3R. For more information about the 3Rs at Charité – Universitätsmedizin Berlin, visit the [Charité 3R Toolbox](https://charite3r.charite.de/en/charite_3r_toolbox/){target="_blank"}. 
+CAMARADES Berlin are supported by [Charité 3R](https://charite3r.charite.de/){target="_blank"}. For more information about the 3Rs at Charité – Universitätsmedizin Berlin, visit the [Charité 3R Toolbox](https://charite3r.charite.de/3r_service/charite_3r_toolbox/){target="_blank"}. 
 <center>
 ![](images/C3R_Screen_Farbe.jpg){#id .class width=20%} 
 

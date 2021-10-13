@@ -1,0 +1,20 @@
+﻿Variable ,Description,Levels
+study_id,a study identifier for each experimental group within a study,"Identifier variable - author, year of publication, experimental group"
+drug,the drug administered in the experiment,IL-1RA
+number_affected_in_control_group,the number of animals affected by the outcome measure in the control group,Numerical - discrete
+number_affected_in_treatment_group,the number of animals affected by the outcome measure in the treatment group,Numerical - discrete
+control_group_n,the number of animals in the control group,Numerical - discrete
+treatment_group_n,the number of animals in the treatment group,Numerical - discrete
+outcome_measure,the outcome measured in the animals ,Mortality
+blinded_assessment_of_outcome,reporting of blinded assessment of outcome,"FALSE, TRUE"
+blinded_induction_of_ischaemia,reporting of blinded induction of ischaemia (stroke) ,"FALSE, TRUE"
+method_of_mcao,the method used for middle cerebral artery occlusion (mcao) to induce stroke,"electrocoagulation, Intraluminal filament/suture, thrombin"
+random_allocation,reporting of random allocation of animals to treatment or control groups,"FALSE, TRUE"
+sample_size_calculation,reporting of a sample size calculation,"FALSE, TRUE"
+sex,the sex of the animals used in the experiment,Male
+type_of_ischaemia,the type of ischaemic stroke,"Permanent, Temporary, Thrombotic"
+comorbidity,the comorbidity suffered by the animals,"Aged, None"
+dose,the dose of the drug administered to the animals,Numerical - continuous
+unit,the unit of the drug dose administered to the animals,mg/kg
+time_of_administration,"the time of the drug administration, relative to stroke induction, in minutes",Numerical - continuous (mins)
+time_of_assessment,"the time the outcome was assessed, relative to stroke induction, in hours",Numerical - continuous (hours)

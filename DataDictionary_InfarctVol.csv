@@ -1,0 +1,34 @@
+﻿Variable,Description,Levels
+study_id,a study identifier for each experimental group within a study,"Identifier variable - author, year of publication, experimental group"
+species,the animal species used in the experiment,"Mouse, Rat"
+strain,the animal strain used in the experiment,"Balb/c, C57BL/6, C57BL/6J,  C57/SV129, CD-1,  Sprague dawley, Unknown, Wistar"
+sex,the sex of the animals used in the experiment,"Male, Unknown"
+drug,the drug administered in the experiment,IL-1RA
+drug_delivery_mode,the mode of the drug delivered to the animals,"IL-1 RA Tg BM cells, Protein, Transgenic, Vector"
+route_of_delivery,the route used to deliver the drug to the animals,"ICerebVentricular, IPeritoneal, IVenous, Stereotactic, SubCut"
+drug_delivery_location,the location of the drug delivery into the animals,"Central, Peripheral"
+dose,the dose of the drug administered to the animals,Numerical - continuous
+unit,the unit of the drug dose administered to the animals,"cells, mg/kg, ng/g, Tg, µg"
+time_of_administration,"the time of the drug administration, relative to stroke induction, in minutes",Numerical - continuous (mins)
+number_of_doses,the number of doses of the drug administered to the animals,"Continuous, Multiple, Single"
+outcome_measure,the outcome measured in the animals ,Infarct volume
+time_of_assessment,"the time the outcome was assessed, relative to stroke induction, in hours",Numerical - continuous (hours)
+blinded_assessment_of_infarct_volume,reporting of blinded assessment of outcome,"FALSE, TRUE"
+blinded_induction_of_ischaemia,reporting of blinded induction of ischaemia (stroke) ,"FALSE, TRUE"
+random_allocation,reporting of random allocation of animals to treatment or control groups,"FALSE, TRUE"
+sample_size_calculation,reporting of a sample size calculation,"FALSE, TRUE"
+use_of_comorbid_animals,use of animals with a comorbidity,"FALSE, TRUE"
+animal_welfare_compliance,reporting of a statement of compliance with animal welfare regulations,"FALSE, TRUE"
+statement_of_potential_coi,reporting of a statement of potential conflicts of interest,"FALSE, TRUE"
+duration_of_ischaemia,the duration of ischaemic stroke in minutes,Numerical - continuous (mins)
+type_of_ischaemia,the type of ischaemic stroke,"Permanent, Temporary, Thrombotic"
+anaesthetic,the anaesthetic used during stroke induction,"Chloral Hydrate, Halothane, Isoflurane, Ketamine, Tribromoethanol, Unknown"
+method_of_mcao,the method used for middle cerebral artery occlusion (mcao) to induce stroke,"electrocoagulation, Intraluminal filament/suture, Ligation, thrombin"
+control_group_mean,the mean value of the outcome measure in the control group,Numerical - continuous
+treatment_group_mean,the mean value of the outcome measure in the treatment group,Numerical - continuous
+control_group_n,the number of animals in the control group,Numerical - discrete
+treatment_group_n,the number of animals in the treatment group,Numerical - discrete
+control_group_calc_n,the number of animals in the control group after adjusting for the number of treatment groups it serves,Numerical - continuous
+treatment_groups_per_control,the number of treatment groups compared to each control group wihin an experiment,Numerical - discrete
+control_group_sd,the standard deviation in the control group,Numerical - continuous
+treatment_group_sd,the standard deviation in the treatment group,Numerical - continuous
