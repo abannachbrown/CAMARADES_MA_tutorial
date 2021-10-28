@@ -149,7 +149,8 @@ It's good practice to take a look at the data you import to make sure there are 
 You can find a description of each variable in the data dictionary table in section 1.4.
 
 ```{r ex1_1_2, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
-head(infarctVol, n=76)
+infarctVol %>% 
+  mutate_if(is.numeric, round, digits = 2)
 ```
 
 ```{r quiz1_1_1, echo=FALSE}
@@ -260,15 +261,29 @@ sdTi <- infarctVol$treatment_group_sd
 nTi <- infarctVol$treatment_group_n
 ```
 
-You have just created six new variables that you will use to calculate effect sizes. You can view variables to check that they contain the correct data. For example, running the following section of code will show you the list of values in the mCi variable (data for the mean in the control group). This should match the corresponding column in the data set. You can edit this code to view the other variables if you wish:
+You have just created six new variables that you will use to calculate effect sizes:
+
+```{r, context ="render", echo=FALSE}
+
+var <- data.frame(
+  Variable = c("mCi", "sdCi", "nCi", "mTi", "sdTi","nTi"),
+  Description = c("mean in the control group", "standard deviation in the control group", "number of animals in the control group", "mean in the treatment group", "standard deviation in the treatment group", "number of animals in the treatment group")
+)
+var %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, position = "left")
+```
+
+
+You can view variables to check that they contain the correct data. For example, running the following section of code will show you the list of values in the mCi variable (data for the mean in the control group). This should match the corresponding column in the data table you saw in the previous section (use the navigation bar on the left to go back and check). You can edit this code to view the other variables if you wish:
 
 ```{r ex1_1_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=3}
 
-mCi
+print(mCi, digits =4)
 ```
 <br>
 
-Now let's calculate an NMD effect size for each experiment (ESi) and add the effect size data as a new column in the infarctVol data set. The function ***cbind***takes a table of data and binds a new column to the right side. Remember, each variable in this equation is a list of numbers, with each entry corresponding to a single experiment.
+Now let's calculate an NMD effect size for each experiment (saved as the variable "ESi") and add the effect size data as a new column in the infarctVol data set. The function ***cbind*** takes a table of data and binds a new column to the right side. Remember, each variable in this equation is a list of numbers, with each entry corresponding to a single experiment.
 <br> 
 
 **Note**: we are using a truncated form of the NMD equation here because we know that a sham animal that has not suffered a stroke will have no infarct. This reduces the corresponding parts of the NMD equation to zero; see the <a href="http://camarades.de/meta-analysis.html#continuous" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page</a> for more information.
@@ -391,7 +406,7 @@ infarctVolTrim <- trimfill(
 ```
 
 <br>
-Next, we calculate the NMD standard deviation for each group:
+Next, we calculate the normalised standard deviation for each group:
 
 ```{r ex1_1_6, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6}
 # control group
@@ -402,7 +417,7 @@ nsdTi <- sdTi / mCi * 100
 ```
 
 
-We will now calculate the NMD standard error for each experiment (SEi) and add the standard error data as a new column in the infarctVol data set:
+We will now calculate the normalised standard error for each experiment (saved as the variable "SEi") and add the standard error data as a new column in the infarctVol data set:
 
 ```{r ex1_1_7, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6}
 # calculate the NMD standard error
@@ -413,10 +428,26 @@ infarctVol <- cbind(infarctVol, SEi)
 ```
 
 
-Check that your new columns have been added to the right hand side of the data set:
+Check that your new variables have been added as columns to the right hand side of the data set:
+
+
+```{r, context ="render", echo=FALSE}
+
+var <- data.frame(
+  Variable = c("ESi", "SEi"),
+  Description = c("effect size for each comparison (NMD)", "standard error for each comparison")
+)
+var %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, position = "left")
+```
+
+
 
 ```{r ex1_1_8, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
-head(infarctVol)
+infarctVol %>% 
+  mutate_if(is.numeric, round, digits = 2)
+
 ```
 
 
@@ -523,7 +554,7 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
 
 A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> is a way to visualise the effect size and confidence interval for each individual study in a meta-analysis. We can create a forest plot using the function ***forest***:
 
-```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=44}
+```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=49}
 
 infarctVolFor <- forest(
   # specify the meta-analysis to plot
@@ -538,14 +569,20 @@ infarctVolFor <- forest(
   # plot the random effects estimate
   comb.random = TRUE,  
   
+  # specify the columns to print on the left side of the plot
+  leftcols = "studlab",
+  
   # specify the labels for the left side plot columns
-  leftlabs = c("Study", "ESi", "SEi"),  
+  leftlabs = "Study",  
+  
+  # specify the labels for the right side plot columns
+  rightlabs = c("NMD", "95% CI", "Weight"),
+  
+  # specify the label for the heterogeneity statistics
+  hetlab = "Het: ",
   
   # specify the x axis label
   xlab = "NMD (% reduction in infarct volume)",  
-  
-  # specify the effect size label
-  smlab = "NMD",  
   
   # specify the graph label on right side of plot
   label.right = "Favours IL-1RA",  
@@ -736,10 +773,10 @@ quiz(caption = "Questions:",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Is the presence of blinded induction of ischaemia a significant source of heterogeneity?",
-    answer("It depends at what level the p-value is considered statistically significant", correct = TRUE),
+  question("Is the presence of blinded induction of ischaemia a significant source of heterogeneity (p < 0.05)?",
+    answer("No, p-val > 0.05"),
     answer("Yes, p-val < .0001"),
-    answer("Yes, p-val = 0.0414"),
+    answer("Yes, p-val = 0.0414", correct = TRUE),
     answer("No, p-val = 0.0414"),
     random_answer_order = TRUE,
     allow_retry = TRUE
@@ -803,7 +840,9 @@ infarctVol2 <- subset(
 ) 
 
 # View the new data subset
-head(infarctVol2, n=65)
+infarctVol2 %>% 
+  mutate_if(is.numeric, round, digits = 2)
+
 ```
 
 <br>
@@ -962,9 +1001,9 @@ quiz(caption = "Questions:",
     random_answer_order = TRUE,
     allow_retry = TRUE
   ),
-  question("Is the route of delivery a significant source of heterogeneity?",
-    answer("Yes, p-val < .0001"),
-    answer("It depends at what level the p-value is considered statistically significant", correct = TRUE),
+  question("Is the route of delivery a significant source of heterogeneity (p < 0.05)?",
+    answer("Yes, p-val < .0001", correct = TRUE),
+    answer("Yes, p-val = 0.0267"),
     answer("No, p-val = 0.0267"),
     answer("No, p-val = 0.0558"),
     random_answer_order = TRUE,
@@ -1060,7 +1099,9 @@ infarctVol3 <- subset(
 )     
 
 # View the new data subset
-head(infarctVol3, n=20)  
+infarctVol3 %>% 
+  mutate_if(is.numeric, round, digits = 2)
+ 
 ```
 <br>
 
@@ -1207,7 +1248,9 @@ For this exercise, we will use the function ***metabin*** for meta-analysis of b
 mortality <- read.csv("IL-1RA_Mortality_section2.csv", 
                       fileEncoding = "UTF-8-BOM")
 
-head(mortality, n=10)
+mortality %>% 
+  mutate_if(is.numeric, round, digits = 2)
+
 ```
 <br>
 
