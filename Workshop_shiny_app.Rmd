@@ -26,11 +26,11 @@ description: >
 # - using "learnr" v0.10.1, chained setup chunks do not work correctly. Found work-around. Question posted to stack overflow: https://stackoverflow.com/questions/68995597/sharing-variables-between-chunks-in-learnr-tutorial-app-with-chained-setup-chun ; it is a bug in this version of "learnr". but following the suggested solution - installing the latest development version of "learnr" - results in plots not being shown correctly. 
 # - using "learnr" v0.10.1.9015, chained setup chunks works, but forest plots are shown incorrectly.
 ################################################################################
-# require('learnr')
-# require('meta')
-# require('metafor')
-# require('tidyverse')
-# require('kableExtra')
+require('learnr')
+require('meta')
+require('metafor')
+require('tidyverse')
+require('kableExtra')
 
 
 library(learnr)
@@ -138,7 +138,7 @@ infarctVol <- read.csv("./IL-1RA_InfarctVolume_section1.csv",
 
 First, let's load the data we will use for the meta-analysis of infarct volume:
 
-```{r ex1_1_1, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
+```{r ex1_1_1, exercise = TRUE, exercise.setup = "ex1_1_setup_1", cache=TRUE}
 infarctVol <- read.csv("IL-1RA_InfarctVolume_section1.csv", 
                        fileEncoding = "UTF-8-BOM")
 ```
@@ -148,7 +148,7 @@ It's good practice to take a look at the data you import to make sure there are 
 
 You can find a description of each variable in the data dictionary table in section 1.4.
 
-```{r ex1_1_2, exercise = TRUE, exercise.setup = "ex1_1_setup_1"}
+```{r ex1_1_2, exercise = TRUE, exercise.setup = "ex1_1_setup_1", cache=TRUE}
 infarctVol %>% 
   mutate_if(is.numeric, round, digits = 2)
 ```
@@ -211,7 +211,7 @@ Note that green text following a hash symbol (#) in the code chunk is not read b
 
 First, specify the columns in the data set that contain the mean, standard deviation, and number of animals in the **control** groups:
 
-```{r ex1_1_setup_2, include = FALSE}
+```{r ex1_1_setup_2, include = FALSE , cache=TRUE}
 infarctVol <- read.csv("IL-1RA_InfarctVolume_section1.csv", 
                          fileEncoding = "UTF-8-BOM")
 
@@ -236,7 +236,7 @@ infarctVol <- cbind(infarctVol, ESi)
 ```
 
 
-```{r ex1_1_3, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9}
+```{r ex1_1_3, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9, , cache=TRUE}
 # save the group means to a variable called mCi
 mCi <- infarctVol$control_group_mean
 
@@ -250,7 +250,7 @@ nCi <- infarctVol$control_group_calc_n
 
 ...and the columns that contain the mean, standard deviation, and number of animals in the **treatment** groups:
 
-```{r ex1_1_4, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9}
+```{r ex1_1_4, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=9, cache=TRUE}
 # save the group means to a variable called mTi
 mTi <- infarctVol$treatment_group_mean
 
@@ -263,7 +263,7 @@ nTi <- infarctVol$treatment_group_n
 
 You have just created six new variables that you will use to calculate effect sizes:
 
-```{r, context ="render", echo=FALSE}
+```{r, context ="render", echo=FALSE, cache=TRUE}
 
 var <- data.frame(
   Variable = c("mCi", "sdCi", "nCi", "mTi", "sdTi","nTi"),
@@ -277,7 +277,7 @@ var %>%
 
 You can view variables to check that they contain the correct data. For example, running the following section of code will show you the list of values in the mCi variable (data for the mean in the control group). This should match the corresponding column in the data table you saw in the previous section (use the navigation bar on the left to go back and check). You can edit this code to view the other variables if you wish:
 
-```{r ex1_1_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=3}
+```{r ex1_1_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=3, cache=TRUE}
 
 print(mCi, digits =4)
 ```
@@ -288,7 +288,7 @@ Now let's calculate an NMD effect size for each experiment (saved as the variabl
 
 **Note**: we are using a truncated form of the NMD equation here because we know that a sham animal that has not suffered a stroke will have no infarct. This reduces the corresponding parts of the NMD equation to zero; see the <a href="http://camarades.de/meta-analysis.html#continuous" target="_blank" rel="noopener noreferrer"> CAMARADES wiki page</a> for more information.
 
-```{r ex1_1_5, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=6}
+```{r ex1_1_5, exercise = TRUE, exercise.setup = "ex1_1_setup_2", exercise.lines=6, cache=TRUE}
 # calculate the NMD effect size for each experiment and save the results to the ESi variable
 ESi <- (mCi - mTi) / mCi * 100
 
@@ -296,7 +296,7 @@ ESi <- (mCi - mTi) / mCi * 100
 infarctVol <- cbind(infarctVol, ESi) 
 ```
 
-```{r ex1_1_setup_3, include = FALSE}
+```{r ex1_1_setup_3, include = FALSE, cache=TRUE}
 infarctVol <- read.csv("IL-1RA_InfarctVolume_section1.csv", 
                          fileEncoding = "UTF-8-BOM")
 
@@ -408,7 +408,7 @@ infarctVolTrim <- trimfill(
 <br>
 Next, we calculate the normalised standard deviation for each group:
 
-```{r ex1_1_6, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6}
+```{r ex1_1_6, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6, cache=TRUE}
 # control group
 nsdCi <- sdCi / mCi * 100 
 
@@ -419,7 +419,7 @@ nsdTi <- sdTi / mCi * 100
 
 We will now calculate the normalised standard error for each experiment (saved as the variable "SEi") and add the standard error data as a new column in the infarctVol data set:
 
-```{r ex1_1_7, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6}
+```{r ex1_1_7, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=6, cache=TRUE}
 # calculate the NMD standard error
 SEi <- sqrt((nsdCi^2) / nCi + (nsdTi^2) / nTi)
 
@@ -431,7 +431,7 @@ infarctVol <- cbind(infarctVol, SEi)
 Check that your new variables have been added as columns to the right hand side of the data set:
 
 
-```{r, context ="render", echo=FALSE}
+```{r, context ="render", echo=FALSE, cache=TRUE}
 
 var <- data.frame(
   Variable = c("ESi", "SEi"),
@@ -444,7 +444,7 @@ var %>%
 
 
 
-```{r ex1_1_8, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_1_8, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 infarctVol %>% 
   mutate_if(is.numeric, round, digits = 2)
 
@@ -456,7 +456,7 @@ infarctVol %>%
 ### Building the meta-analysis model
 Next we combine the individual effect sizes with meta-analysis using the function ***metagen*** from the ***{meta}*** package. This gives us an overall summary estimate of the effect of IL-1RA on infarct volume, compared to control. Note that to begin with, we will print both the random effects and fixed effect estimates so that we can compare the results:
 
-```{r ex1_1_9, exercise = TRUE, exercise.setup = "ex1_1_setup_3",  exercise.lines=23}
+```{r ex1_1_9, exercise = TRUE, exercise.setup = "ex1_1_setup_3",  exercise.lines=23 , cache=TRUE}
 infarctVolMA <- metagen(
   # specify the variable that contains the effect size for each experiment
   ESi,   
@@ -483,7 +483,7 @@ infarctVolMA <- metagen(
 
 View the results of the meta-analysis:
 
-```{r ex1_1_10, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_1_10, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 infarctVolMA   
 ```
 
@@ -554,7 +554,7 @@ quiz(caption = "Answer the following questions about the results of the meta-ana
 
 A <a href="https://www.camarades.de/meta-analysis.html#step-5.-interpret-the-results" target="_blank" rel="noopener noreferrer">forest plot</a> is a way to visualise the effect size and confidence interval for each individual study in a meta-analysis. We can create a forest plot using the function ***forest***:
 
-```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=49}
+```{r ex1_1_11, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=49, cache=TRUE}
 
 infarctVolFor <- forest(
   # specify the meta-analysis to plot
@@ -658,7 +658,7 @@ First, investigate the variable "blinded induction of ischaemia" in the complete
 
 Categorical variables like this one can be added to a meta-regression model using what are known as "dummy variables". In this tutorial we will allow R to handle the coding of these dummy variables automatically, but you can also code them manually. For more information <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/metareg.html#meta-regression-with-a-categorical-predictor" target="_blank" rel="noopener noreferrer"> see here</a>.
 
-```{r ex1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14}
+```{r ex1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14, cache=TRUE}
 # check the different levels of the variable and number of experiments in each
 table(infarctVol$blinded_induction_of_ischaemia)  
 
@@ -679,7 +679,7 @@ infarctVolBlind
 
 You can create a bar chart of these results using the code below. Don't worry about trying to understand the code at this stage, it's very long!
 
-```{r plot1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=5, fig.width=5, fig.height=5.5, fig.fullwidth=FALSE}
+```{r plot1_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=5, fig.width=5, fig.height=5.5, fig.fullwidth=FALSE, cache=TRUE}
 infarctVolBlind.p <- predict.rma(infarctVolBlind, addx = TRUE)
 blind <- as_tibble(infarctVolBlind.p)%>% group_by(X.blinded_induction_of_ischaemiaTRUE)
 blind.s <- blind %>% summarise(
@@ -827,7 +827,7 @@ Route of delivery refers to how IL-1RA was administered e.g. intravenous, subcut
 
 First we will create a new data set including only the protein studies using the function ***subset***:
 
-```{r ex1_2_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14}
+```{r ex1_2_2_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=14, cache=TRUE}
 infarctVol2 <- subset(
   # specify the data to subset
   infarctVol,  
@@ -851,7 +851,7 @@ Have a look at the table above and check that the only studies remaining are tho
 
 Next we will run a meta-analysis on this subset of the data: 
 
-```{r ex1_2_2_2, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=27}
+```{r ex1_2_2_2, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=27, cache=TRUE}
 infarctVolMA2 <- metagen(
   # specify the variable that contains the effect size for each experiment 
   ESi,  
@@ -883,7 +883,7 @@ infarctVolMA2
 
 Now check the variable data and perform the meta-regression investigating "route of delivery":
 
-```{r ex1_2_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_2_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 # check the different delivery routes and number of experiments using each
 table(infarctVol2$route_of_delivery)
  
@@ -904,7 +904,7 @@ infarctVolRoute
 
 We can also graph the results of a meta-regression using a forest plot:
 
-```{r ex1_3_3_1, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=5}
+```{r ex1_3_3_1, fig.width = 8.5, fig.height = 18, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=5, cache=TRUE}
 
 
 infarctVolRoute.p <- predict.rma(infarctVolRoute, addx = TRUE)
@@ -1033,7 +1033,7 @@ quiz(caption = "Questions:",
 
 Using the same data set (infarctVol2) and meta-analysis (infarctVolMA2), now investigate whether animal species is a source of heterogeneity:
 
-```{r ex1_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_2_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 table(infarctVol2$species)
 
 infarctVolspecies <- metareg(
@@ -1086,7 +1086,7 @@ Now let's check if the dose of IL-1RA is associated with effect size differences
 
 First we will create a new data set including only the centrally-administered protein studies, again using the function ***subset***:
 
-```{r ex1_2_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_2_4_1, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 infarctVol3 <- subset(
   # specify the data to subset
   infarctVol2,   
@@ -1109,7 +1109,7 @@ Have a look at the table above and check that the only studies remaining are tho
 
 Next run a meta-analysis on this new data set:
 
-```{r ex1_2_4_2, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=24}
+```{r ex1_2_4_2, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=24, cache=TRUE}
 infarctVolMA3 <-  metagen(
   # specify the variable that contains the effect size for each experiment
   ESi,  
@@ -1140,7 +1140,7 @@ infarctVolMA3
 
 Finally, perform the meta-regression investigating "dose":
 
-```{r ex1_2_4_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_2_4_3, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 infarctVoldose <- metareg(
   # specify the meta-analysis
   infarctVolMA3,   
@@ -1157,7 +1157,7 @@ infarctVoldose
 
 To graph a meta-regression of a continuous variable we can use a bubble plot:
 
-```{r ex1_2_4_4, fig.width = 6, fig.height = 5, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex1_2_4_4, fig.width = 6, fig.height = 5, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 # specify the meta-regression analysis to plot 
 bubble(infarctVoldose, 
        
@@ -1207,7 +1207,7 @@ quiz(caption = "Questions:",
 
 ## 1.4 Data dictionary: infarct volume
 
-```{r, context ="render", echo=FALSE}
+```{r, context ="render", echo=FALSE, cache=TRUE}
 dictionary_infarct <- read.csv("DataDictionary_InfarctVol.csv", 
                          fileEncoding = "UTF-8-BOM"
                          )
@@ -1220,7 +1220,7 @@ dictionary_infarct %>%
 
 ## 2.  Meta-analysis of binary data
 
-```{r ex1_3_setup, include = FALSE}
+```{r ex1_3_setup, include = FALSE, cache=TRUE}
 mortality <- read.csv("IL-1RA_Mortality_section2.csv", 
                       fileEncoding = "UTF-8-BOM")
 
@@ -1244,7 +1244,7 @@ For this exercise, we will use the function ***metabin*** for meta-analysis of b
 
 ### Load and view the data
 
-```{r ex1_3_1, exercise = TRUE, exercise.setup = "ex1_3_setup"}
+```{r ex1_3_1, exercise = TRUE, exercise.setup = "ex1_3_setup", cache=TRUE}
 mortality <- read.csv("IL-1RA_Mortality_section2.csv", 
                       fileEncoding = "UTF-8-BOM")
 
@@ -1281,7 +1281,7 @@ quiz(caption = "Question:",
 
 Now perform a meta-analysis using the function ***metabin***: 
 
-```{r ex1_3_2, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=34}
+```{r ex1_3_2, cache=TRUE, exercise=TRUE, exercise.lines=34, exercise.setup="ex1_3_setup"}
 mortalityMA <- metabin(
   # specify the number of events in experimental group
   event.e = number_affected_in_treatment_group,
@@ -1350,7 +1350,7 @@ quiz(caption = "Questions:",
 
 Next we will create a forest plot of the mortality data using the function ***forest***:
 
-```{r ex1_3_3, fig.width = 8.5, fig.height = 4, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=32}
+```{r ex1_3_3, fig.width = 8.5, fig.height = 4, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_3_setup", exercise.lines=32, cache=TRUE}
 mortalityFor <- forest(
  # specify the meta-analysis to plot
  mortalityMA,  
@@ -1414,7 +1414,7 @@ quiz(caption = "Questions:",
 
 ## 2.1 Data dictionary: mortality
 
-```{r, context ="render", echo=FALSE}
+```{r, context ="render", echo=FALSE, cache=TRUE}
 dictionary_mortality <- read.csv("DataDictionary_Mortality.csv", 
                          fileEncoding = "UTF-8-BOM")
 
@@ -1433,19 +1433,19 @@ You can edit the code we used to analyse the infarct volume data above and compa
 
 Start by loading and viewing the data set, you can find a description of each variable in the data dictionary table in section 3.1:
 
-```{r ex1_4_setup, include = FALSE}
+```{r ex1_4_setup, include = FALSE, cache=TRUE}
 neurobeh <- read.csv("IL-1RA_Neurobehaviour_nested_section3.csv", fileEncoding = "UTF-8-BOM")
 
 ```
 
-```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=10}
+```{r ex1_4_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_4_setup", exercise.lines=10, cache=TRUE}
 # load and view the data set "IL-1RA_Neurobehaviour_nested_section3.csv" using the function read.csv().
 
 
 ```
 
 
-```{r ex1_4_2_setup, include = FALSE}
+```{r ex1_4_2_setup, include = FALSE, cache=TRUE}
 neurobeh <- read.csv("IL-1RA_Neurobehaviour_nested_section3.csv", fileEncoding = "UTF-8-BOM")
 
 neurobehMA <- metagen(
@@ -1678,7 +1678,7 @@ quiz(caption = "Questions:",
 
 ## 3.1 Data dictionary: neurobehaviour 
 
-```{r, context ="render", echo=FALSE}
+```{r, context ="render", echo=FALSE, cache=TRUE}
 dictionary_neuro <- read.csv("DataDictionary_Neurobehaviour.csv", 
                          fileEncoding = "UTF-8-BOM")
 
@@ -1696,7 +1696,7 @@ In this exercise, we will use the complete infarct volume data set and meta-anal
 
 First, draw a funnel plot using the function ***funnel***: 
 
-```{r ex2_1, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex2_1, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 infarctVolFun <- funnel(
  # specify the meta-analysis to plot
  infarctVolMA,  
@@ -1766,7 +1766,7 @@ In addition to assessing the funnel plot visually, we can test for asymmetry sta
 
 
 Test for funnel plot asymmetry using the function ***metabias***:
-```{r ex2_2, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3"}
+```{r ex2_2, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", cache=TRUE}
 infarctVolBias <- metabias(
  # specify the meta-analysis to analyse
  infarctVolMA,  
@@ -1809,7 +1809,7 @@ quiz(caption = "Question",
 We can also estimate and adjust for the number and outcomes of theoretically missing studies in a meta-analysis, using a method called **trim and fill**. 
 We can test for and impute missing studies using the function ***trimfill***:
 
-```{r ex2_3, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=16}
+```{r ex2_3, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=16, cache=TRUE}
 infarctVolTrim <- trimfill(
   # specify the meta-analysis to plot
   infarctVolMA,
@@ -1832,7 +1832,7 @@ infarctVolTrim
 
 You can draw a funnel plot of the filled data using the function ***funnel***:
 
-```{r ex2_4, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=10}
+```{r ex2_4, scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_1_setup_3", exercise.lines=10, cache=TRUE}
 infarctVolTrimFun <- funnel(infarctVolTrim,
   # plot the random effects estimate
   comb.random = TRUE,  
@@ -1907,7 +1907,7 @@ Now you can assess and visaulise small study effects in the neurobehavioural dat
 
 We have provided the first part of the code to load the data and perform the meta-analysis. Start by writing code to create a funnel plot visualising these data:
 
-```{r ex1_5_setup, include = FALSE}
+```{r ex1_5_setup, include = FALSE, cache=TRUE}
 neurobeh2 <- read.csv("IL-1RA_Neurobehaviour_prenest_section5.csv", fileEncoding = "UTF-8-BOM")
 
 neurobehMA2 <- metagen(
@@ -1933,7 +1933,7 @@ neurobehMA2 <- metagen(
 
 ```
 
-```{r ex2_5_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_5_setup", exercise.lines=40}
+```{r ex2_5_1, fig.width = 8.5, fig.height = 8, out.width="100%", out.height="100%", scaled = TRUE, exercise = TRUE, exercise.setup = "ex1_5_setup", exercise.lines=40, cache=TRUE}
 
 # first, load the data set "IL-1RA_Neurobehaviour_prenest_section5.csv" using the function read.csv().
 neurobeh2 <- read.csv("IL-1RA_Neurobehaviour_prenest_section5.csv", fileEncoding = "UTF-8-BOM")
